@@ -1,0 +1,17 @@
+#for capistrano
+/config/
+Capfile
+#---
+
+.idea
+
+framework
+/protected/config/environment/params-local.php
+/uploads
+/gallery
+*~
+/index.php
+protected/yiic.php
+protected/yiic.bat
+protected/cron.php
+/upload
