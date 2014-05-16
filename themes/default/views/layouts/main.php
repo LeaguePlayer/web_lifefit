@@ -55,7 +55,7 @@
                 <div class="bottom">
                     <nav class="menu">
                         <ul>
-                            <li><a href="#">Новости</a></li>
+                            <li><a href="/news">Новости</a></li>
                             <li><a href="#">О нас</a></li>
                             <li><a href="#">Как начать</a></li>
                             <li><a href="#">Акции и статьи</a></li>
@@ -65,7 +65,7 @@
                             <li><a href="#">Контакты</a></li>
                         </ul>
                     </nav>
-
+                    
                     <div class="shedule">
                         <span class="weekdays">8-23</span>
                         <span class="weekend">9-22</span>

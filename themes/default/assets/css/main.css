@@ -810,4 +810,17 @@ i[class|=arrow] {
 
   h2, h3 {
     page-break-after: avoid; } }
-  
+  .item-news{
+    display: inline-block;
+    width: 535px;
+  }
+  .img_preview{
+    display: inline-block;
+    width: 220px;
+    height: 140px;
+    padding-right: 20px;
+  }
+  .news-info-preview{
+    display: inline-block;
+    width: 290px;
+  }

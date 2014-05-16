@@ -42,4 +42,24 @@ class NewsController extends FrontController
             'newsPage'=>$newsPage
         ));
     }
+
+    public function actionIndex(){
+
+        $dataProvider=new CActiveDataProvider('News', array(
+
+            'criteria'=>array(
+                'order'=>'create_time DESC',
+            ),
+
+            'countCriteria'=>array(
+                'condition'=>'status=1',
+            ),
+
+            'pagination'=>array(
+                'pageSize'=>3,
+            ),
+        ));
+
+        $this->render('index',array('dataProvider'=>$dataProvider));
+    }
 }
