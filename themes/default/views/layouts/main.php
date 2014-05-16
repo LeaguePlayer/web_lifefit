@@ -70,6 +70,10 @@
                         <span class="weekdays">8-23</span>
                         <span class="weekend">9-22</span>
                     </div>
+                    <div class="record">
+                        <a href="#" >Записаться<span></span></a>
+                        <span class="discription">на бесплатный гостевой визит</span>
+                    </div>
                 </div>
 
             </div>
@@ -201,6 +205,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- Конец действия -->
 
 
@@ -335,6 +340,10 @@
                 <div class="bottom">
                     <p class="socials">
                         <a class="vk" target="_blank" href="https://vk.com/lifefit72"></a>
+                        <a class="instagram" target="_blank" href="https://vk.com/lifefit72"></a>
+                        <a class="facebook" target="_blank" href="https://vk.com/lifefit72"></a>
+                        <a class="twitter" target="_blank" href="https://vk.com/lifefit72"></a>
+                        <a class="skype" target="_blank" href="https://vk.com/lifefit72"></a>
                     </p>
                     <p class="powered">© Фитнес-центр Lifefit 2014. Все права защищены</p>
                 </div>

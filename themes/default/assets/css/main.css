@@ -105,11 +105,45 @@ header {
   header .address {
     font-family: "Ubuntu", sans-serif;
     display: inline-block;
-    font-size: 16px;
-    width: 175px; }
+    font-size: 14px;
+    width: 180px; }
   header .top {
     margin-bottom: 20px; }
-
+  header .bottom .record{
+    display: inline-block;
+    padding: 15px;
+    background: #d12424;
+    margin-left: 20px;
+    position: absolute;
+  }  
+  header .bottom{
+    position: relative;
+  }
+  header .bottom .record a{
+    background: #e32727;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-left: 35px;
+    padding-right: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+  }
+  header .bottom .record .discription{
+    font-size: 13px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
+  }
+  header .bottom .record a span{
+    width: 14px;
+    height: 12px;
+    background: url('../img/arrow-record.png')no-repeat!important;
+    display: inline-block;
+    margin-left: 20px;
+  }
 nav.menu {
   display: inline-block;
   vertical-align: bottom; }
@@ -117,15 +151,17 @@ nav.menu {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 620px; }
+    width: 520px; }
     nav.menu ul li {
-      width: 140px;
+      width: 125px;
       display: inline-block;
       margin-bottom: 6px; }
       nav.menu ul li a {
         display: inline-block;
         padding: 3px 0;
-        border-top: 2px solid #1a1a1a; }
+        border-top: 2px solid #1a1a1a; 
+        font-size: 16px;
+      }
       nav.menu ul li.active a {
         color: #e32727;
         border-top-color: #e32727; }
@@ -547,7 +583,10 @@ footer {
     footer .content .order {
       display: inline-block;
       vertical-align: top;
-      text-align: center; }
+      text-align: center; 
+      padding-right: 70px;
+      border-right: solid 1px;
+    }
       footer .content .order p {
         margin: 0;
         line-height: 1.4; }
@@ -578,7 +617,9 @@ footer {
         text-transform: uppercase;
         border-bottom: 2px solid #e32727;
         display: inline-block;
-        margin-top: 30px; }
+        margin-top: 30px; 
+        padding-bottom: 5px;
+      }
     footer .content .master {
       display: inline-block;
       vertical-align: top;
@@ -620,11 +661,28 @@ footer {
       text-align: left; }
       footer .bottom .socials a {
         display: inline-block;
-        width: 48px;
-        height: 48px;
-        background: url(../img/sprites.png) 0 -25px no-repeat;
-        margin-right: 10px; }
+        width: 31px;
+        height: 31px;
+        border: solid #E32727 2px;
+        border-radius: 34px;
 
+      }
+
+      footer .bottom .socials .vk{
+        background: url(../img/vk.png) 0 0px no-repeat;
+      }
+      footer .bottom .socials .instagram{
+        background: url(../img/instagram.png) 0 0px no-repeat;
+      }
+      footer .bottom .socials .skype{
+        background: url(../img/skype.png) 0 0px no-repeat;
+      }
+      footer .bottom .socials .twitter{
+        background: url(../img/twitter.png) 0 0px no-repeat;
+      }
+      footer .bottom .socials .facebook{
+        background: url(../img/facebook.png) no-repeat;
+      }
 .fix-width {
   width: 950px;
   margin: 0 auto; }
@@ -752,3 +810,4 @@ i[class|=arrow] {
 
   h2, h3 {
     page-break-after: avoid; } }
+  
