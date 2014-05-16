@@ -49,13 +49,25 @@ class PageController extends FrontController
 			'node'=>$node,
 		));
 	}
-
-	
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Page');
+		$node = Structure::model()->findByUrl('main');
+		if ( !$node )
+			throw new CHttpException(404, "Узел с псевдонимом '$url' не найден");
+
+		$this->breadcrumbs = $node->getBreadcrumbs();
+		$page = $node->getComponent();
+
+		if ( !empty($node->seo->meta_title) )
+			$this->title = $node->seo->meta_title;
+		else
+			$this->title = $node->name . ' | ' . Yii::app()->config->get('app.name');
+		Yii::app()->clientScript->registerMetaTag($node->seo->meta_desc, 'description', null, array('id'=>'meta_description'), 'meta_description');
+		Yii::app()->clientScript->registerMetaTag($node->seo->meta_keys, 'keywords', null, array('id'=>'keywords'), 'meta_keywords');
+
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'page'=>$page,
+			'node'=>$node,
 		));
 	}
 }
