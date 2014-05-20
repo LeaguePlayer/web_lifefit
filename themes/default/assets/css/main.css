@@ -1037,17 +1037,17 @@ i[class|=arrow] {
     text-transform: uppercase;
     margin-bottom: 35px;
   }
-  .bg_404 .bottom{
+  .bg_404 .bot{
     background: inherit;
     border: none;
 
   }
-  .bottom ul{
+  .bot ul{
     margin: 0 auto;
     width: 950px;
   }
 
-  .bottom ul li{
+  .bot ul li{
     margin:35px 0px 15px 0px;
     display: inline-block;
     width: 225px;
@@ -1064,7 +1064,7 @@ i[class|=arrow] {
     font-size: 14px;
     font-weight: normal;
   }
-  .bottom .phone{
+  .bot .phone{
     background: url('../img/phone-404.png') no-repeat;
     padding-left: 20px;
     background-position: 4px center;

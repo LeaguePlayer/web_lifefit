@@ -1,8 +1,8 @@
-<?
+<?php
+
 	$cs = Yii::app()->clientScript;
 	$cs->registerCssFile($this->getAssetsUrl().'/css/main.css');
-?>
-
+	?>
 <div class="bg_404">
 	<div class="fix-width">
 		<div class="logo">
@@ -60,7 +60,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="bottom">
+	<div class="bot">
 		<ul>
 			<li class="toMain">
 				На главную
