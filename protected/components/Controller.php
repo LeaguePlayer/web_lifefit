@@ -165,4 +165,13 @@ class Controller extends CController
 			}
 		}
 	}
+    
+    
+    public function initGoogleMap()
+	{
+		$cs = Yii::app()->clientScript;
+		$cs->registerScriptFile('http://maps.google.com/maps/api/js?sensor=false', CClientScript::POS_END);
+		$cs->registerScriptFile($this->getAssetsUrl().'/js/map.js', CClientScript::POS_END);
+
+	}
 }

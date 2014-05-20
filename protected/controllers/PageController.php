@@ -32,6 +32,8 @@ class PageController extends FrontController
 		$node = Structure::model()->findByUrl($url);
 		if ( !$node )
 			throw new CHttpException(404, "Узел с псевдонимом '$url' не найден");
+            
+        $this->initGoogleMap();
 
 		$this->breadcrumbs = $node->getBreadcrumbs();
 

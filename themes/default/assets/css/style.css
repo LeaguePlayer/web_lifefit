@@ -257,3 +257,239 @@ h2 {
 /************
  *  Команда
  ************/
+ 
+ .backgroundPage
+ {
+    background: #bababa;
+  overflow: hidden;
+  padding: 46px 0;
+    
+ }
+ .captionPage
+ {
+    overflow:hidden;
+    margin-bottom:30px;
+ }
+  .captionPage h1
+ {
+    width:50%;
+    display:inline-block;
+    float:left;
+    margin:0;
+    padding:0;
+    font-size:44px;
+    font-family: "a_avantetckheavy";
+ }
+  .captionPage .breadcrumbs
+ {
+    width:50%;
+    display:inline-block;
+    float:right;
+    text-align:right;
+    font-size:16px;
+    color:#535353;
+    font-family: "Ubuntu", sans-serif;
+    font-weight:300;
+    line-height: 50px;
+ }
+ .captionPage .breadcrumbs a
+ {
+    font-size:16px;
+    color:#dd1d22;
+    font-family: "Ubuntu", sans-serif;
+    font-weight:500;
+    border-bottom: 1px solid #c39d9d;
+ }
+  .captionPage .breadcrumbs a:hover
+ {
+    color:#d02424;
+    border-bottom:none;
+ }
+  .captionPage .breadcrumbs span
+ {
+    font-size:16px;
+    color:#535353;
+    font-family: "Ubuntu", sans-serif;
+    font-weight:300;
+ }
+ .controlRow
+ {
+    overflow:hidden;
+ }
+.controlRow .controlMap
+{
+    display:inline-block;
+}
+
+.controlRow .controlMap.text
+{
+    color:#ffffff;
+    font-size:24px;
+    font-family: "a_avantetckmedium";
+}
+
+.controlRow .controlMap.a_feedback
+{
+    color:#fff;
+     font-family: "a_avantetckheavy", sans-serif;
+     font-size:25px;
+     background:url(../img/mail.png) #e32727 no-repeat;
+     background-position: 214px 8px;
+     padding:4px 38px 4px 8px;
+     border-radius:6px;
+     margin-left:26px;
+}
+.controlRow .controlMap.a_feedback:hover
+{
+    background-color: #d02424;
+}
+.controlRow .controlMap.a_print
+{
+    color:#363636;
+     font-family: "a_avantetckmedium", sans-serif;
+     font-size:25px;
+     float:right;
+     padding:4px 18px;
+     border: 3px solid #545454;
+}
+.controlRow .controlMap.a_print:hover
+{
+    color:#d02424;
+    border-color:#d02424;
+}
+.plugin_vk
+{
+    overflow:hidden;
+}
+.plugin_vk span
+{
+    font-family: "a_avantetckheavy", sans-serif;
+    font-size:36px;
+    color:#ffffff;
+    display:inline-block;
+    padding-top:42px;
+}
+.plugin_vk .plugin
+{
+    display:inline-block;
+    float:right;
+}
+#map
+{
+    height:442px;
+}
+.mapHelper
+{
+    z-index:30;
+    top:44px;
+    position:absolute;
+    
+    right:15%;
+}
+.mapHelper .rel
+{
+    position:relative;
+    height:100%;
+    width:100%;
+}
+.mapHelper .rel .contacts
+{
+    background:#222222;
+    padding:44px 36px;
+}
+.mapHelper .rel .contacts .captionMap
+{
+    font-size:38px;
+    color:#fff;
+    font-family: "a_avantetckheavy", sans-serif;
+    margin-bottom:24px;
+}
+.mapHelper .rel .contacts .street
+{
+    font-size:16px;
+    color:#fff;
+    font-family: "Ubuntu", sans-serif;
+    line-height:24px;
+}
+.angleMap
+{
+    position:absolute;
+    bottom:-28px;
+    left:35px;
+    background:url(../img/angleMap.png) no-repeat;
+    width:37px;
+    height:28px;
+    
+}
+.container_with_map
+{
+    position:relative;
+}
+.typegraphy
+{
+    font-size:16px;
+    color:#222222;
+    line-height:22px;
+    font-weight: 300;
+}
+
+.employer .information
+{
+    width:208px;
+    display:inline-block;
+    vertical-align:top;
+    padding: 25px 21px;
+    
+}
+.employer
+{
+    margin-bottom:48px;
+}
+.employer img
+{
+    width:218px;
+    display:inline-block;
+}
+.employer .information .categoryClass
+{
+    font-size:14px;
+    color:#e32727;
+    font-family: "a_avantetckheavy", sans-serif;
+}
+
+.employer .information .categoryClass .fio div
+{
+    color:#ffffff;
+    font-size:25px;
+    font-family: "a_avantetckheavy", sans-serif;
+}
+.employer a:hover
+{
+    color:#fff;
+}
+.employer
+{
+    display:inline-block;
+    vertical-align:top;
+}
+.block_employers h3
+{
+    font-size:36px;
+    color:#ffffff;
+    font-family: "a_avantetckheavy", sans-serif;
+}
+
+table.abonementy .main_caption
+{
+    width:300px;
+    
+}
+table.abonementy .slot
+{
+    width:160px;
+    
+}
+table.abonementy tr th
+{
+    padding: 48px 0 60px 0;
+}

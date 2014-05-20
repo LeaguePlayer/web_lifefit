@@ -72,5 +72,22 @@ class Cardlist extends CActiveRecord
 	{
 	 	return "Абонементы";	
 	}
+    
+    public function cardsSearch($count = null)
+    {
+        $criteria = new CDbCriteria();
+        $criteria->compare('list_id', $this->id);
+        $criteria->compare('status', News::STATUS_PUBLISH);
+
+	
+        $criteria->order = 'create_time DESC';
+        $pageSize = 9999;
+        return new CActiveDataProvider('Cards', array(
+            'criteria'=>$criteria,
+            'pagination'=>array(
+                'pageSize'=>$pageSize
+            )
+        ));
+    }
 
 }
