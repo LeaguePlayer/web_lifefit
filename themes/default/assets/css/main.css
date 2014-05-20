@@ -894,7 +894,7 @@ i[class|=arrow] {
   }
    .yiiPager .page a:hover{
     border: solid #e32727;
-    color:#e32727;
+    color:black;
    }
    .yiiPager  .selected a{
     background: #e32727;
@@ -902,12 +902,15 @@ i[class|=arrow] {
     border: solid #e32727;
    }
   .yiiPager .next{
-    float: right;
     margin: 0;
+    position: absolute;
+    right: 0;
   }
   .yiiPager .previous{
     float: left;
     margin: 0;
+    position: absolute;
+    left: 0;
   }
   .yiiPager .next a,  .yiiPager .previous a{
     display: block;
@@ -919,6 +922,7 @@ i[class|=arrow] {
 
   .list-view .items{
     margin-bottom: 50px;
+    min-height: 525px;
   }
   .list-view .pager{
     position: absolute;
