@@ -810,9 +810,14 @@ i[class|=arrow] {
 
   h2, h3 {
     page-break-after: avoid; } }
+
   .item-news{
     display: inline-block;
     width: 535px;
+    padding-bottom: 35px;
+  }
+  .item-news div{
+    vertical-align: top;
   }
   .img_preview{
     display: inline-block;
@@ -823,4 +828,101 @@ i[class|=arrow] {
   .news-info-preview{
     display: inline-block;
     width: 290px;
+  }
+  .news-date{
+    color: #222222;
+    font-size: 22px;
+    font-weight: normal;
+  }
+  .news-info-preview .caption p{
+    color: #e41e26;
+    font-size: 22px;
+    margin:0;
+    word-spacing: 2;
+    padding-bottom: 35px;
+    font-weight: normal;
+  }
+  .news-announce{
+    color: #222222;
+    font-size: 14px;
+  }
+  .news-fallow,.list-view{
+    display: inline-block;
+  }
+  .list-view{
+    width: 525px;
+    position: relative;
+  }
+  .news-fallow{
+    width: 250px;
+    float: right;
+    vertical-align: top;
+    background: #dddddd;
+    padding: 25px;
+    line-height: 30px;
+    position: relative;
+  }
+  .news-fallow .caption{
+    color: #222222;
+    font-size: 38px;
+    font-weight: bold;
+  }
+  .news-fallow .description{
+    padding-top: 25px;
+    color: #7f7f7f;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+  }
+  .news-fallow .treangle{
+    background: url('../img/treangle.png')no-repeat;
+    width: 38px;
+    height: 38px;
+    bottom: -38px;
+    position: absolute;
+    left: 30px;
+
+  }
+  .yiiPager li{
+    display: inline-block;
+    margin: 10px;
+  }
+ .yiiPager .page a{
+    padding: 10px 15px;
+    border: solid black;
+    color:black;
+  }
+   .yiiPager .page a:hover{
+    border: solid #e32727;
+    color:#e32727;
+   }
+   .yiiPager  .selected a{
+    background: #e32727;
+    border-radius: 5px;
+    border: solid #e32727;
+   }
+  .yiiPager .next{
+    float: right;
+    margin: 0;
+  }
+  .yiiPager .previous{
+    float: left;
+    margin: 0;
+  }
+  .yiiPager .next a,  .yiiPager .previous a{
+    display: block;
+    border: #c85757 solid;
+    padding: 10px 25px ;
+    color: #c85757;
+    line-height: 20px;
+  }
+
+  .list-view .items{
+    margin-bottom: 50px;
+  }
+  .list-view .pager{
+    position: absolute;
+    text-align: center;
+    bottom: -20px;
+    width: 950px;
   }
