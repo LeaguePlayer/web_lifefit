@@ -31,7 +31,7 @@ class NewsController extends FrontController
         if ( !empty($model->seo->meta_title) )
             $this->title = $model->seo->meta_title;
         else
-            $this->title = $model->name.' | '.Yii::app()->config->get('app.name');
+            $this->title = $model->title.' | '.Yii::app()->config->get('app.name');
 
         Yii::app()->clientScript->registerMetaTag($model->seo->meta_desc, 'description', null, array('id'=>'meta_description'), 'meta_description');
         Yii::app()->clientScript->registerMetaTag($model->seo->meta_keys, 'keywords', null, array('id'=>'keywords'), 'meta_keywords');
@@ -43,8 +43,5 @@ class NewsController extends FrontController
         ));
     }
 
-    public function actionIndex(){
-
-       
-    }
+    
 }

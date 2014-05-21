@@ -98,7 +98,15 @@
         <div>
             <div class="plugin_vk">
                 <span>Наша <br />живая группа <br />Вконтакте</span>
-                <div class="plugin"><img src="<? echo $this->getAssetsUrl();?>/img/vk.jpg" /></div>
+                <div class="plugin">
+                    <script type="text/javascript" src="//vk.com/js/api/openapi.js?112"></script>
+
+                    <!-- VK Widget -->
+                    <div id="vk_groups"></div>
+                    <script type="text/javascript">
+                    VK.Widgets.Group("vk_groups", {mode: 0, width: "622", height: "216", color1: 'e32727', color2: 'ffffff', color3: 'c71f1f'}, 27148277);
+                    </script>
+                </div>
             </div>
         </div>
     </div>

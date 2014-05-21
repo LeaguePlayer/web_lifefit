@@ -37,7 +37,13 @@ $this->widget('zii.widgets.CListView', array(
 в самой уютной группе
 		</div>
 		<div class="vk-widget">
+            <script type="text/javascript" src="//vk.com/js/api/openapi.js?112"></script>
 
+            <!-- VK Widget -->
+            <div id="vk_groups"></div>
+            <script type="text/javascript">
+            VK.Widgets.Group("vk_groups", {mode: 0, width: "250", height: "116", color1: 'e32727', color2: 'ffffff', color3: 'c71f1f'}, 27148277);
+            </script>
 		</div>
 		<div class="treangle">
 		</div>
