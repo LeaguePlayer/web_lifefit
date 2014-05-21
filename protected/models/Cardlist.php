@@ -82,7 +82,7 @@ class Cardlist extends CActiveRecord
         $criteria->compare('status', News::STATUS_PUBLISH);
 
 	
-        $criteria->order = 'create_time DESC';
+        $criteria->order = 'sort ASC';
         $pageSize = 9999;
         return new CActiveDataProvider('Cards', array(
             'criteria'=>$criteria,

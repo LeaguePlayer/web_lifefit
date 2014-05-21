@@ -839,3 +839,6 @@ right: -2px;
     min-height:216px;
     margin-top:20px;
 }
+.typography ul{
+    list-style: disc;
+}

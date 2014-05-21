@@ -15,10 +15,10 @@
         )',
     'columns'=>array(
         array(
-            'name'=>'img_preview',
+            'name'=>'type',
             'type'=>'raw',
-            'value'=>'$data->getImage("icon")',
-            'filter'=>false
+            'value'=>'Cards::getTypes($data->type)',
+            'filter'=>Cards::getTypes()
         ),
         array(
             'name'=>'name',
@@ -45,3 +45,5 @@
         ),
     ),
 )); ?>
+
+<?php Yii::app()->clientScript->registerScript('sortGrid', 'sortGrid("cards");', CClientScript::POS_END) ;?>

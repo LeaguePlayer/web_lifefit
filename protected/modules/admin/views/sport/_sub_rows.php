@@ -15,7 +15,7 @@
                         <span class="add-on"><i class="icon-time"></i></span>
                     </div>
                     
-                    <?  echo CHtml::dropDownList("Schedule[{$id_slot}][id_hall]", $object->id_hall, Sport::getHall(),array('class'=>'span2') ); ?>
+                    <?  echo CHtml::dropDownList("Schedule[{$id_slot}][id_hall]", $object->id_hall, Sport::getHall() ,array('class'=>'fx_input') ); ?>
                     
                     <?  echo CHtml::textField("Schedule[{$id_slot}][teacher]", $object->teacher, array('placeHolder'=>'Укажите преподавателя') ); ?>
                     

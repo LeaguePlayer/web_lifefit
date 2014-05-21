@@ -1,12 +1,12 @@
 <?php
 $this->breadcrumbs=array(
     "Структура сайта"=>array('/admin/structure/list'),
-    "Абонементы"=>array('/admin/cardslist/update', 'id'=>$model->list_id),
+    "Абонементы"=>array('/admin/cardlist/update', 'id'=>$model->list_id),
     'Редактирование',
 );
 
 $this->menu=array(
-    array('label'=>'Абонементы','url'=>array('/admin/cardslist/update', 'id'=>$model->list_id)),
+    array('label'=>'Абонементы','url'=>array('/admin/cardlist/update', 'id'=>$model->list_id)),
     array('label'=>'Добавить новый','url'=>array('/admin/cards/create', 'list_id'=>$model->list_id)),
 );
 ?>

@@ -7,12 +7,11 @@
         	)); ?></div></div>
             
             
-            <div class="line_command">
-                <div class="part big hall">Большой зал</div>
-                <div class="part small hall">Малый зал</div>
-                <a href="javascript:void(0);" class="part excel">Смотреть в Excel</a>
-                
-            </div>
+            <? if ( $node->getComponent()->wswg_content ) { ?>
+                <div class="typegraphy">
+                    <? echo $node->getComponent()->wswg_content; ?>
+                </div>
+            <? } ?>
             
     </div>
     
