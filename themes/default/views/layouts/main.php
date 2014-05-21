@@ -54,7 +54,8 @@
                 </div>
                 <div class="bottom">
                     <nav class="menu">
-                        <ul>
+                        <? $this->widget('zii.widgets.CMenu', array('items'=>$this->menu)); ?>
+                       <!-- <ul>
                             <li><a href="/news">Новости</a></li>
                             <li><a href="#">О нас</a></li>
                             <li><a href="#">Как начать</a></li>
@@ -63,8 +64,9 @@
                             <li class="active"><a href="#">Партнеры</a></li>
                             <li><a href="#">Цены</a></li>
                             <li><a href="#">Контакты</a></li>
-                        </ul>
+                        </ul> -->
                     </nav>
+                    
                     
                     <div class="shedule">
                         <span class="weekdays">8-23</span>
@@ -92,16 +94,8 @@
         <footer>
             <div class="fix-width">
                 <div class="content">
-                    <ul class="menu">
-                        <li><a href="#">Новости</a></li>
-                        <li><a href="#">Новости и акции</a></li>
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Партнеры</a></li>
-                        <li><a href="#">Как начать</a></li>
-                        <li><a href="#">Цены</a></li>
-                        <li><a href="#">Расписание</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
+                    
+                    <? $this->widget('zii.widgets.CMenu', array('items'=>$this->menu, 'htmlOptions'=>array('class'=>'menu'))); ?>
 
                     <div class="order">
                         <p class="address">Тюмень, Широтная, 189, к2</p>

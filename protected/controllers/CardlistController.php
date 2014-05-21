@@ -31,13 +31,17 @@ class CardlistController extends FrontController
     {
 
 	
-	
+	   $result = array();
 
         $node = Structure::model()->findByUrl($url);
         if ( !$node )
             throw new CHttpException(404, 'Новостей не найдено');
         $cardlist = $node->getComponent();
         $dataProvider = $cardlist->cardsSearch(null);
+        $dataProvider_array = $dataProvider->getData();
+        
+        foreach($dataProvider_array as $obj)
+            $result[$obj['type']][] = $obj;
 
         $this->buildMenu($node);
 
@@ -52,7 +56,7 @@ class CardlistController extends FrontController
         Yii::app()->clientScript->registerMetaTag($node->seo->meta_keys, 'keywords', null, array('id'=>'keywords'), 'meta_keywords');
 
         $this->render('/cards/index', array(
-            'dataProvider'=>$dataProvider,
+            'result'=>$result,
             'node'=>$node,
 			
         ));

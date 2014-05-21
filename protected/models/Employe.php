@@ -5,7 +5,7 @@
 *
 * The followings are the available columns in table '{{employes}}':
     * @property integer $id
-    * @property string $fio
+    * @property string $name
     * @property string $img_photo
     * @property string $phone
     * @property string $fax
@@ -45,13 +45,13 @@ class Employe extends EActiveRecord
     public function rules()
     {
         return array(
-            array('fio, billet', 'required'),
+            array('name, billet', 'required'),
             array('list_id, status, sort, create_time, update_time, gender', 'numerical', 'integerOnly'=>true),
-            array('fio, phone', 'length', 'max'=>255),
-            array('wswg_description', 'safe'),
+            array('name, phone', 'length', 'max'=>255),
+            array('wswg_description, surname', 'safe'),
             array('email', 'email'),
             // The following rule is used by search().
-            array('id, fio, phone, wswg_description, list_id, status, sort, create_time, update_time', 'safe', 'on'=>'search'),
+            array('id, name, phone, wswg_description, list_id, status, sort, create_time, update_time', 'safe', 'on'=>'search'),
         );
     }
 
@@ -67,7 +67,8 @@ class Employe extends EActiveRecord
     {
         return array(
             'id' => 'ID',
-            'fio' => 'ФИО',
+            'name' => 'Имя',
+            'surname'=>'Фамилия',
             'img_photo' => 'Фото сотрудника',
             'phone' => 'Телефон',
          //   'fax' => 'Факс',
@@ -96,7 +97,7 @@ class Employe extends EActiveRecord
 						'centeredpreview' => array(90, 90),
 					),
 					'small' => array(
-						'centeredpreview' => array(191, 272),
+						'adaptiveResize' => array(218, 302),
 					),
                     'full' => array(
                         'resize' => array(300),
@@ -111,7 +112,8 @@ class Employe extends EActiveRecord
     {
         $criteria=new CDbCriteria;
 		$criteria->compare('id',$this->id);
-		$criteria->compare('fio',$this->fio,true);
+		$criteria->compare('name',$this->name,true);
+        $criteria->compare('surname',$this->surname,true);
 		$criteria->compare('img_photo',$this->img_photo,true);
 		$criteria->compare('phone',$this->phone,true);
 		$criteria->compare('email',$this->email,true);

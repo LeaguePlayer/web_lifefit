@@ -11,7 +11,7 @@ class ECategoryNSTreeBehavior extends CActiveRecordBehavior
     /**
      * @var string model attribute, which defined alias
      */
-    public $aliasAttribute = 'alias';
+    public $aliasAttribute = 'url';
     /**
      * @var string model property, which contains url.
      * Optionally your model can have 'url' attribute or getUrl() method,
@@ -21,7 +21,7 @@ class ECategoryNSTreeBehavior extends CActiveRecordBehavior
 	/**
 	 * @var string set this request property if you can use default getLinkActive() method
 	 */
-	public $requestPathAttribute = 'path';
+	public $requestPathAttribute = 'url';
     /**
      * @var string model property, which contains icon.
      * Optionally for 'image' value your model can have 'image' attribute or getImage() method,
@@ -43,6 +43,7 @@ class ECategoryNSTreeBehavior extends CActiveRecordBehavior
 	 */
 	public function getLinkActive()
 	{
+	     
 		return mb_strpos(Yii::app()->request->getParam($this->requestPathAttribute), $this->getOwner()->{$this->aliasAttribute}, null, 'UTF-8') === 0;
 	}
 

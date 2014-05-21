@@ -27,10 +27,21 @@ class SportController extends FrontController
 	}
 
 	
-	public function actionView($id)
+	public function actionView($alias)
 	{
+        $model = Sport::model()->find(array( 'condition'=>'alias = :alias and status = :status', 'params'=>array(':alias'=>$alias,':status'=>Sport::STATUS_PUBLISH) ));
+       
+        if(!$model)
+            throw new CHttpException(404,'Запрашиваемое направление не найдено');
+            
+        $this->breadcrumbs =  array(
+									"Расписание занятий"=>$model->list->node->getUrl(),
+								    $model->title,
+								 );;
+            
 		$this->render('view',array(
-			'model'=>$this->loadModel('Sport', $id),
+			'model'=>$model,
+            
 		));
 	}
 

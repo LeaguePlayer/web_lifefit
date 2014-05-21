@@ -38,6 +38,9 @@ class PageController extends FrontController
 		$this->breadcrumbs = $node->getBreadcrumbs();
 
 		$page = $node->getComponent();
+        
+        $employesListNodes = $node->getChildNodesByType("Employelist");
+        
 
 		if ( !empty($node->seo->meta_title) )
 			$this->title = $node->seo->meta_title;
@@ -49,6 +52,7 @@ class PageController extends FrontController
 		$this->render('view',array(
 			'page'=>$page,
 			'node'=>$node,
+            'employesListNodes'=>$employesListNodes,
 		));
 	}
 	public function actionIndex()

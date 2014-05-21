@@ -482,14 +482,336 @@ h2 {
 table.abonementy .main_caption
 {
     width:300px;
-    
+    background:#222222;
+    font-size:20px;
 }
 table.abonementy .slot
 {
     width:160px;
-    
+    font-size:16px;
+}
+table.abonementy tr td 
+{
+    min-width:160px;
 }
 table.abonementy tr th
 {
-    padding: 48px 0 60px 0;
+    padding: 48px 0 50px 0;
+    border-bottom:6px solid #bababa;
+    font-family: "a_avantetckmedium";
+}
+table.abonementy th.slot
+{
+   background:#b72020; 
+}
+table.abonementy th.slot+th.slot
+{
+   background:#c42222; 
+}
+table.abonementy th.slot+th.slot+th.slot
+{
+   background:#d02424; 
+}
+table.abonementy th.slot+th.slot+th.slot+th.slot
+{
+   background:#e32727; 
+}
+
+table.abonementy tbody tr td
+{
+    padding:27px 14px;
+    background-color:#fff;
+    border-right:1px solid #f5f5f5;
+    border-bottom:3px solid #bababa;
+}
+table.abonementy tbody tr td:last-child
+{
+    border-right:none;
+}
+table.abonementy tbody tr td.first_column
+{
+     padding:27px 40px;
+}
+table.abonementy tbody tr td.first_column i
+{
+    font-size:20px;
+    color:#222222;
+    font-family: "Exo 2", sans-serif;
+    font-weight:600;
+    padding-bottom:16px;
+    display:inline-block;
+}
+table.abonementy tbody tr td.first_column div
+{
+    font-size:14px;
+    color:#222222;
+    font-family: "Ubuntu", sans-serif;
+    font-weight:500;
+}
+table.abonementy tbody tr td .card_price
+{
+    font-size:26px;
+    color:#222222;
+    font-family: "a_avantetckheavy", sans-serif;
+    text-align:center;
+}
+table.abonementy tbody tr td span
+{
+    font-size:18px;
+    color:#222222;
+    font-family: "a_avantetckheavy", sans-serif;
+}
+table.abonementy tbody tr td .card_buy
+{
+    margin-top:20px;
+    text-align:center;
+}
+table.abonementy tbody tr td .card_buy a
+{
+    font-size:25px;
+    color:#b1b1b1;
+    padding: 4px 18px;
+border: 3px solid #b1b1b1;
+}
+table.abonementy tbody tr td .card_buy.reserve a
+{
+    padding: 4px 10px;
+}
+table.abonementy tbody tr td .card_buy a:hover
+{
+  
+    color:#d02424;
+   
+border-color:#d02424;
+}
+.abonementy
+{
+    margin-bottom:17px;
+    min-width:950px;
+}
+.abonementy.personal thead tr th.slot
+{
+    background-color:#d02424;
+    font-size:20px;
+    font-family: "a_avantetckmedium", sans-serif;
+}
+.line_command
+{
+    margin-bottom:34px;
+}
+.line_command .part
+{
+    display:inline-block;
+    margin-right:37px;
+}
+.line_command .part.hall
+{
+    padding-left:21px;
+    font-size:20px;
+    color:#222222;
+    font-style: italic;
+    font-family: "Exo 2", sans-serif;
+    font-weight:600;
+}
+.line_command .part.hall.big
+{
+    background:url(../img/big_hall.png) no-repeat left 9px;
+}
+.line_command .part.hall.small
+{
+    background:url(../img/small_hall.png) no-repeat left 9px;
+}
+.line_command .part.excel
+{
+    padding-left:48px;
+    background:url(../img/xls.png) no-repeat left top;
+    min-height:38px;
+    line-height:37px;
+    font-size:22px;
+    color:#767676;
+    font-family: "a_avantetckmedium", sans-serif;
+}
+.redline
+{
+    background-color:#fd212a;
+    height:60px;
+    font-size:0px;
+    line-height:0px;
+    width:100%;
+    z-index:10;
+}
+#schedule_table
+{
+    font-size:0;
+    line-height:0;
+    
+}
+
+.compromiss_width
+{
+    width:1200px;
+    margin:auto;
+}
+#schedule_table .time_cell
+{
+    display:inline-block;
+    width:150px;
+    vertical-align:top;
+}
+#schedule_table .time_cell .time
+{
+    width:150px;
+    text-align:center;
+    height:65px;
+    display:inline-block;
+    font-size:18px;
+    color:#151313;
+    line-height:66px;
+    font-family: "a_avantetckmedium", sans-serif;
+    border-bottom:1px solid #e1e3e6;
+}
+.week_of_day
+{
+    display:inline-block;
+    width:150px;
+    vertical-align:top;
+}
+#schedule_table .week_of_day .cell
+{
+    width:74px;
+    height:65px;
+    display:inline-block;
+    background-color:#fff;
+    border-right:1px solid #e1e3e6;
+    border-bottom:1px solid #e1e3e6;
+    position:relative;
+}
+#schedule_table .week_of_day .cell_for
+{
+    display:inline-block;
+    width:75px;
+}
+.redline .week_of_day
+{
+    height:60px;    
+    line-height:60px;
+    font-size:16px;
+    color:#ffffff;
+    font-family: "a_avantetckmedium", sans-serif;
+    text-align:center;
+    width:150px;
+}
+.redline .week_of_day:first-child
+{
+     font-family: "a_avantetckheavy", sans-serif;
+}
+.busy_cell
+{
+    width: 70px;
+    height:59px;
+    border-radius:6px;
+    position:absolute;
+    z-index:4;
+    font-size:14px;
+    color:#161616;
+    line-height:14px;    
+    left:50%;
+    margin-left:-35px;
+    top: 50%;
+    margin-top:-30px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight:bold;
+    box-shadow: 0px 1px 1px rgba(139,150,155,0.2);
+    text-align:center;
+   
+}
+.busy_cell span
+{
+    padding-top:3px;
+    font-weight:300;
+    display:block;
+    font-size:13px;
+    text-align:center;
+}
+.title_busy_cell
+{
+    padding-top:6px;
+}
+.rel
+{
+    position:relative;
+}
+.angle
+{
+    width:5px;
+    height:5px;
+    position:absolute;
+    top: -2px;
+right: -2px;
+    
+}
+.angle.big
+{
+    background:url(../img/big_hall_s.png) no-repeat;
+}
+.angle.small
+{
+    background:url(../img/small_hall_s.png) no-repeat;
+}
+#schedule_table .week_of_day .cell.busy.slise
+{
+    position:absolute;
+   
+    
+    border-top: 1px solid #e1e3e6;
+    z-index:5;
+    top:-1px;
+}
+
+
+#schedule_table .week_of_day .cell.busy.slise.selected .title_busy_cell, #schedule_table .week_of_day .cell.busy.slise.selected span
+{
+   
+    color:#fff;
+}
+.compromiss_width .week_of_day.selected, #schedule_table .time_cell .time.selected, #schedule_table .week_of_day .cell.busy.slise.selected, .redline.fixed .compromiss_width  .week_of_day.selected
+{
+    background-color:#939b99;
+    color:#fff;
+}
+.redline.fixed
+{
+    background-color:transparent;
+    
+}
+.redline.fixed .week_of_day
+{
+    color:#bababa;
+}
+.redline.fixed .week_of_day.first-child
+{
+    line-height:16px;
+    text-align:left;
+    font-size:16px;
+    color:#bababa;
+    font-family: "Exo 2", sans-serif;
+    font-weight:600;
+    font-style:italic;
+}
+.redline.fixed .week_of_day.first-child .hall
+{
+    padding-left: 17px;
+    display:inline-block;
+    margin-left:20px;
+}
+.redline.fixed .week_of_day.first-child .big.hall
+{
+    margin-top:7px;
+    background: url(../img/big_hall.png) no-repeat left 4px;
+    padding-bottom:6px;
+}
+.redline.fixed .week_of_day.first-child .small.hall
+{
+    background: url(../img/small_hall.png) no-repeat left 4px;
+   
 }

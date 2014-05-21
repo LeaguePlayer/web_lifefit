@@ -42,10 +42,11 @@
             'value'=>'TbHtml::link($data->getImage("icon"), array("/admin/employe/update/", "id"=>$data->id, "list_id"=>'.$model->id.'))',
         ),
         array(
-            'name'=>'fio',
+            'header'=>'Фамилия Имя',
             'type'=>'raw',
-            'value'=>'TbHtml::link($data->fio, array("/admin/employe/update/", "id"=>$data->id, "list_id"=>'.$model->id.'))'
+            'value'=>'TbHtml::link("{$data->surname} {$data->name}", array("/admin/employe/update/", "id"=>$data->id, "list_id"=>'.$model->id.'))'
         ),
+        
         array(
             'name'=>'status',
             'type'=>'raw',

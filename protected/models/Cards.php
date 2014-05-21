@@ -16,6 +16,10 @@
 */
 class Cards extends EActiveRecord
 {
+    
+    const BELONGS_TO_ABONEMENT = 0;
+    const BELONGS_TO_PERSONAL_TRAINING = 1;
+    
     public function tableName()
     {
         return '{{cards}}';
