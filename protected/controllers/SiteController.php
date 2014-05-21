@@ -2,7 +2,7 @@
 
 class SiteController extends FrontController
 {
-	public $layout = '//layouts/simple';
+	public $layout = '//layouts/main';
 	
 	/**
 	 * Declares class-based actions.
@@ -38,6 +38,7 @@ class SiteController extends FrontController
 	 */
 	public function actionError()
 	{
+		$this->layout='//layouts/error';
 		if($error=Yii::app()->errorHandler->error)
 		{
 			if(Yii::app()->request->isAjaxRequest)

@@ -56,6 +56,7 @@ body {
   min-height: 100%;
   min-width: 950px;
   color: white;
+  margin:0;
   line-height: 1.2; }
 
 a {
@@ -810,9 +811,14 @@ i[class|=arrow] {
 
   h2, h3 {
     page-break-after: avoid; } }
+
   .item-news{
     display: inline-block;
     width: 535px;
+    padding-bottom: 35px;
+  }
+  .item-news div{
+    vertical-align: top;
   }
   .img_preview{
     display: inline-block;
@@ -823,4 +829,257 @@ i[class|=arrow] {
   .news-info-preview{
     display: inline-block;
     width: 290px;
+  }
+  .news-date{
+    color: #222222;
+    font-size: 22px;
+    font-weight: normal;
+  }
+  .news-info-preview .caption p{
+    color: #e41e26;
+    font-size: 22px;
+    margin:0;
+    word-spacing: 2;
+    padding-bottom: 35px;
+    font-weight: normal;
+  }
+  .news-announce{
+    color: #222222;
+    font-size: 14px;
+  }
+  .news-fallow,.list-view{
+    display: inline-block;
+  }
+  .list-view{
+    width: 525px;
+    position: relative;
+  }
+  .news-fallow{
+    width: 250px;
+    float: right;
+    vertical-align: top;
+    background: #dddddd;
+    padding: 25px;
+    line-height: 30px;
+    position: relative;
+  }
+  .news-fallow .caption{
+    color: #222222;
+    font-size: 38px;
+    font-weight: bold;
+  }
+  .news-fallow .description{
+    padding-top: 25px;
+    color: #7f7f7f;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+  }
+  .news-fallow .treangle{
+    background: url('../img/treangle.png')no-repeat;
+    width: 38px;
+    height: 38px;
+    bottom: -38px;
+    position: absolute;
+    left: 30px;
+
+  }
+  .yiiPager li{
+    display: inline-block;
+    margin: 10px;
+  }
+ .yiiPager .page a{
+    padding: 10px 15px;
+    border: solid black;
+    color:black;
+  }
+   .yiiPager .page a:hover{
+    border: solid #e32727;
+    color:black;
+   }
+   .yiiPager  .selected a{
+    background: #e32727;
+    border-radius: 5px;
+    border: solid #e32727;
+   }
+  .yiiPager .next{
+    margin: 0;
+    position: absolute;
+    right: 0;
+  }
+  .yiiPager .previous{
+    float: left;
+    margin: 0;
+    position: absolute;
+    left: 0;
+  }
+  .yiiPager .next a,  .yiiPager .previous a{
+    display: block;
+    border: #c85757 solid;
+    padding: 10px 25px ;
+    color: #c85757;
+    line-height: 20px;
+  }
+
+  .list-view .items{
+    margin-bottom: 50px;
+    min-height: 525px;
+  }
+  .list-view .pager{
+    position: absolute;
+    text-align: center;
+    bottom: -20px;
+    width: 950px;
+  }
+  .bg_404{
+    background: #e32727;
+    widows: 100%;
+    height: 100%;
+  }
+  .bg_404 .fix-width{
+    background: url('../img/girya.png') no-repeat;
+    background-position: center 260px; 
+    height: 100%;
+  }
+
+  .bg_404 .logo{
+    background: url('../img/logo-bg.png') no-repeat;
+    width: 260px;
+    height: 86px;
+    margin:0 auto;
+    padding-bottom: 20px;
+  }
+
+  .bg_404 .caption .title{
+    font-size: 52px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .bg_404 .caption .desc p{
+    text-align: center;
+    font-style: italic;
+    font-size: 20px;
+  }
+  .record .item-left{
+    float: left
+  }
+  .bg_404 .info{
+    position: relative;
+    width: 270px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 30px;
+  }
+  .info .record{
+    margin-bottom: 25px;
+  }
+  .record .caption{
+    font-size: 18px;
+    color: 20px;
+  }
+  .record .caption .free{
+    font-weight: normal;
+    font-size: 28px;
+    font-style: italic;
+  }
+    .record .caption .first{
+      font-size: 42px;
+      color: #fff;
+      font-weight: bold;
+    }
+  .record-form input{
+    border: none;
+    margin: 5px 0;
+    text-align: center;
+  }
+  .record-form .send{
+    background: #c21616;
+    border-radius: 10px;
+    width: 233px;
+    margin:5px auto;
+  }
+  .record-form input[type=submit]
+  {
+    background: url('../img/arrow-record.png')no-repeat;
+    background-position: right center;
+    color: #fff;
+    
+  }
+  .info{
+    float: left;
+  }
+  .info-right {
+    float: right;
+    vertical-align: top;
+    width: 270px;
+  }
+   .info-right ul{
+    list-style: none;
+    padding-left: 25px;
+   }
+   .info-right ul li{
+    margin-bottom: 20px;
+   }
+   .info-right ul li a:hover{
+      color: #f5b5b5;
+      border-bottom: #e32727;
+   }
+   .info-right ul li a{
+    font-size: 16px;
+    border-bottom: solid #fff 2px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 22px;
+   }
+  .info-right .caption{
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+  }
+  .bg_404 .bot{
+    background: inherit;
+    border: none;
+
+  }
+  .bot ul{
+    margin: 0 auto;
+    width: 950px;
+  }
+
+  .bot ul li{
+    margin:35px 0px 15px 0px;
+    display: inline-block;
+    width: 225px;
+  }
+  .toMain {
+    
+    font-size: 15px;
+    text-transform:uppercase;
+    padding-bottom: 20px;
+    letter-spacing: 2px;
+  }
+  .fitnes {
+    color: #ada9aa;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  .bot .phone{
+    background: url('../img/phone-404.png') no-repeat;
+    padding-left: 20px;
+    background-position: 4px center;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .logo-amobile {
+    width: 91px;
+    height: 23px;
+    background: url('../img/logo-amobile.png') no-repeat;
+    background-position: 100px 0px;
+    color: #ada9aa;
+    line-height: 20px;
+    font-size:14px; 
+  }
+  .logo-amobile .justify{
+    letter-spacing: 4px;
   }

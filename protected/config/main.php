@@ -88,7 +88,7 @@ return array_replace_recursive(
                     'admin'=>'admin/structure',
                     'sport/<alias>' => 'sport/view',
                     'admin/<controller:!config>' => 'admin/<controller>/list',
-                    //'/'=>'page/index',
+                    '/'=>'site/index',
                     '<controller:page>/<url:[\w_-]+>' => '<controller>/view',
                 ),
             ),

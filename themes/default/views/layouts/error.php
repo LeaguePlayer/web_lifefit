@@ -1,3 +1,8 @@
+<?php
+
+	$cs = Yii::app()->clientScript;
+	$cs->registerCssFile($this->getAssetsUrl().'/css/main.css');
+	?>
 <div class="bg_404">
 	<div class="fix-width">
 		<div class="logo">
