@@ -2,44 +2,29 @@
 
 class PartnerslistController extends FrontController
 {
-	public $layout='//layouts/simple';
-
-	
-	public function filters()
+	public function actionView($url)
 	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-		);
-	}
+	   
+       
+		$node = Structure::model()->findByUrl($url);
+		if ( !$node )
+			throw new CHttpException(404, 'Партнеров нет');
+		$partnerslist = $node->getComponent();
+		$dataProvider = $partnerslist->partnersSearch();
 
-	
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
+		$this->buildMenu($node);
+		$this->breadcrumbs = $node->getBreadcrumbs();
 
-	
-	public function actionView($id)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel('Partnerslist', $id),
-		));
-	}
+		if ( !empty($node->seo->meta_title) )
+			$this->title = $node->seo->meta_title;
+		else
+			$this->title = $node->name.' | '.Yii::app()->config->get('app.name');
+		Yii::app()->clientScript->registerMetaTag($node->seo->meta_desc, 'description', null, array('id'=>'meta_description'), 'meta_description');
+		Yii::app()->clientScript->registerMetaTag($node->seo->meta_keys, 'keywords', null, array('id'=>'keywords'), 'meta_keywords');
 
-	
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Partnerslist');
-		$this->render('index',array(
+		$this->render('index', array(
 			'dataProvider'=>$dataProvider,
+			'node'=>$node,
 		));
 	}
 }

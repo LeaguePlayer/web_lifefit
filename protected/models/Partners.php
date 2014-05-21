@@ -70,7 +70,7 @@ class Partners extends EActiveRecord
 						'centeredpreview' => array(90, 90),
 					),
 					'small' => array(
-						'resize' => array(0, 52),
+						'resize' => array(176, 52),
 					)
 				),
 			),
@@ -96,6 +96,7 @@ class Partners extends EActiveRecord
 		$criteria->compare('create_time',$this->create_time,true);
 		$criteria->compare('update_time',$this->update_time,true);
         $criteria->order = 'sort';
+        
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
         ));

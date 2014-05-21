@@ -839,6 +839,32 @@ right: -2px;
     min-height:216px;
     margin-top:20px;
 }
-.typography ul{
+.typegraphy ul{
     list-style: disc;
+}
+.partner
+{
+    width:176px;
+    display:inline-block;
+    vertical-align:top;
+    
+    margin: 40px 30px;
+}
+.partner .img_div
+{
+    text-align:center;
+}
+.partner .title_div
+{
+    text-align:center;
+    margin-top:10px;
+    
+    color: white;
+font-size: 18px;
+font-weight: bold;
+text-decoration: none;
+}
+#partners .list-view
+{
+    width:auto;
 }

@@ -46,3 +46,6 @@
         ),
     ),
 )); ?>
+
+
+<?php Yii::app()->clientScript->registerScript('sortGrid', 'sortGrid("partners");', CClientScript::POS_END) ;?>
