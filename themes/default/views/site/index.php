@@ -3,11 +3,44 @@
 <div class="slider-fix">
 
     <div class="slide-wrap">
+        <div class="slider-list">
+        <ul>
+            <li >
+                <a class="active" href="#" data-jump="1"> Тренажерный зал</a>
+            </li>
+            <li >
+                <a href="#" data-jump="2">Мягкий фитнес</a>
+            </li>
+            <li >
+                <a href="#" data-jump="3">Сильный <br>фитнес</a>
+            </li>
+            <li >
+                <a href="#" data-jump="4">йога</a>
+            </li>
+            <li >
+                <a href="#" data-jump="5">танцевальные <br>направления</a>
+            </li>
+            <li >
+                <a href="#" data-jump="6">Бокс</a>
+            </li>
+            <li >
+                <a href="#" data-jump="7">trx</a>
+            </li>
+        </ul>
+    </div>
         <div class="slide" id="slide-top">
             <div class="slide-item">
                 <img src="/media/images/slider/main.png">
                 <div class="info">
-
+                    <div class="caption">
+                        Тренажерный зал
+                    </div>
+                    <div class="title">
+                        Сила &amp; Объем
+                    </div>
+                    <div class="record">
+                        <a href="#" class="red-button">Записаться</a>
+                    </div>
                 </div>
             </div>
              <div class="slide-item">
@@ -42,31 +75,7 @@
             </div>
         </div>
     </div>
-    <div class="slider-list">
-        <ul>
-            <li class="active">
-                <a href="#" data-jump="1"> Тренажерный зал</a>
-            </li>
-            <li >
-                <a href="#" data-jump="2">Мягкий фитнес</a>
-            </li>
-            <li >
-                <a href="#" data-jump="3">Сильный фитнес</a>
-            </li>
-            <li >
-                <a href="#" data-jump="4">йога</a>
-            </li>
-            <li >
-                <a href="#" data-jump="5">танцевальные направления</a>
-            </li>
-            <li >
-                <a href="#" data-jump="6">Бокс</a>
-            </li>
-            <li >
-                <a href="#" data-jump="7">trx</a>
-            </li>
-        </ul>
-    </div>
+    
 </div>
             <!-- Действия -->
             <div class="actions">
