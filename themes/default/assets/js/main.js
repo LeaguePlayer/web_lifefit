@@ -1,10 +1,23 @@
 
 $(document).ready(function() {
-    $('.main-slider').customslider({
-        slideshow: true
-    });
 
+ 
+  $("#slide-top").owlCarousel();
+    var owl = $("#slide-top").data('owlCarousel');
 
+  $('.slider-list ul li a').click(function(){
+
+    $('.slider-list ul li a').each(function(){
+        $(this).removeClass('active');
+    })
+
+    $(this).addClass('active')
+    console.log($(this).data('jump'))
+
+    owl.goTo(parseInt($(this).data('jump'),10));
+    return false;
+
+  })
     var sliderOptions = {
         $AutoPlay: true,
         $SlideshowOptions: {
