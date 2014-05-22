@@ -14,6 +14,12 @@
                      	<input name="Schedule[<? echo $id_slot; ?>][time_of]" type="text" value="<?=$object->time_of?>" class="input-small time in_row" />
                         <span class="add-on"><i class="icon-time"></i></span>
                     </div>
+                    
+                    <?  echo CHtml::dropDownList("Schedule[{$id_slot}][id_hall]", $object->id_hall, Sport::getHall() ,array('class'=>'fx_input') ); ?>
+                    
+                    <?  echo CHtml::textField("Schedule[{$id_slot}][teacher]", $object->teacher, array('placeHolder'=>'Укажите преподавателя') ); ?>
+                    
+                    
                    
                     
                     <?php echo TbHtml::button('Удалить', array('color' => TbHtml::BUTTON_COLOR_DANGER, 'class'=>'del_row')); ?>

@@ -20,8 +20,8 @@ class SportSchedule extends EActiveRecord
     public function rules()
     {
         return array(
-            array('id_sport, day_of', 'numerical', 'integerOnly'=>true),
-            array('time_of', 'safe'),
+            array('id_sport, day_of, id_hall', 'numerical', 'integerOnly'=>true),
+            array('time_of, teacher', 'safe'),
             // The following rule is used by search().
             array('id, id_sport, day_of, time_of', 'safe', 'on'=>'search'),
         );
@@ -31,6 +31,7 @@ class SportSchedule extends EActiveRecord
     public function relations()
     {
         return array(
+             'sport' => array(self::BELONGS_TO, 'Sport', 'id_sport')
         );
     }
 

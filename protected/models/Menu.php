@@ -57,9 +57,11 @@ class Menu extends EActiveRecord
     }
 
 
-	public function getLinkActive()
+    public function getLinkActive()
 	{
-		return false;
+        if( ! Yii::app()->request->getParam($this->requestPathAttribute) ) return false;
+  
+	  	return (mb_strpos($this->getOwner()->{$this->aliasAttribute}, Yii::app()->request->getParam($this->requestPathAttribute), null, 'UTF-8')===false) ? false : true;
 	}
 
 

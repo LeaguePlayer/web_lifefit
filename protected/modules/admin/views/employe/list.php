@@ -17,7 +17,11 @@ $this->menu=array(
         "class"=>"status_".$data->status,
     )',
 	'columns'=>array(
-		'fio',
+		array(
+			'header'=>'Фамилия Имя',
+			'type'=>'raw',
+			'value'=>'"{$data->surname} {$data->name}"'
+		),
 		array(
 			'header'=>'Фото',
 			'type'=>'raw',

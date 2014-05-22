@@ -14,54 +14,60 @@
         </div>
         
         
+        <? if ( count( $employesListNodes ) > 0 ) { ?>
         
-        <div class="block_employers">
-            <h3>Тренеры в лицах</h3>
+            <? foreach($employesListNodes as $employesListNode) { ?>
+            <? $employesList = $employesListNode->getComponent(); ?>
+            <? $employes = $employesList->getEmployes(); ?>
             
-            <div class="employers">
-                <div class="employer">
-                    <a href="javascript:void(0);">
-                        <img src="<? echo $this->getAssetsUrl();?>/img/nophoto_man.jpg" />
-                        <div class="information">
-                            <div class="categoryClass">Мастер спорта</div>
-                            <div class="fio">
-                                <div class="employerName">Алексей</div>
-                                <div class="employerSurname">Хорошев</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                
-                <div class="employer">
-                    <a href="javascript:void(0);">
-                        <img src="<? echo $this->getAssetsUrl();?>/img/nophoto_woman.jpg" />
-                        <div class="information">
-                            <div class="categoryClass">Мастер спорта</div>
-                            <div class="fio">
-                                <div class="employerName">Алексей</div>
-                                <div class="employerSurname">Хорошев</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                
-                <div class="employer">
-                    <a href="javascript:void(0);">
-                        <img src="<? echo $this->getAssetsUrl();?>/img/nophoto_man.jpg" />
-                        <div class="information">
-                            <div class="categoryClass">Мастер спорта</div>
-                            <div class="fio">
-                                <div class="employerName">Алексей</div>
-                                <div class="employerSurname">Хорошев</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
             
-            </div>
-        </div>
+            
+                <? if ( count( $employesList ) > 0 ) { ?>
+                    
+                    <div class="block_employers">
+                            <h3><? echo $employesList->name; ?></h3>
+                            <div class="employers">
+                    <? foreach($employes as $employer) { ?>
+                        
+                            
+                            
+                                <div class="employer">
+                                    <a href="javascript:void(0);">
+                                        <? if($employer->img_photo) { ?>
+                                            <? echo $employer->getImage('small'); ?>
+                                        <? } else { ?>
+                                            <? if($employer->gender==Employe::GENDER_WOOMAN) { ?>
+                                                <img src="<? echo $this->getAssetsUrl();?>/img/nophoto_woman.jpg" />
+                                            <? } else { ?>
+                                                <img src="<? echo $this->getAssetsUrl();?>/img/nophoto_man.jpg" />
+                                            <? } ?>
+                                        <? } ?>
+                                       
+                                        
+                                        <div class="information">
+                                            <div class="categoryClass"><? echo $employer->billet ?></div>
+                                            <div class="fio">
+                                                <div class="employerName"><? echo $employer->name ?></div>
+                                                <? if($employer->surname) { ?><div class="employerSurname"><? echo $employer->surname ?></div><? } ?>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                
+                                
+                            
+                            
+                    <? } ?>
+                    
+                         </div>
+                    </div>
+                    
+                <? } ?>
+            
+            <? } ?>
+        
+        <? } ?>
         
     </div>
 </div>
@@ -92,7 +98,15 @@
         <div>
             <div class="plugin_vk">
                 <span>Наша <br />живая группа <br />Вконтакте</span>
-                <div class="plugin"><img src="<? echo $this->getAssetsUrl();?>/img/vk.jpg" /></div>
+                <div class="plugin">
+                    <script type="text/javascript" src="//vk.com/js/api/openapi.js?112"></script>
+
+                    <!-- VK Widget -->
+                    <div id="vk_groups"></div>
+                    <script type="text/javascript">
+                    VK.Widgets.Group("vk_groups", {mode: 0, width: "622", height: "216", color1: 'e32727', color2: 'ffffff', color3: 'c71f1f'}, 27148277);
+                    </script>
+                </div>
             </div>
         </div>
     </div>

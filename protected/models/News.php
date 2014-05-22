@@ -76,10 +76,10 @@ class News extends EActiveRecord
 						'centeredpreview' => array(90, 90),
 					),
 					'small' => array(
-						'resize' => array(200, 180),
+						'adaptiveResize' => array(219, 140),
 					),
 					'big' => array(
-						'adaptiveResize' => array(800, 600),
+						'adaptiveResize' => array(300, false),
 					),
 				),
 			),
@@ -110,9 +110,10 @@ class News extends EActiveRecord
 		$criteria->compare('sort',$this->sort);
 		$criteria->compare('create_time',$this->create_time,true);
 		$criteria->compare('update_time',$this->update_time,true);
-        $criteria->order = 'sort';
+        
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
+            'sort'=>array('defaultOrder'=>'create_time DESC'),
         ));
     }
 

@@ -5,7 +5,20 @@
         		'separator'=>' → ',
         		'links'=>$this->breadcrumbs,
         	)); ?></div></div>
+            
+            
+            
+            
+            <? if ( $node->getComponent()->wswg_content ) { ?>
+                <div class="typegraphy">
+                    <? echo $node->getComponent()->wswg_content; ?>
+                </div>
+            <? } ?>
+            
     
+    
+            <? if ( count( $result[Cards::BELONGS_TO_ABONEMENT] ) ) { ?>
+            
             <table class="abonementy">
                 <thead>
                     <tr>
@@ -27,25 +40,79 @@
                     </tr>
                 </thead>
                 <tbody>
+                    
+                    <? foreach ($result[Cards::BELONGS_TO_ABONEMENT] as $abonement) { ?>
+                
                     <tr>
-                        <td>
-                            123
+                        <td class="first_column">
+                            <i><? echo $abonement['name']; ?></i>
+                            <? if ( $abonement['wswg_short_desc'] ) { ?>
+                                <div>
+                                    <? echo $abonement['wswg_short_desc']; ?>
+                                </div>
+                            <? } ?>
                         </td>
+                        
+                        <? foreach ($abonement->prices as $abonement_slot) {?>
                         <td>
-                            123
+                            <? if($abonement_slot->price) { ?>
+                                <div class="card_price"><? echo number_format($abonement_slot->price, 0, '', ' '); ?><span>руб.</span></div>
+                                <div  class="card_buy"><a href="javascript:void(0);">Купить</a></div>
+                            <? } ?>
                         </td>
-                        <td>
-                            123
-                        </td>
-                        <td>
-                            123
-                        </td>
-                        <td>
-                            123
-                        </td>
+                        <? } ?>
                     </tr>
+                    
+                    <? } ?>
+                    
                 </tbody>
             </table>
+            
+            <? } ?>
+            
+            
+            <? if ( count( $result[Cards::BELONGS_TO_PERSONAL_TRAINING] ) ) { ?>
+            
+                <table class="abonementy personal">
+                    <thead>
+                        <tr>
+                            <th class="slot" colspan="5">
+                                Персональные тренировки
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <? foreach ($result[Cards::BELONGS_TO_PERSONAL_TRAINING] as $personal_training) { ?>
+                            <tr>
+                                <td class="first_column">
+                                    <i><? echo $personal_training['name']; ?></i>
+                                    <? if ( $personal_training['wswg_short_desc'] ) { ?>
+                                        <div>
+                                            <? echo $personal_training['wswg_short_desc']; ?>
+                                        </div>
+                                    <? } ?>
+                                </td>
+                               
+                                
+                                 <? foreach ($personal_training->prices as $personal_training_slot) {?>
+                                    <td>
+                                        <? if($personal_training_slot->price) { ?>
+                                            <div class="card_price"><? echo number_format($personal_training_slot->price, 0, '', ' '); ?><span>руб.</span></div>
+                                            <div  class="card_buy reserve"><a href="javascript:void(0);">Записаться</a></div>
+                                        <? } ?>
+                                    </td>
+                                 <? } ?>
+                                
+                            </tr>
+                            
+                           
+                        <? } ?>    
+                        
+                    </tbody>
+                </table>
+            
+            
+            <? } ?>
     
     </div>
 </div>

@@ -92,7 +92,7 @@ class Partnerslist extends EActiveRecord
         $criteria = new CDbCriteria();
         $criteria->compare('id_list', $this->id);
         $criteria->compare('status', News::STATUS_PUBLISH);
-        $criteria->order = 'create_time DESC';
+        $criteria->order = 'sort ASC';
         //$pageSize = $count ? $count : ( is_numeric($this->page_size) ? $this->page_size : 5 );
         return new CActiveDataProvider('Partners', array(
             'criteria'=>$criteria,

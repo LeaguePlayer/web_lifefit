@@ -1,35 +1,51 @@
+<div class="backgroundPage">
+    <div class="fix-width">
+        <div class="captionPage"><h1><? echo $node->name ?></h1><div class="breadcrumb"><?php $this->widget('zii.widgets.CBreadcrumbs', array(
+		'separator'=>' → ',
+		'links'=>$this->breadcrumbs,
+	)); ?></div></div>
+<?
+$this->widget('zii.widgets.CListView', array(
+    'dataProvider'=>$dataProvider,
+    'itemView'=>'_item',   // refers to the partial view named '_post'
+    'template'=>'{items}{pager}',
+    'pager' => array(
+           'firstPageLabel'=>'',
+           'prevPageLabel'=>'Назвад',
+           'nextPageLabel'=>'Вперед',
+           'lastPageLabel'=>'',
+           'maxButtonCount'=>'5',
+           'header'=>'',
+           'cssFile'=>false,
 
-<div>
-    <?php $this->widget('zii.widgets.CBreadcrumbs', array(
-        'separator'=>' → ',
-        'links'=>$node->breadcrumbs,
-    )); ?>
-</div>
+       ),
+    'sortableAttributes'=>array(
+        'title',
+        'create_time'=>'Post Time',
 
+    ),
 
-<div>
-	<h1 class="news_title"><?= $node->name ?>
-		<? if ( isset($_GET['tag']) && !empty($_GET['tag']) ): ?>
-			<? echo ' по теме «'.$_GET['tag'].'»' ?>
-			<a class="reset" href="<?= $this->createUrl($this->route, array('url'=>$_GET['url'])) ?>">Сбросить</a>
-		<? endif ?>
-	</h1>
+));
+?>
+	<div class="news-fallow">
+		<div class="caption">
+			Следите <br>за нами
+		</div>
+		<div class="description">
+			Все новые акции и скидки
+можно увидеть первыми
+в самой уютной группе
+		</div>
+		<div class="vk-widget">
+            <script type="text/javascript" src="//vk.com/js/api/openapi.js?112"></script>
 
-	<? $tags = Tag::model()->findAll() ?>
-	<div class="tags">
-		<p>Выберите тему:</p>
-		<ul>
-			<? foreach ( $tags as $tag ): ?>
-				<? $active = (isset($_GET['tag']) && $_GET['tag'] == $tag->value) ?>
-				<li <?= $active ? 'class="active"' : '' ?>><a href="<?= $this->createUrl($this->route, array('url'=>$_GET['url'], 'tag'=>$tag->value)) ?>"><?= $tag->value ?></a></li>
-			<? endforeach ?>
-		</ul>
+            <!-- VK Widget -->
+            <div id="vk_groups"></div>
+            <script type="text/javascript">
+            VK.Widgets.Group("vk_groups", {mode: 0, width: "250", height: "116", color1: 'e32727', color2: 'ffffff', color3: 'c71f1f'}, 27148277);
+            </script>
+		</div>
+		<div class="treangle">
+		</div>
 	</div>
-
-
-	<?php $this->widget('zii.widgets.CListView', array(
-		'dataProvider'=>$dataProvider,
-		'template'=>'{items}{pager}',
-		'itemView'=>'_item',
-	)) ?>
 </div>

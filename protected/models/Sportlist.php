@@ -18,6 +18,7 @@ class Sportlist extends EActiveRecord
     public function rules()
     {
         return array(
+            array('wswg_content','safe'),
             array('node_id', 'numerical', 'integerOnly'=>true),
             // The following rule is used by search().
             array('id, node_id', 'safe', 'on'=>'search'),
@@ -38,6 +39,7 @@ class Sportlist extends EActiveRecord
         return array(
             'id' => 'ID',
             'node_id' => 'NODE_ID',
+            'wswg_content'=>'Текст на странице',
         );
     }
 

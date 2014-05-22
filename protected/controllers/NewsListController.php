@@ -4,6 +4,8 @@ class NewsListController extends FrontController
 {
 	public function actionView($url = 'news')
 	{
+	   
+       
 		$node = Structure::model()->findByUrl($url);
 		if ( !$node )
 			throw new CHttpException(404, 'Новостей не найдено');

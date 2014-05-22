@@ -1,14 +1,14 @@
 <?php echo TbHtml::linkButton("Добавить в {$model->node->name}", array(
     'icon'=>TbHtml::ICON_PLUS,
-    'url'=>array('/admin/partners/create', 'list_id'=>$model->id)
+    'url'=>array('/admin/sport/create', 'list_id'=>$model->id)
 )); ?>
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
-    'id'=>'partners-grid',
-    'dataProvider'=>$partnersFinder->search(),
-    'filter'=>$partnersFinder,
+    'id'=>'sport-grid',
+    'dataProvider'=>$sportFinder->search(),
+    'filter'=>$sportFinder,
     'type'=>TbHtml::GRID_TYPE_HOVER,
-    'afterAjaxUpdate'=>"function() {sortGrid('partners')}",
+    'afterAjaxUpdate'=>"function() {sortGrid('sport')}",
     'rowHtmlOptionsExpression'=>'array(
             "id"=>"items[]_".$data->id,
             "class"=>"status_".$data->status,
@@ -17,35 +17,31 @@
         array(
             'name'=>'img_preview',
             'type'=>'raw',
-            'value'=>'$data->getImage("small")',
+            'value'=>'TbHtml::imageCircle($data->getImageUrl("icon"))',
             'filter'=>false
         ),
         array(
             'name'=>'title',
             'type'=>'raw',
-            'value'=>'TbHtml::link($data->title, array("/admin/partners/update/", "id"=>$data->id, "list_id"=>'.$model->id.'))'
+            'value'=>'TbHtml::link($data->title, array("/admin/sport/update/", "id"=>$data->id, "list_id"=>'.$model->id.'))'
         ),
-        'create_time',
         array(
             'name'=>'status',
             'type'=>'raw',
-            'value'=>'partners::getStatusAliases($data->status)',
-            'filter'=>partners::getStatusAliases()
+            'value'=>'Sport::getStatusAliases($data->status)',
+            'filter'=>Sport::getStatusAliases()
         ),
         array(
             'class'=>'bootstrap.widgets.TbButtonColumn',
             'template'=>'{delete}',
             'buttons'=>array(
                 'delete'=>array(
-                    'url'=>'array("/admin/partners/delete", "id"=>$data->id)'
+                    'url'=>'array("/admin/sport/delete", "id"=>$data->id)'
                 ),
                 'view'=>array(
-                    'url'=>'array("/admin/partners/view", "id"=>$data->id)'
+                    'url'=>'array("/admin/sport/view", "id"=>$data->id)'
                 ),
             ),
         ),
     ),
 )); ?>
-
-
-<?php Yii::app()->clientScript->registerScript('sortGrid', 'sortGrid("partners");', CClientScript::POS_END) ;?>

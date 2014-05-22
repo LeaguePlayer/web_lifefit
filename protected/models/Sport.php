@@ -27,7 +27,9 @@ class Sport extends EActiveRecord
     public function rules()
     {
         return array(
-			array('title', 'required'),
+            array('alias', 'convertation'),
+            array('alias', 'unique'),
+			array('title, alias', 'required'),
             array('list_id, status, sort', 'numerical', 'integerOnly'=>true),
             array('title, img_preview_main_slider, img_preview_coming_soon', 'length', 'max'=>255),
             array('short_desc, wswg_body, create_time, update_time', 'safe'),
@@ -35,6 +37,11 @@ class Sport extends EActiveRecord
             array('id, list_id, title, short_desc, wswg_body, img_preview_main_slider, img_preview_coming_soon, status, sort, create_time, update_time', 'safe', 'on'=>'search'),
         );
     }
+    
+    public function convertation($attribute,$params)
+	{
+		$this->{$attribute} = strtolower(SiteHelper::translit($this->title));
+	}
 
 
     public function relations()
@@ -60,6 +67,7 @@ class Sport extends EActiveRecord
             'sort' => 'Вес для сортировки',
             'create_time' => 'Дата создания',
             'update_time' => 'Дата последнего редактирования',
+            'alias'=>"URL",
         );
     }
 
@@ -149,5 +157,47 @@ class Sport extends EActiveRecord
 		else
 			return $array;
 	}
-
+    
+    public static function getTimeOfClasses($n = false)
+	{
+		$array = array( "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"   );
+		
+		if ( is_numeric($n) )
+			return $array[$n];
+		else
+			return $array;
+	
+    }
+    
+    public static function generateCell($type_hall, $data)
+    {
+        
+        $div = "<div class='cell busy slise' data-day='{$data[day]}' data-time='{$data[time]}' data-sport='{$data[id_sport]}'>";
+            $div .= "<div class='busy_cell'>";
+                $div .= "<div class='rel'>";
+                        $div .= "<div class='angle {$type_hall}'></div>";
+                    $div .= "<div class='title_busy_cell'>{$data[sport]}</div>";
+                    
+                    $div .= ($data['teacher']) ? "<span>{$data[teacher]}</span>" : "";
+                $div .= "</div>";
+            $div .= "</div>";
+        $div .= "</div>";
+        
+        return $div;
+    }
+    
+    const SMALL_HALL = 0;
+    const BIG_HALL = 1;
+    
+    public static function getHall($n=false)
+    {
+        $array = array( self::SMALL_HALL => "Малый зал", self::BIG_HALL => "Большой зал"   );
+		
+		if ( is_numeric($n) )
+			return $array[$n];
+		else
+			return $array;
+    }
+    
+    
 }

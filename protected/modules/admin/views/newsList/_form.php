@@ -39,7 +39,7 @@
         array(
             'name'=>'img_preview',
             'type'=>'raw',
-            'value'=>'$data->getImage("icon")',
+            'value'=>'TbHtml::link($data->getImage("icon"), array("/admin/news/update/", "id"=>$data->id, "list_id"=>'.$model->id.'))',
             'filter'=>false
         ),
         array(
@@ -52,6 +52,12 @@
             'type'=>'raw',
             'value'=>'News::getStatusAliases($data->status)',
             'filter'=>News::getStatusAliases()
+        ),
+        array(
+            'name'=>'create_time',
+            'type'=>'raw',
+            'value'=>'date("d.m.Y",strtotime($data->create_time))',
+            'filter'=>false
         ),
         array(
             'class'=>'bootstrap.widgets.TbButtonColumn',

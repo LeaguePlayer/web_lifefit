@@ -45,7 +45,7 @@ $(document).ready(function(e) {
 			
 			block.html( block.html().replace(new RegExp(numeric,'g'),new_numeric) );
 			
-			block.find('input').timepicker({timeFormat : "H:i"});
+			block.find('input.time').timepicker({timeFormat : "H:i"});
 			
 			$.each( $(block).find('input'), function(  ) {
 				//alert( $(this).attr('class') +  " = " +  $(this).val());

@@ -20,6 +20,7 @@ class Cardlist extends CActiveRecord
     {
         return array(
             array('node_id, page_size', 'numerical', 'integerOnly'=>true),
+            array('wswg_content', 'safe'),
             // The following rule is used by search().
             array('id, node_id, page_size', 'safe', 'on'=>'search'),
         );
@@ -40,6 +41,7 @@ class Cardlist extends CActiveRecord
             'id' => 'ID',
             'node_id' => 'node_id',
             'page_size' => 'Количество записей',
+            'wswg_content'=>'Текст на странице',
         );
     }
 
@@ -80,7 +82,7 @@ class Cardlist extends CActiveRecord
         $criteria->compare('status', News::STATUS_PUBLISH);
 
 	
-        $criteria->order = 'create_time DESC';
+        $criteria->order = 'sort ASC';
         $pageSize = 9999;
         return new CActiveDataProvider('Cards', array(
             'criteria'=>$criteria,
