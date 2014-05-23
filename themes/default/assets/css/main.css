@@ -1368,7 +1368,7 @@ i[class|=arrow] {
 .owl-prev{
   position: absolute;
   top: 350px;
-  left: -140px;
+  left: -5%;
   width: 52px;
   height: 26px;
   background: url('../img/arrow-left.png') no-repeat;
@@ -1376,7 +1376,7 @@ i[class|=arrow] {
 .owl-next{
   position: absolute;
   top: 350px;
-  right: -140px;
+  right: -5%;
   width: 52px;
   height: 26px;
   background: url('../img/arrow-right.png') no-repeat; 
