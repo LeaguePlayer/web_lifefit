@@ -1,88 +1,82 @@
-<div class="slider main-slider">
-                <div class="fix-width viewport">
-                    <div class="slider-width">
-                        <div class="wrap">
-                            <div class="slides">
 
-                                <div class="slide">
-                                    <img src="<? echo $this->getAssetsUrl();?>/img/slide.jpg" alt=""/>
-                                    <div class="description">
-                                        <p class="name">Тренажерный зал</p>
-                                        <h2>Сила&объем</h2>
-                                        <a class="red-button" href="#">Записаться <i class="arrow-down"></i></a>
-                                    </div>
-                                </div>
+            <!-- Конец слайдера -->
+<div class="slider-fix">
 
-                                <div class="slide">
-                                    <img src="<? echo $this->getAssetsUrl();?>/img/slide_r_e.jpg" alt=""/>
-                                    <div class="description">
-                                        <p class="name">Мягкий фитнес</p>
-                                        <h2>Выносливость и скорость</h2>
-                                        <a class="red-button" href="#">Записаться <i class="arrow-down"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="slide">
-                                    <img src="<? echo $this->getAssetsUrl();?>/img/slide.jpg" alt=""/>
-                                    <div class="description">
-                                        <p class="name">Сильный фитнес</p>
-                                        <h2>Сила&объем</h2>
-                                        <a class="red-button" href="#">Записаться <i class="arrow-down"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="slide">
-                                    <img src="<? echo $this->getAssetsUrl();?>/img/slide_r_d.jpg" alt=""/>
-                                    <div class="description">
-                                        <p class="name">Йога</p>
-                                        <h2>Гармония&душа</h2>
-                                        <a class="red-button" href="#">Записаться <i class="arrow-down"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="slide">
-                                    <img src="<? echo $this->getAssetsUrl();?>/img/slide.jpg" alt=""/>
-                                    <div class="description">
-                                        <p class="name">Танцевальные направления</p>
-                                        <h2>Искусство в движении</h2>
-                                        <a class="red-button" href="#">Записаться <i class="arrow-down"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="slide">
-                                    <img src="<? echo $this->getAssetsUrl();?>/img/slide_r_c.jpg" alt=""/>
-                                    <div class="description">
-                                        <p class="name">Бокс</p>
-                                        <h2>Скорость&сила</h2>
-                                        <a class="red-button" href="#">Записаться <i class="arrow-down"></i></a>
-                                    </div>
-                                </div>
-
-                                <div class="slide">
-                                    <img src="<? echo $this->getAssetsUrl();?>/img/slide.jpg" alt=""/>
-                                    <div class="description">
-                                        <p class="name">TRX</p>
-                                        <h2>Гармония&сила</h2>
-                                        <a class="red-button" href="#">Записаться <i class="arrow-down"></i></a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
+    <div class="slide-wrap">
+        <div class="slider-list">
+        <ul>
+            <li >
+                <a class="active" href="#" data-jump="1"> Тренажерный зал</a>
+            </li>
+            <li >
+                <a href="#" data-jump="2">Мягкий фитнес</a>
+            </li>
+            <li >
+                <a href="#" data-jump="3">Сильный <br>фитнес</a>
+            </li>
+            <li >
+                <a href="#" data-jump="4">йога</a>
+            </li>
+            <li >
+                <a href="#" data-jump="5">танцевальные <br>направления</a>
+            </li>
+            <li >
+                <a href="#" data-jump="6">Бокс</a>
+            </li>
+            <li >
+                <a href="#" data-jump="7">trx</a>
+            </li>
+        </ul>
+    </div>
+        <div class="slide" id="slide-top">
+            <div class="slide-item">
+                <img src="/media/images/slider/main.png">
+                <div class="info">
+                    <div class="caption">
+                        Тренажерный зал
                     </div>
-                    <ul class="slider-nav">
-                        <li class="gym"><a href="#"><span>Тренажерный зал</span></a></li>
-                        <li class="soft_fitness"><a href="#"><span>Мягкий фитнес</span></a></li>
-                        <li class="strong_fitness"><a href="#"><span>Сильный фитнес</span></a></li>
-                        <li class="yoga"><a href="#"><span>Йога</span></a></li>
-                        <li class="dance"><a href="#"><span>Танцевальные направления</span></a></li>
-                        <li class="boxing"><a href="#"><span>Бокс</span></a></li>
-                        <li class="trx"><a href="#"><span>TRX</span></a></li>
-                    </ul>
+                    <div class="title">
+                        Сила &amp; Объем
+                    </div>
+                    <div class="record">
+                        <a href="#" class="red-button">Записаться</a>
+                    </div>
                 </div>
             </div>
-            <!-- Конец слайдера -->
-
+             <div class="slide-item">
+                <img src="/media/images/slider/main.png">
+            </div>
+             <div class="slide-item">
+                <img src="/media/images/slider/main.png">
+            </div>
+             <div class="slide-item">
+                <img src="/media/images/slider/main.png">
+            </div>
+             <div class="slide-item">
+               <img src="/media/images/slider/main.png">
+            </div>
+             <div class="slide-item">
+                <img src="/media/images/slider/main.png">
+            </div>
+             <div class="slide-item">
+                <img src="/media/images/slider/main.png">
+            </div>
+             <div class="slide-item">
+                <img src="/media/images/slider/main.png">
+            </div>
+             <div class="slide-item">
+                <img src="/media/images/slider/main.png">
+            </div>
+             <div class="slide-item">
+                <img src="/media/images/slider/main.png">
+            </div>
+            <div class="slide-item">
+                <img src="/media/images/slider/main.png">
+            </div>
+        </div>
+    </div>
+    
+</div>
             <!-- Действия -->
             <div class="actions">
                 <div class="fix-width">
