@@ -1,5 +1,3 @@
-
-
 <div class="backgroundPage">
     <div class="fix-width">
         <div class="captionPage"><h1><? echo $node->name ?></h1><div class="breadcrumb"><?php $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -69,8 +67,48 @@
         
         <? } ?>
         
+        
+        
+        
     </div>
 </div>
+
+
+    
+        <? if(count($page->getGalleries())>0){ ?>
+            
+                <? foreach( $page->getGalleries() as $gallery ) { ?>
+                
+                <div class="slider_big">
+                    <div class="title_slider">
+                        <div class="fix-width"><? echo $gallery->gallery_name; ?></div>
+                    </div>
+                    <div class="big_photos">
+                        
+                
+                    <? foreach( $gallery->galleryPhotos as $i => $photo ) { ?>
+                
+                        
+                       <div class="block_with_img<? echo ($i==0) ? " active" : ""?>">
+                         <img sizes="100vw, (min-width: 40em) 80vw" srcset="<? echo $photo->getUrl('big_800'); ?> 800w,<? echo $photo->getUrl('big_900'); ?> 900w,<? echo $photo->getUrl('big_1000'); ?> 1000w, <? echo $photo->getUrl('big_1100'); ?> 1100w, <? echo $photo->getUrl('big_1200'); ?> 1200w, <? echo $photo->getUrl('big_1300'); ?> 1300w, <? echo $photo->getUrl('big_1400'); ?> 1400w, <? echo $photo->getUrl('big_1500'); ?> 1500w, <? echo $photo->getUrl('big_1600'); ?> 1600w">
+                       </div>
+                    
+                    <? } ?>
+                   
+                   </div>
+               </div>
+                
+                <? } ?>
+                
+                <div class="backgroundPage">
+                    <div class="fix-width medal">
+                        <div id="medal"></div>
+                    </div>
+                </div>
+            
+            <? } ?>
+        
+    
 
 <? if($page->map) { ?>
 

@@ -51,6 +51,14 @@ $(document).ready(function(e) {
 				//alert( $(this).attr('class') +  " = " +  $(this).val());
 			     $(this).val("");
 			});
+            
+            
+            $.each( $(block).find('.fx_input option'), function( i ) {
+				$(this).val(i);
+			});
+            
+          //  $(block).find('.fx_input option').val('0');
+         //   $(block).find('.fx_input option:last-child').val('1');
 			
 			$(parent_div).find('.place_c').append(block);
 			$(parent_div).find('.controls:last-child').attr('data-numeric', new_numeric);

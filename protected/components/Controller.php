@@ -173,4 +173,11 @@ class Controller extends CController
 		$cs->registerScriptFile('http://maps.google.com/maps/api/js?sensor=false', CClientScript::POS_END);
 		$cs->registerScriptFile($this->getAssetsUrl().'/js/map.js', CClientScript::POS_END);
 	}
+    
+    public function initPictureFill()
+	{
+		$cs = Yii::app()->clientScript;
+		$cs->registerScriptFile($this->getAssetsUrl().'/js/picturefill.js', CClientScript::POS_END);
+        $cs->registerScriptFile($this->getAssetsUrl().'/js/slider.js', CClientScript::POS_END);
+	}
 }

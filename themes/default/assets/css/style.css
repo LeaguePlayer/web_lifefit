@@ -631,6 +631,11 @@ border-color:#d02424;
     color:#767676;
     font-family: "a_avantetckmedium", sans-serif;
 }
+.line_command .part.excel:hover
+{
+    background-position: left bottom;
+    color:#fd212a;
+}
 .redline
 {
     background-color:#fd212a;
@@ -867,4 +872,115 @@ text-decoration: none;
 #partners .list-view
 {
     width:auto;
+}
+.slider_big
+{
+    position:relative;
+    overflow:hidden;
+   
+}
+.big_photos
+{
+    position:absolute;
+    width:999999px;
+}
+.big_photos .block_with_img img
+{
+   
+    width:100%;
+}
+.block_with_img
+{
+    width:auto;
+    display:inline-block;
+}
+.title_slider
+{
+    position:absolute;
+    z-index:5;
+    top:5%;
+    color:#ffffff;
+    font-size:44px;
+    font-family: "a_avantetckheavy", sans-serif;
+    width:100%;
+}
+
+#medal
+{
+    width:561px;
+    margin:auto;
+    height:365px;
+    background:url(../img/medal.png) no-repeat;
+}
+.fancybox-inner
+{
+   background:#9a9a9a; 
+}
+.fancybox-close.fancybox-item
+{
+    top:48px;
+    right:30px;
+    width:30px;
+    height:30px;
+    background:url(../img/close.png) no-repeat;
+}
+.order_view
+{
+    padding: 50px 30px;
+    min-height: 560px;
+}
+.order_view h1
+{
+    font-size:44px;
+    color:#fff;
+    font-family: "a_avantetckheavy", sans-serif;
+}
+.order_view.girl
+{
+    background:url(../img/girl.png) no-repeat bottom right
+}
+.guest_form
+{
+    width:303px;
+}
+.guest_form .row
+{
+    margin-bottom:22px;
+}
+.guest_form .row input
+{
+    border: 3px solid #fff;
+    font-size:18px;
+    color:#636363;
+    font-family: "Exo 2", sans-serif;
+    font-weight:300;
+    width:303px;
+}
+.guest_form .row.error input
+{
+    color:#e32727;
+    border-color:#e32727;
+}
+.guest_form .row label
+{
+    font-size:16px;
+    color:#ffffff;
+    font-family: "a_avantetckmedium", sans-serif;
+    margin-bottom:6px;
+    display:block;
+}
+.guest_form .row.submit input
+{
+    
+    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    border:none;
+    background: url('../img/arrow-record.png') no-repeat 210px 16px #e32727;
 }

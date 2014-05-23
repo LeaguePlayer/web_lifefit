@@ -30,14 +30,17 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title><? echo $this->title; ?></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 
         <link href='http://fonts.googleapis.com/css?family=Exo+2:400,700,300,600italic,300italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic' rel='stylesheet' type='text/css'>
+        
+        <link id="favicon" type="image/x-icon" rel="shortcut icon" href="/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
       
-
+    
        
     </head>
     <body>
@@ -73,7 +76,7 @@
                         <span class="weekend">9-22</span>
                     </div>
                     <div class="record">
-                        <a href="#" >Записаться<span></span></a>
+                        <a class="fancybox.ajax" href="/site/order" >Записаться<span></span></a>
                         <span class="discription">на бесплатный гостевой визит</span>
                     </div>
                 </div>

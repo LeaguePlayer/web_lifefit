@@ -34,12 +34,15 @@ class PageController extends FrontController
 			throw new CHttpException(404, "Узел с псевдонимом '$url' не найден");
             
         $this->initGoogleMap();
+        $this->initPictureFill();
 
 		$this->breadcrumbs = $node->getBreadcrumbs();
 
 		$page = $node->getComponent();
         
         $employesListNodes = $node->getChildNodesByType("Employelist");
+        
+        
         
 
 		if ( !empty($node->seo->meta_title) )

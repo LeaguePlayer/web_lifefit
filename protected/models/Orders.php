@@ -64,6 +64,7 @@ class Orders extends EActiveRecord
     public function rules()
     {
         return array(
+            array('email', 'email'),
 			array('phone', 'required'),
             array('status', 'numerical', 'integerOnly'=>true),
             array('name, phone, email, post_id, post_type', 'length', 'max'=>255),

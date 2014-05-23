@@ -1,7 +1,24 @@
 
 $(document).ready(function() {
+    
+    
+    
+    
+    
+    
+    
+    
     $('.main-slider').customslider({
         slideshow: true
+    });
+    
+    $('.record a').fancybox({
+            
+            padding: 0,
+           
+            minWidth: 539,
+            //wrapCSS: '../css/style.css',
+        
     });
 
 
