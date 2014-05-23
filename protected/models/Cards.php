@@ -44,6 +44,7 @@ class Cards extends EActiveRecord
         return array(
 			'list'=>array(self::BELONGS_TO, 'Cardlist', 'list_id'),
 			'prices'=>array(self::HAS_MANY, 'Pricecards', 'id_card', 'order'=>'slot ASC'),
+            'price'=>array(self::HAS_ONE, 'Pricecards', 'id_card'),
         );
     }
 
@@ -135,7 +136,17 @@ class Cards extends EActiveRecord
 	
 	public static function getSlots($n = false)
 	{
-		$array = array('1 слот (на 1 месяц)', '2 слот (на 3 месяц)', '3 слот (на 6 месяц)', '4 слот (на 12 месяц)',);	
+		$array = array('1 слот (на 1 месяц)', '2 слот (на 3 месяца)', '3 слот (на 6 месяцев)', '4 слот (на 12 месяцев)',);	
+		
+		if( is_numeric ( $n ) )
+			return $array[$n];
+		else
+			return $array;
+		
+	}
+    public static function getSlotsWithMonth($n = false)
+	{
+		$array = array('на 1 месяц', 'на 3 месяца', 'на 6 месяцев', 'на 12 месяцев',);	
 		
 		if( is_numeric ( $n ) )
 			return $array[$n];

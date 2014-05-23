@@ -1,7 +1,9 @@
-<form class="guest_form ajaxForm" action="/site/order">
+<form class="guest_form ajaxForm" action="<? echo $_SERVER['REQUEST_URI']; ?>">
 
-    <input type="hidden" name="Order[post_type]" value="guest" />
-    
+    <input type="hidden" name="Order[post_id]" value="<? echo $data['id_card'] ?>" />
+    <input type="hidden" name="Order[post_slot]" value="<? echo $data['id_slot'] ?>" />
+    <input type="hidden" name="Order[post_type]" value="card" />
+
     <div class="row">
         <label>Как вас зовут</label>
         <input type="text" data-field="name" name="Order[name]" placeholder="Иван" />

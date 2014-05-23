@@ -57,7 +57,7 @@
                         <td>
                             <? if($abonement_slot->price) { ?>
                                 <div class="card_price"><? echo number_format($abonement_slot->price, 0, '', ' '); ?><span>руб.</span></div>
-                                <div  class="card_buy"><a href="javascript:void(0);">Купить</a></div>
+                                <div  class="card_buy"><a class="run_fancy fancybox.ajax" href="/site/buycard/id_card/<? echo $abonement->id;?>/slot/<? echo $abonement_slot->id; ?>">Купить</a></div>
                             <? } ?>
                         </td>
                         <? } ?>
@@ -98,7 +98,7 @@
                                     <td>
                                         <? if($personal_training_slot->price) { ?>
                                             <div class="card_price"><? echo number_format($personal_training_slot->price, 0, '', ' '); ?><span>руб.</span></div>
-                                            <div  class="card_buy reserve"><a href="javascript:void(0);">Записаться</a></div>
+                                            <div  class="card_buy reserve"><a class="run_fancy fancybox.ajax" href="/site/buycard/id_card/<? echo $personal_training->id;?>/slot/<? echo $personal_training_slot->id; ?>">Записаться</a></div>
                                         <? } ?>
                                     </td>
                                  <? } ?>

@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-<<<<<<< HEAD
+
     
     
     
@@ -13,16 +13,15 @@ $(document).ready(function() {
         slideshow: true
     });
     
-    $('.record a').fancybox({
+    $('.run_fancy').fancybox({
             
             padding: 0,
            
-            minWidth: 539,
+            minWidth: 300,
             //wrapCSS: '../css/style.css',
         
     });
-=======
->>>>>>> 58792daeff3c952632561b902392660582d952b2
+
 
  
   $("#slide-top").owlCarousel(

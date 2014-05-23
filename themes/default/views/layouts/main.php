@@ -76,11 +76,12 @@
                         <span class="weekdays">8-23</span>
                         <span class="weekend">9-22</span>
                     </div>
-                    <div class="record">
-                        <a class="fancybox.ajax" href="/site/order" >Записаться<span></span></a>
+                    
+                </div>
+                <div class="record">
+                        <a class="fancybox.ajax run_fancy" href="/site/order" >Записаться<span></span></a>
                         <span class="discription">на бесплатный гостевой визит</span>
                     </div>
-                </div>
 
             </div>
         </header>

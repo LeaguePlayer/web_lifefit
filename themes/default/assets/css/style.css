@@ -927,13 +927,14 @@ text-decoration: none;
 .order_view
 {
     padding: 50px 30px;
-    min-height: 560px;
+    min-height: 300px;
 }
 .order_view h1
 {
     font-size:44px;
     color:#fff;
     font-family: "a_avantetckheavy", sans-serif;
+    max-width:500px;
 }
 .order_view.girl
 {
@@ -942,6 +943,7 @@ text-decoration: none;
 .guest_form
 {
     width:303px;
+    margin-bottom:120px;
 }
 .guest_form .row
 {

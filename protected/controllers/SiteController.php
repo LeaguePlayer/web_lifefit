@@ -29,12 +29,74 @@ class SiteController extends FrontController
 	 */
 	public function actionIndex()
 	{
+	    
+       
+       
         $this->title = Yii::app()->config->get('app.name');
 		$this->render('index');
 	}
     
+    public function actionBuycard($id_card, $slot)
+    {
+        if (isset($_POST['Order']))
+          {
+            header('Content-type: application/json');
+            $model = new Orders;
+			$model->attributes = $_POST['Order'];
+			$model->status = 0;
+
+			if($model->save())
+			{
+						if($model->name) $message .="Имя: {$model->name}<br>";
+						if($model->phone) $message .="Номер телефона: {$model->phone}<br>";
+						//if($model->rating) $message .="Оценка: {$model->rating}<br>";
+					//	if($model->comment) $message .="Комментарий: {$model->comment}<br>";
+						//$message.="{$model->create_time}";
+					//	$message.="http://{$_SERVER['SERVER_NAME']}/admin/reviews/update/id/{$model->id}/list_id/{$model->id_list}";
+
+							$date = date('d.m.Y H:i');
+							$message .="Время заявки: {$date}<br>";	
+
+
+
+						if(SiteHelper::sendMail("Получен новый вопрос/заявка сайта!",$message,"minderov@amobile-studio.ru","no-reply@alextour72.ru")) 
+				echo CJSON::encode("OK");
+			}
+			else
+			{
+			
+				echo CJSON::encode($model->getErrors());	
+			}
+            die();
+          }
+          
+          
+        if(!Yii::app()->request->isAjaxRequest)
+            throw new CHttpException('404','error');
+       
+       
+        
+        $card_model = Cards::model()->with( array('price'=>array('condition'=>"price.id=:slot_id", 'params'=>array(':slot_id'=>$slot))) )->findByPk($id_card);
+        
+        if(!$card_model)    
+            throw new CHttpException('404','error');
+            
+        
+        $data['id_card'] = $id_card;
+        $data['id_slot'] = $slot;
+        
+        $begin_string = ($card_model->type==Cards::BELONGS_TO_ABONEMENT) ? "Резервирование абонемента" : "Вы выбрали";
+           
+        $period_card = Cards::getSlotsWithMonth($card_model->price->slot);
+        $title = "{$begin_string} {$card_model->name} {$period_card} за {$card_model->price->price} руб";
+        
+        $this->renderPartial('/site/order/main', array('title'=>$title, 'type'=>'card', 'data'=>$data));
+    }
+    
     public function actionOrder()
     {
+        if(!Yii::app()->request->isAjaxRequest)
+            throw new CHttpException('404','error');
        
          if (isset($_POST['Order']))
           {
@@ -76,8 +138,10 @@ class SiteController extends FrontController
     
     public function actionThankyou()
     {
+        if(!Yii::app()->request->isAjaxRequest)
+            throw new CHttpException('404','error');
         
-        $title = "Спасибо за заявку!";
+        $title = "Спасибо что выбрали LifeFit!";
         
         $this->renderPartial('/site/order/main', array('title'=>$title, 'type'=>'thanks'));
     }

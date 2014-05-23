@@ -16,7 +16,7 @@
 */
 class Orders extends EActiveRecord
 {
-	protected $post_types = array ( 'card' => 'Заявка на абонемент', 'sport'=>'Запись на занятия' );	
+	protected $post_types = array ( 'card' => 'Заявка на абонемент', 'sport'=>'Запись на занятия', 'guest'=>"Запись на гостевой визит" );	
 	
 	public $post_type_word;
 	
@@ -66,7 +66,7 @@ class Orders extends EActiveRecord
         return array(
             array('email', 'email'),
 			array('phone', 'required'),
-            array('status', 'numerical', 'integerOnly'=>true),
+            array('status, post_slot', 'numerical', 'integerOnly'=>true),
             array('name, phone, email, post_id, post_type', 'length', 'max'=>255),
             array('create_time, update_time', 'safe'),
             // The following rule is used by search().

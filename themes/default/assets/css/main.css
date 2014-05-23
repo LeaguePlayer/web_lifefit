@@ -76,6 +76,7 @@ form input {
   border: 1px solid #1a1a1a; }
 
 header {
+    position:relative;
   padding: 28px 0; }
   header a.logo {
     display: inline-block;
@@ -110,17 +111,19 @@ header {
     width: 180px; }
   header .top {
     margin-bottom: 20px; }
-  header .bottom .record{
+  header .record{
     display: inline-block;
     padding: 15px 15px 8px 15px;
     background: #d12424;
     margin-left: 20px;
+    bottom:-28px;
+    right:0;
     position: absolute;
   }  
   header .bottom{
     position: relative;
   }
-  header .bottom .record a{
+  header .record a{
     background: #e32727;
     padding-bottom: 15px;
     padding-top: 10px;
@@ -132,13 +135,13 @@ header {
     color: #fff;
     display: block;
   }
-  header .bottom .record .discription{
+  header .record .discription{
     font-size: 12px;
     padding-top: 3px;
     display: block;
     padding-bottom: 7px;
   }
-  header .bottom .record a span{
+  header .record a span{
     width: 14px;
     height: 12px;
     background: url('../img/arrow-record.png')no-repeat!important;
@@ -685,6 +688,7 @@ footer {
         background: url(../img/facebook.png) no-repeat;
       }
 .fix-width {
+    position:relative;
   width: 950px;
   margin: 0 auto; }
 
