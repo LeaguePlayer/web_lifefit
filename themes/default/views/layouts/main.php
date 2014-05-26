@@ -48,13 +48,13 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+    <div class="all_divs">
         <header>
             <div class="fix-width">
                 <div class="top">
                     <div class="inline-middle"><a class="logo" href="/"><img src="<? echo $this->getAssetsUrl();?>/img/logo.png" alt=""/></a><span>Жизнь в ритме спорта</span></div>
-                    <div class="inline-middle"><span class="phone">8 4352 612-691</span></div>
-                    <div class="inline-middle"><span class="address">Тюмень, Широтная, 189, к2</span></div>
+                    <div class="inline-middle"><span class="phone">8 3452 612-691</span></div>
+                    <div class="inline-middle"><span class="address">Тюмень, Широтная, 189, к1</span></div>
                 </div>
                 <div class="bottom">
                     <nav class="menu">
@@ -103,9 +103,9 @@
                     <? $this->widget('zii.widgets.CMenu', array('items'=>$this->menu, 'htmlOptions'=>array('class'=>'menu'))); ?>
 
                     <div class="order">
-                        <p class="address">Тюмень, Широтная, 189, к2</p>
-                        <p class="phone">8 (4352) 612-691</p>
-                        <a href="#">Записаться</a>
+                        <p class="address">Тюмень, Широтная, 189, к1</p>
+                        <p class="phone">8 (3452) 612-691</p>
+                        <a class="fancybox.ajax run_fancy" href="/site/order">Записаться</a>
                     </div>
 
                     <div class="master">
@@ -130,6 +130,11 @@
         
        
 
-        
+        </div>
+        <div class="hiddenMap">
+        <img src='/googleMap/map.png' alt='' />
+        <p>Фитнес клуб Life Fit  -  8 (3452) 612-691  -  Тюмень, Широтная, 189, к1</p>
+    </div>
     </body>
+    
 </html>

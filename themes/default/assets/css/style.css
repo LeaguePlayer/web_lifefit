@@ -425,14 +425,17 @@ h2 {
 {
     position:relative;
 }
-.typegraphy
+.typegraphy,.typography
 {
     font-size:16px;
     color:#222222;
     line-height:22px;
     font-weight: 300;
 }
-
+.typegraphy.about
+{
+    min-width:500px;
+}
 .employer .information
 {
     width:208px;
@@ -949,7 +952,7 @@ text-decoration: none;
 {
     margin-bottom:22px;
 }
-.guest_form .row input
+.row input
 {
     border: 3px solid #fff;
     font-size:18px;
@@ -958,7 +961,13 @@ text-decoration: none;
     font-weight:300;
     width:303px;
 }
-.guest_form .row.error input
+.guest_visit .row input
+{
+    margin-bottom:3px;
+    color:#636363;
+    font-size:18px;
+}
+.row.error input
 {
     color:#e32727;
     border-color:#e32727;
@@ -986,3 +995,45 @@ text-decoration: none;
     border:none;
     background: url('../img/arrow-record.png') no-repeat 210px 16px #e32727;
 }
+.slider_big .gal_arrow
+{
+    position: absolute;
+    top: 50%;
+    margin-top:-13px;
+    
+    width: 52px;
+    height: 26px;
+    
+    cursor:pointer;
+    z-index:10;
+}
+.slider_big .gal_arrow.to_left
+{
+    background: url('../img/arrow-left.png') no-repeat;
+    left: 5%;
+}
+.slider_big .gal_arrow.to_right
+{
+    background: url('../img/arrow-right.png') no-repeat;
+    right: 5%;
+}
+
+.owl-controls
+{
+    display:none;
+}
+.hiddenMap
+{
+    display:none;
+}
+
+@media print { /* Стиль для печати */
+    .all_divs {
+     display:none;
+    }
+    .hiddenMap
+    {
+        display:block;
+    }
+}
+    

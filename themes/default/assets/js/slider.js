@@ -3,13 +3,13 @@ $(document).ready(function(){
    slider.adaptiveSlider();
    
    
-   $('.slider_big').click(function(){
+   $('.to_right').click(function(){
     
     slider.goRight( $(this) );
     
    });
     
-    $('.order').click(function(){
+    $('.to_left').click(function(){
         
         slider.goLeft( $(this) );
         

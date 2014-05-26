@@ -3,76 +3,41 @@
 <div class="slider-fix">
 
     <div class="slide-wrap">
+        <div class="left_gradient gradient"></div>
+        <div class="right_gradient gradient"></div>
         <div class="slider-list">
         <ul>
-            <li >
-                <a class="active" href="#" data-jump="1"> Тренажерный зал</a>
-            </li>
-            <li >
-                <a href="#" data-jump="2">Мягкий фитнес</a>
-            </li>
-            <li >
-                <a href="#" data-jump="3">Сильный <br>фитнес</a>
-            </li>
-            <li >
-                <a href="#" data-jump="4">йога</a>
-            </li>
-            <li >
-                <a href="#" data-jump="5">танцевальные <br>направления</a>
-            </li>
-            <li >
-                <a href="#" data-jump="6">Бокс</a>
-            </li>
-            <li >
-                <a href="#" data-jump="7">trx</a>
-            </li>
+            
+            
+            <? foreach ( $gallery->galleryPhotos as $index => $photo ){ ?>
+                 <li >
+                    <a<? echo ($index+1 == 1) ? ' class="active"' : ''; ?> href="#" data-jump="<? echo $index+1; ?>"><? echo $photo->name; ?></a>
+                </li>
+            <? } ?>            
         </ul>
     </div>
         <div class="slide" id="slide-top">
             <div class="slide-item">
                 <img src="/media/images/slider/main.png">
-                <div class="info">
+                
+            </div>
+            <? foreach ( $gallery->galleryPhotos as $photo ){ ?>
+                 <div class="slide-item">
+                    <? echo $photo->getImage('big'); ?>
+                    <div class="info">
                     <div class="caption">
-                        Тренажерный зал
+                        <? echo $photo->name; ?>
                     </div>
                     <div class="title">
-                        Сила &amp; Объем
+                        <? echo $photo->description; ?>
                     </div>
                     <div class="record">
-                        <a href="#" class="red-button">Записаться</a>
+                        <a href="#" class="red-button">Узнать</a>
                     </div>
+                </div>                    
                 </div>
-            </div>
-             <div class="slide-item">
-                <img src="/media/images/slider/main.png">
-            </div>
-             <div class="slide-item">
-                <img src="/media/images/slider/main.png">
-            </div>
-             <div class="slide-item">
-                <img src="/media/images/slider/main.png">
-            </div>
-             <div class="slide-item">
-               <img src="/media/images/slider/main.png">
-            </div>
-             <div class="slide-item">
-                <img src="/media/images/slider/main.png">
-            </div>
-             <div class="slide-item">
-                <img src="/media/images/slider/main.png">
-            </div>
-             <div class="slide-item">
-                <img src="/media/images/slider/main.png">
-            </div>
-             <div class="slide-item">
-                <img src="/media/images/slider/main.png">
-            </div>
-             <div class="slide-item">
-                <img src="/media/images/slider/main.png">
-            </div>
-            <div class="slide-item">
-                <img src="/media/images/slider/main.png">
-            </div>
+            <? } ?>
+             
         </div>
     </div>
     
@@ -84,9 +49,13 @@
                         <p class="label">Записаться</p>
                         <p class="cursive">на бесплатный</p>
                         <p class="normal">гостевой визит</p>
-                        <form action="/">
-                            <input type="text" placeholder="Ваше имя" />
-                            <input type="text" placeholder="Номер телефона" />
+                        <form class="ajaxForm" action="/site/order">
+                            <div class="row">
+                                <input type="text" data-field="name" name="Order[name]" placeholder="Ваше имя" />
+                            </div>
+                            <div class="row">
+                                <input type="text" data-field="phone" name="Order[phone]" placeholder="Номер телефона" />
+                            </div>
                             <button class="red-button">Записаться <i class="arrow-right"></i></button>
                         </form>
                     </div>
@@ -95,13 +64,13 @@
                         <div class="content">
                             <p class="label">Йога</p><br>
                             <p class="desc">Сегодня вы можете успеть на увлекательные занятия по йоге.</p>
-                            <a class="red-button" href="#">Посетить <i class="arrow-right"></i></a>
+                            <a class="red-button fancybox.ajax run_fancy" href="/site/goto/sport/1">Посетить <i class="arrow-right"></i></a>
                             <p class="beginning">
                                 <span class="text">Начало занятий</span>
                                 <span class="timer">16</span><span class="timer">20</span>
                             </p>
                             <p class="address">
-                                Ждем Вас по <a href="#">адресу</a> <span>Тюмень, Широтная, 66</span>
+                                Ждем Вас по <a href="/page/kontakty#begin_content">адресу</a> <span>Тюмень, Широтная, 66</span>
                             </p>
                         </div>
                     </div>
@@ -109,8 +78,8 @@
                     <div class="block right fitness">
                         <div class="content">
                             <p class="label">Месяц фитнеса за:</p>
-                            <p class="price">2 200<span>руб</span></p>
-                            <a class="black-button" href="#">Записаться <i class="arrow-right"></i></a>
+                            <p class="price">2 500<span>руб</span></p>
+                            <a class="black-button fancybox.ajax run_fancy" href="/site/buycard/id_card/1/slot/1">Получить <i class="arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -135,8 +104,8 @@
                 <div class="fix-width">
                     <ul class="switch_slider">
                         <li class="active"><a href="#">Тренажерный зал</a></li>
-                        <li><a href="#">Боксерский ринг</a></li>
-                        <li><a href="#">Зал для йоги</a></li>
+                        <li><a href="#">Малый зал</a></li>
+                        <li><a href="#">Большой зал</a></li>
                         <li><a href="#">Ресепшн</a></li>
                     </ul>
                 </div>

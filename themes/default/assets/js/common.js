@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 				  success: function(data) {
 
-               
+              
                     
 					  if(data == "OK")
 					  {
@@ -36,8 +36,8 @@ $(document).ready(function() {
 					  {
                             
 						  $.each(data, function(key, value){
-						      
-							  $('.ajaxForm input[data-field="'+key+'"]').parent('.row').addClass('error');
+						      console.log(key);
+							  $(form).find('input[data-field="'+key+'"]').parent('.row').addClass('error');
 							 // $('textarea[data-field="'+key+'"]').css('border','1px solid #F00');
 							 // $('input[data-field="'+key+'"]').css('border','1px solid #F00');
 							 // $('span[data-field="'+key+'"]').css('color','#F00');

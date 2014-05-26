@@ -11,8 +11,11 @@
             case 'card':
                 echo $this->renderPartial('/site/order/_card', array('data'=>$data));
             break;
+            case 'about':
+                echo $this->renderPartial('/site/_about', array('data'=>$data));
+            break;
             case 'thanks':
-                echo "Thanks";
+                echo "<div class='typography'><p>Наш специалист свяжется с Вами в максимально короткие сроки! Просто дожидайтесь его звонка.</p></div>";
             break;
         }
         

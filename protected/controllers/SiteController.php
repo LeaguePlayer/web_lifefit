@@ -29,11 +29,22 @@ class SiteController extends FrontController
 	 */
 	public function actionIndex()
 	{
-	    
+	    $node = Structure::model()->findByUrl('main');
+        $page = $node->getComponent();
+        
        
-       
-        $this->title = Yii::app()->config->get('app.name');
-		$this->render('index');
+        if ( !empty($node->seo->meta_title) )
+            $this->title = $node->seo->meta_title;
+        else
+            $this->title = $node->name.' | '.Yii::app()->config->get('app.name');
+
+        Yii::app()->clientScript->registerMetaTag($node->seo->meta_desc, 'description', null, array('id'=>'meta_description'), 'meta_description');
+        Yii::app()->clientScript->registerMetaTag($node->seo->meta_keys, 'keywords', null, array('id'=>'keywords'), 'meta_keywords');
+        
+        $gallery = $page->getGallery();
+        
+        
+		$this->render('index', array('page'=>$page, 'gallery'=>$gallery));
 	}
     
     public function actionBuycard($id_card, $slot)
@@ -132,6 +143,74 @@ class SiteController extends FrontController
           
         
         $title = "Гостевое занятие";
+        
+        $this->renderPartial('/site/order/main', array('title'=>$title, 'type'=>'guest'));
+    }
+    
+    public function actionAbout($personal)
+    {
+        if(!Yii::app()->request->isAjaxRequest)
+            throw new CHttpException('404','error');
+       
+        
+          
+        $model = Employe::model()->findByPk($personal);
+        if(!$model)
+            throw new CHttpException('404','error');
+            
+        $data['model']=$model;
+        
+        $title = "{$model->name}";
+        
+        $this->renderPartial('/site/order/main', array('title'=>"$model->surname $model->name", 'type'=>'about', 'data'=>$data));
+    }
+    
+    
+ 
+    
+    
+    public function actionGoTo($sport)
+    {
+        if(!Yii::app()->request->isAjaxRequest)
+            throw new CHttpException('404','error');
+       
+         if (isset($_POST['Order']))
+          {
+            header('Content-type: application/json');
+            $model = new Orders;
+			$model->attributes = $_POST['Order'];
+			$model->status = 0;
+
+			if($model->save())
+			{
+						if($model->name) $message .="Имя: {$model->name}<br>";
+						if($model->phone) $message .="Номер телефона: {$model->phone}<br>";
+						//if($model->rating) $message .="Оценка: {$model->rating}<br>";
+					//	if($model->comment) $message .="Комментарий: {$model->comment}<br>";
+						//$message.="{$model->create_time}";
+					//	$message.="http://{$_SERVER['SERVER_NAME']}/admin/reviews/update/id/{$model->id}/list_id/{$model->id_list}";
+
+							$date = date('d.m.Y H:i');
+							$message .="Время заявки: {$date}<br>";	
+
+
+
+				//		if(SiteHelper::sendMail("Получен новый вопрос/заявка сайта!",$message,Yii::app()->config->get('app.email'),"no-reply@alextour72.ru")) 
+				echo CJSON::encode("OK");
+			}
+			else
+			{
+			
+				echo CJSON::encode($model->getErrors());	
+			}
+            die();
+          }
+          
+        $model = Sport::model()->findByPk($sport);
+        if(!$model)
+            throw new CHttpException('404','error');
+        
+        $title = "Заявка на посещения {$model->title}";
         
         $this->renderPartial('/site/order/main', array('title'=>$title, 'type'=>'guest'));
     }

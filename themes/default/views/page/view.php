@@ -1,4 +1,4 @@
-<div class="backgroundPage">
+<div class="backgroundPage" id="begin_content">
     <div class="fix-width">
         <div class="captionPage"><h1><? echo $node->name ?></h1><div class="breadcrumb"><?php $this->widget('zii.widgets.CBreadcrumbs', array(
 		'separator'=>' → ',
@@ -30,7 +30,7 @@
                             
                             
                                 <div class="employer">
-                                    <a href="javascript:void(0);">
+                                    <a class="fancybox.ajax run_fancy" href="/site/about/personal/<? echo $employer->id; ?>">
                                         <? if($employer->img_photo) { ?>
                                             <? echo $employer->getImage('small'); ?>
                                         <? } else { ?>
@@ -80,6 +80,8 @@
                 <? foreach( $page->getGalleries() as $gallery ) { ?>
                 
                 <div class="slider_big">
+                    <div class="to_right gal_arrow"></div>
+                    <div class="to_left gal_arrow"></div>
                     <div class="title_slider">
                         <div class="fix-width"><? echo $gallery->gallery_name; ?></div>
                     </div>
@@ -118,7 +120,7 @@
             <div class="rel">
                 <div class="contacts">
                     <div class="captionMap">Мы <br />находимся:</div>
-                    <div class="street">Тюмень, Широтная,  д 189, <br />Фитнес клуб "Life Fit"</div>
+                    <div class="street">Тюмень, Широтная,  д 189, к1 <br />Фитнес клуб "Life Fit"</div>
                 </div>
                 <div class="angleMap"></div>
             </div>
