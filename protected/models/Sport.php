@@ -158,6 +158,13 @@ class Sport extends EActiveRecord
 			return $array;
 	}
     
+    public static function getDayOfClassesEng($n)
+	{
+		$array = array( "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" );
+		
+		return array_search($n, $array);
+	}
+    
     public static function getTimeOfClasses($n = false)
 	{
 		$array = array( "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"   );
@@ -197,6 +204,69 @@ class Sport extends EActiveRecord
 			return $array[$n];
 		else
 			return $array;
+    }
+    
+    public static function getNextTrain()
+    {
+        $string = "";
+        $data=array();
+        $today = date('D');
+        $time = date('H:i',strtotime("+2 hours"));
+        $numeric_today = Sport::getDayOfClassesEng($today);
+        $find_all_right_sports = SportSchedule::model()->find( array( 'order'=>'day_of ASC, time_of ASC', 'condition'=>"day_of > :day or (day_of =:day and time_of>=:time)", 'params'=>array(':day'=>$numeric_today,'time'=>$time)) );
+        if($find_all_right_sports) 
+        {
+             if($numeric_today == $find_all_right_sports->day_of)
+                $string = "Сегодня вы можете успеть на увлекательные занятия по {$find_all_right_sports->sport->title}.";
+             else
+             {
+                $diff = $find_all_right_sports->day_of- $numeric_today;
+                
+                switch($diff)
+                {
+                    case 1:
+                         $string = "Завтра вы можете посетить увлекательное занятие по {$find_all_right_sports->sport->title}.";
+                    break;
+                    case 2:
+                         $string = "Запланируйте на послезавтра поход на занятие по {$find_all_right_sports->sport->title}.";
+                    break;
+                    default:
+                          $date_start = date('d.m',strtotime("+{$diff} days"));
+                          $string = "Посетите ближайшее занятие {$date_start} по {$find_all_right_sports->sport->title}.";
+                    break;
+                }
+             }
+        }
+        else // значит тренеровка слева (по дню)
+        {
+            $find_all_right_sports = SportSchedule::model()->find( array( 'order'=>'day_of ASC, time_of ASC', 'condition'=>"day_of < :day or (day_of = :day and time_of<:time)", 'params'=>array(':day'=>$numeric_today,'time'=>$time)) );
+            if($find_all_right_sports) 
+            {
+                
+                        $diff = $numeric_today - $find_all_right_sports->day_of;
+                        $string = $diff;
+                        $diff_of_weak = 7-$diff;
+                        switch($diff_of_weak)
+                        {
+                            case 1:
+                                 $string = "Завтра вы можете посетить увлекательное занятие по {$find_all_right_sports->sport->title}.";
+                            break;
+                            case 2:
+                                 $string = "Запланируйте на послезавтра поход на занятие по {$find_all_right_sports->sport->title}.";
+                            break;
+                            default:
+                                  $date_start = date('d.m',strtotime("+{$diff_of_weak} days"));
+                                  $string = "Посетите ближайшее занятие {$date_start} по {$find_all_right_sports->sport->title}.";
+                            break;
+                        }
+                     
+            }
+        }
+        $data['model']=$find_all_right_sports;
+        $data['string']=$string;
+        
+        
+        return $data;
     }
     
     

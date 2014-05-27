@@ -52,9 +52,11 @@ class SiteController extends FrontController
                              );
                              
        
+        $getNextTrain = Sport::getNextTrain();
+       
+       
         
-        
-		$this->render('index', array('page'=>$page, 'gallery'=>$gallery));
+		$this->render('index', array('page'=>$page, 'gallery'=>$gallery,'next_training'=>$getNextTrain));
 	}
     
     public function actionBuycard($id_card, $slot)

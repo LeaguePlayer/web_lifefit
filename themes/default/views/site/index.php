@@ -62,21 +62,24 @@
                             <button class="red-button">Записаться <i class="arrow-right"></i></button>
                         </form>
                     </div>
-
-                    <div class="block right yoga">
-                        <div class="content">
-                            <p class="label">Йога</p><br>
-                            <p class="desc">Сегодня вы можете успеть на увлекательные занятия по йоге.</p>
-                            <a class="red-button fancybox.ajax run_fancy" href="/site/goto/sport/1">Посетить <i class="arrow-right"></i></a>
-                            <p class="beginning">
-                                <span class="text">Начало занятий</span>
-                                <span class="timer">16</span><span class="timer">20</span>
-                            </p>
-                            <p class="address">
-                                Ждем Вас по <a href="/page/kontakty#begin_content">адресу</a> <span>Тюмень, Широтная, 66</span>
-                            </p>
+                    
+                    <? if($next_training) { ?>
+                        <div class="block right yoga" style="background-image: url(<? echo $next_training['model']->sport->imgBehaviorPreview_coming_soon->getImageUrl('small'); ?>);">
+                            
+                            <div class="content">
+                                <p class="label"><? echo $next_training['model']->sport->title;?></p><br>
+                                <p class="desc"><? echo $next_training['string'];?></p>
+                                <a class="red-button fancybox.ajax run_fancy" href="/site/goto/sport/<? echo $next_training['model']->sport->id;?>">Посетить <i class="arrow-right"></i></a>
+                                <p class="beginning">
+                                    <span class="text">Начало занятий</span>
+                                    <span class="timer"><? echo date('H',strtotime($next_training['model']->time_of));?></span><span class="timer"><? echo date('i',strtotime($next_training['model']->time_of));?></span>
+                                </p>
+                                <p class="address">
+                                    Ждем Вас по <a href="/page/kontakty#begin_content">адресу</a> <span>Тюмень, Широтная, 66</span>
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    <? } ?>
 
                     <div class="block right fitness">
                         <div class="content">

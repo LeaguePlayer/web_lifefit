@@ -38,10 +38,12 @@ class Controller extends CController
     protected function preinit()
     {
         parent::preinit();
+        
     }
 
     public function init(){
         parent::init();
+        date_default_timezone_set("Asia/Dhaka");
         $this->title = Yii::app()->name;
         $this->cs = Yii::app()->clientScript;
         $this->cs->registerCoreScript('jquery');

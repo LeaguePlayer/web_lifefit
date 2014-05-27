@@ -17,7 +17,7 @@
         array(
             'name'=>'img_preview',
             'type'=>'raw',
-            'value'=>'TbHtml::imageCircle($data->getImageUrl("icon"))',
+            'value'=>'TbHtml::imageCircle($data->imgBehaviorPreview_coming_soon->getImageUrl("icon"))',
             'filter'=>false
         ),
         array(
