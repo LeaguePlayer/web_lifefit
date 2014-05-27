@@ -1126,7 +1126,10 @@ i[class|=arrow] {
   line-height: 0;
   height: 0;
 }
-
+.owl-carousel .owl-stage
+{
+    width:17000px !important;
+}
 .owl-carousel{
   display: none;
   width: 100%;
@@ -1251,7 +1254,8 @@ i[class|=arrow] {
     user-select: none;
     background: blue;
     height: 710px;
-    width: 1070px;
+    width: 1067px;
+    border-right: 4px solid #222222;
 }
 /* If mouseDrag:false then you are able to select text */
 .owl-carousel.owl-text-select-on .owl-item{

@@ -41,7 +41,15 @@ class SiteController extends FrontController
         Yii::app()->clientScript->registerMetaTag($node->seo->meta_desc, 'description', null, array('id'=>'meta_description'), 'meta_description');
         Yii::app()->clientScript->registerMetaTag($node->seo->meta_keys, 'keywords', null, array('id'=>'keywords'), 'meta_keywords');
         
-        $gallery = $page->getGallery();
+        $gallery = array(
+                            1 => array('name'=>"Тренажерный зал", 'link'=>'/page/trenazhernyj-zal', 'slogan'=>'Стремление к победе'),
+                            2 => array('name'=>"Сильный фитнес", 'link'=>'/page/sil-nyj-fitnes', 'slogan'=>'Созидание и цель'),
+                            3 => array('name'=>"Мягкий фитнес", 'link'=>'/page/myagkij-fitnes', 'slogan'=>'Легкость движения'),
+                            4 => array('name'=>"TRX", 'link'=>'/page/trx', 'slogan'=>'Гибкость тела'),
+                            5 => array('name'=>"Бокс", 'link'=>'/page/boks', 'slogan'=>'Сила & точность'),
+                            6 => array('name'=>"Йога", 'link'=>'/page/joga', 'slogan'=>'Гибкость и душа'),
+                            7 => array('name'=>"Танцевальные направление", 'link'=>'/page/tanceval-nye-napravlenie', 'slogan'=>'Движение и совешенство'),
+                             );
         
         
 		$this->render('index', array('page'=>$page, 'gallery'=>$gallery));

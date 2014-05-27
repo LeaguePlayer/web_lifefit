@@ -9,9 +9,9 @@
         <ul>
             
             
-            <? foreach ( $gallery->galleryPhotos as $index => $photo ){ ?>
+            <?  foreach( $gallery as $id=>$gal) { ?>
                  <li >
-                    <a<? echo ($index+1 == 1) ? ' class="active"' : ''; ?> href="#" data-jump="<? echo $index+1; ?>"><? echo $photo->name; ?></a>
+                    <a<? echo ($id == 1) ? ' class="active"' : ''; ?> href="#" data-jump="<? echo $id; ?>"><? echo $gal['name']; ?></a>
                 </li>
             <? } ?>            
         </ul>
@@ -21,22 +21,25 @@
                 <img src="/media/images/slider/main.png">
                 
             </div>
-            <? foreach ( $gallery->galleryPhotos as $photo ){ ?>
+                <? foreach( $gallery as $id=>$gal) { ?>
                  <div class="slide-item">
-                    <? echo $photo->getImage('big'); ?>
+                        <img src="<? echo $this->getAssetsUrl() ?>/img/slider/<? echo $id ?>.jpg" />
+                    
                     <div class="info">
-                    <div class="caption">
-                        <? echo $photo->name; ?>
-                    </div>
-                    <div class="title">
-                        <? echo $photo->description; ?>
-                    </div>
-                    <div class="record">
-                        <a href="#" class="red-button">Узнать</a>
-                    </div>
-                </div>                    
+                        <div class="caption">
+                            <? echo $gal['name']; ?>
+                        </div>
+                        <div class="title">
+                           <? echo $gal['slogan']; ?>
+                        </div>
+                        <div class="record">
+                            <a href="<? echo $gal['link']; ?>" class="red-button">Узнать</a>
+                        </div>
+                    </div>                    
                 </div>
             <? } ?>
+                
+            
              
         </div>
     </div>

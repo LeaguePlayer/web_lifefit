@@ -1,4 +1,5 @@
 
+
 $(document).ready(function() {
 
     
@@ -30,8 +31,10 @@ $(document).ready(function() {
 
 
  
-  $("#slide-top").owlCarousel({pagination:false});
+ $("#slide-top").owlCarousel();
   
+  
+
   
 
     setTimeout(function() {
