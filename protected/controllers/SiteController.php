@@ -50,6 +50,8 @@ class SiteController extends FrontController
                             6 => array('name'=>"Йога", 'link'=>'/page/joga', 'slogan'=>'Гибкость и душа'),
                             7 => array('name'=>"Танцевальные направление", 'link'=>'/page/tanceval-nye-napravlenie', 'slogan'=>'Движение и совешенство'),
                              );
+                             
+       
         
         
 		$this->render('index', array('page'=>$page, 'gallery'=>$gallery));

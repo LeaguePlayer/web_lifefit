@@ -12,7 +12,7 @@
 
 <?php echo $form->dropDownListControlGroup($model,'vk_plugin', array('Нет', 'Да'),array('class'=>'span8')); ?>
 
-<?php echo $form->textAreaControlGroup($model,'description',array('rows'=>6, 'cols'=>50, 'class'=>'span12')); ?>
+<?php // echo $form->textAreaControlGroup($model,'description',array('rows'=>6, 'cols'=>50, 'class'=>'span12')); ?>
 
 <div class='control-group'>
 	<?php echo CHtml::activeLabelEx($model, 'wswg_body'); ?>

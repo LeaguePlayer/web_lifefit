@@ -95,7 +95,7 @@ class Sport extends EActiveRecord
 						'centeredpreview' => array(90, 90),
 					),
 					'small' => array(
-						'resize' => array(200, 180),
+						'adaptiveResize' => array(540, 422),
 					)
 				),
 			),

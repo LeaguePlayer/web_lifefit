@@ -1252,7 +1252,7 @@ i[class|=arrow] {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background: blue;
+    
     height: 710px;
     width: 1067px;
     border-right: 4px solid #222222;

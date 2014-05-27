@@ -106,83 +106,41 @@
             <div class="sliders-block">
                 <div class="fix-width">
                     <ul class="switch_slider">
-                        <li class="active"><a href="#">Тренажерный зал</a></li>
-                        <li><a href="#">Малый зал</a></li>
-                        <li><a href="#">Большой зал</a></li>
-                        <li><a href="#">Ресепшн</a></li>
+                        <? foreach ( $page->getGalleries() as $id=>$gal ) { ?>
+                            
+                            <li<? echo ($id==0) ? " class='active'" : "";?> ><a href="#"><? echo $gal->gallery_name; ?></a></li>
+                        <? } ?>
+                        
+                       
                     </ul>
                 </div>
 
                 <div class="sliders">
-                    <!-- Один слайдер -->
-                    <div class="slider">
-                        <div class="fix-width">
-                            <div class="slider-width">
-                                <div class="wrap">
-                                    <div class="slider_container" style="position: relative; top: 0px; left: 0px; width: 1400px; height: 535px;">
-                                        <!-- Slides Container -->
-                                        <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 1400px; height: 535px;">
-                                            <div><img u="image" src="<? echo $this->getAssetsUrl();?>/img/slide2.jpg" /></div>
-                                            <div><img u="image" src="<? echo $this->getAssetsUrl();?>/img/slide3.jpg" /></div>
+                
+                    <? foreach ( $page->getGalleries() as $id=>$gal ) { ?>
+                        <div class="slider">
+                            <div class="fix-width">
+                                <div class="slider-width">
+                                    <div class="wrap">
+                                        <div class="slider_container" style="position: relative; top: 0px; left: 0px; width: 1400px; height: 535px;">
+                                            <!-- Slides Container -->
+                                            <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 1400px; height: 535px;">
+                                                 <? foreach( $gal->galleryPhotos as $i => $photo ) { ?>
+                                                    <div><img u="image" src="<? echo $photo->getUrl('big'); ?>" /></div>
+                                                 <? } ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <? } ?>
+                   
                     
-                    <!-- Второй слайдер -->
-                    <div class="slider">
-                        <div class="fix-width">
-                            <div class="slider-width">
-                                <div class="wrap">
-                                    <div class="slider_container" style="position: relative; top: 0px; left: 0px; width: 1400px; height: 535px;">
-                                        <!-- Slides Container -->
-                                        <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 1400px; height: 535px;">
-                                            <div><img u="image" src="<? echo $this->getAssetsUrl();?>/img/slide3.jpg" /></div>
-                                            <div><img u="image" src="<? echo $this->getAssetsUrl();?>/img/slide4.jpg" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Третий слайдер -->
-                    <div class="slider">
-                        <div class="fix-width">
-                            <div class="slider-width">
-                                <div class="wrap">
-                                    <div class="slider_container" style="position: relative; top: 0px; left: 0px; width: 1400px; height: 535px;">
-                                        <!-- Slides Container -->
-                                        <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 1400px; height: 535px;">
-                                            <div><img u="image" src="<? echo $this->getAssetsUrl();?>/img/slide2.jpg" /></div>
-                                            <div><img u="image" src="<? echo $this->getAssetsUrl();?>/img/slide4.jpg" /></div>
-                                            <div><img u="image" src="<? echo $this->getAssetsUrl();?>/img/slide3.jpg" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Четвертый слайдер -->
-                    <div class="slider">
-                        <div class="fix-width">
-                            <div class="slider-width">
-                                <div class="wrap">
-                                    <div class="slider_container" style="position: relative; top: 0px; left: 0px; width: 1400px; height: 535px;">
-                                        <!-- Slides Container -->
-                                        <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 1400px; height: 535px;">
-                                            <div><img u="image" src="<? echo $this->getAssetsUrl();?>/img/slide2.jpg" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                  </div>
 
                 </div>
 
-            </div>
+            
             <!-- Конец слайдеры -->
