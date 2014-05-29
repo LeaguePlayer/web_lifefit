@@ -3,6 +3,8 @@
 <div class="slider-fix">
 
     <div class="slide-wrap">
+        <div class="slide-prev"></div>
+        <div class="slide-next"></div>
         <div class="left_gradient gradient"></div>
         <div class="right_gradient gradient"></div>
         <div class="slider-list">

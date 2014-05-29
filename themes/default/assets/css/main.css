@@ -1372,17 +1372,23 @@ i[class|=arrow] {
 .slider-list ul li a.active{
   border: solid;
 }
-.owl-prev{
+.slide-prev{
+  cursor: pointer;
   position: absolute;
   top: 350px;
   left: -5%;
+  z-index: 100;
   width: 52px;
   height: 26px;
   background: url('../img/arrow-left.png') no-repeat;
 }
-.owl-next{
+
+.slide-next{
+  cursor: pointer;
+  z-index: 50;
   position: absolute;
   top: 350px;
+  z-index: 100;
   right: -5%;
   width: 52px;
   height: 26px;
