@@ -54,7 +54,7 @@
                 <div class="top">
                     <div class="inline-middle"><a class="logo" href="/"><img src="<? echo $this->getAssetsUrl();?>/img/logo.png" alt=""/></a><span>Жизнь в ритме спорта</span></div>
                     <div class="inline-middle"><span class="phone">8 3452 612-691</span></div>
-                    <div class="inline-middle"><span class="address">Тюмень, Широтная, 189, к1</span></div>
+                    <div class="inline-middle"><span class="address">Тюмень, Широтная 189, к1</span></div>
                 </div>
                 <div class="bottom">
                     <nav class="menu">
@@ -103,7 +103,7 @@
                     <? $this->widget('zii.widgets.CMenu', array('items'=>$this->menu, 'htmlOptions'=>array('class'=>'menu'))); ?>
 
                     <div class="order">
-                        <p class="address">Тюмень, Широтная, 189, к1</p>
+                        <p class="address">Тюмень, Широтная 189, к1</p>
                         <p class="phone">8 (3452) 612-691</p>
                         <a class="fancybox.ajax run_fancy" href="/site/order">Записаться</a>
                     </div>

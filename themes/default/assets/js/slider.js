@@ -1,6 +1,10 @@
+var intervalID;
+
+
+
 $(document).ready(function(){
    
-   slider.adaptiveSlider();
+   
    
    
    $('.to_right').click(function(){
@@ -14,6 +18,9 @@ $(document).ready(function(){
         slider.goLeft( $(this) );
         
     });
+  
+  window.intervalID = setInterval(sec, 500) // использовать функцию
+  
 });
 
 
@@ -23,6 +30,16 @@ $(window).resize(function(){
    slider.adaptiveSlider();
     
 });
+
+
+
+
+// (2)
+function sec() { 
+  slider.adaptiveSlider();
+  clearInterval(window.intervalID);
+}
+
 
 
 var slider = 
@@ -36,6 +53,10 @@ var slider =
         $('.block_with_img').css('width', width_screen);
         
         var height_img = $('.block_with_img.active').height();
+      //  var height_img = $('.block_with_img.active').css('height');
+     // var height_img = $('.big_photos').height();
+     
+     console.log(height_img);
         $('.slider_big').css('height', height_img);
         
         var activeElementIndex = $( ".block_with_img" ).index( $('.block_with_img.active') );

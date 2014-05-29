@@ -75,7 +75,7 @@
                                     <span class="timer"><? echo date('H',strtotime($next_training['model']->time_of));?></span><span class="timer"><? echo date('i',strtotime($next_training['model']->time_of));?></span>
                                 </p>
                                 <p class="address">
-                                    Ждем Вас по <a href="/page/kontakty#begin_content">адресу</a> <span>Тюмень, Широтная, 66</span>
+                                    Ждем Вас по <a href="/page/kontakty#begin_content">адресу</a> <span>Тюмень, Широтная 189, к1</span>
                                 </p>
                             </div>
                         </div>
