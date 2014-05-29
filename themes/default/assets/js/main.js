@@ -32,17 +32,14 @@ $(document).ready(function() {
 
  
  $("#slide-top").owlCarousel();
-  
-  
-
-  
-
+    var owl = $("#slide-top").data('owlCarousel');
     setTimeout(function() {
-        $('.owl-prev').on("click",function(){
+        $('.slide-prev').on("click",function(){
 
         var id=parseInt($('.slider-list ul li .active').data('jump'),10);
-
         id= id-1==0 ?  $('.slider-list ul li a').length : id-1 ;
+
+        owl.goTo(id);
 
         $('.slider-list ul li .active').removeClass('active');
 
@@ -54,10 +51,14 @@ $(document).ready(function() {
             }
         })
     })    
-    $('.owl-next').on("click",function(){
+    $('.slide-next').on("click",function(){
+
+             
 
             var id=parseInt($('.slider-list ul li .active').data('jump'),10);
             id= id+1!=$('.slider-list ul li a').length+1 ? id+1 : 1;
+
+            owl.goTo(id);
 
             $('.slider-list ul li .active').removeClass('active');
 
@@ -68,10 +69,10 @@ $(document).ready(function() {
             })
 
         })
-    }, 1000);
+    }, 3000);
     
 
-    var owl = $("#slide-top").data('owlCarousel');
+    //var owl = $("#slide-top").data('owlCarousel');
 
   $('.slider-list ul li a').click(function(){
 
@@ -84,9 +85,12 @@ $(document).ready(function() {
     
 
     $(this).addClass('active')
+
     console.log($(this).data('jump'))
 
-    owl.goTo(parseInt($(this).data('jump'),10));
+    var id=parseInt($(this).data('jump'),10);
+
+    owl.goTo(id);
     return false;
 
   })

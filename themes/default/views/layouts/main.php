@@ -1,11 +1,11 @@
 <?php
 
 	$cs = Yii::app()->clientScript;
-	$cs->registerCssFile($this->getAssetsUrl().'/css/style.css?v=2');
+	$cs->registerCssFile($this->getAssetsUrl().'/css/style.css');
 	$cs->registerCssFile($this->getAssetsUrl().'/css/fancybox/jquery.fancybox.css');
 	$cs->registerCssFile($this->getAssetsUrl().'/css/jquery.ui/overcast/jquery-ui-1.10.3.custom.min.css');
 	$cs->registerCssFile($this->getAssetsUrl().'/css/normalize.min.css');
-	$cs->registerCssFile($this->getAssetsUrl().'/css/main.css?v=2');
+	$cs->registerCssFile($this->getAssetsUrl().'/css/main.css');
 	
 	$cs->registerCoreScript('jquery');
 	$cs->registerCoreScript('jquery.ui');
@@ -60,7 +60,7 @@
                     <nav class="menu">
                         <? $this->widget('zii.widgets.CMenu', array('items'=>$this->menu)); ?>
                        <!-- <ul>
-                            <li><a href="/news">Новости</a></li>
+                              <li><a href="/news">Новости</a></li>
                             <li><a href="#">О нас</a></li>
                             <li><a href="#">Как начать</a></li>
                             <li><a href="#">Акции и статьи</a></li>
