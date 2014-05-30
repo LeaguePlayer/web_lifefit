@@ -6,7 +6,17 @@ $(document).ready(function() {
     
     
     
-    
+    $(window).resize(function(){
+
+        if ($(this).width()<1300)
+        {
+            $('.slide-prev,.slide-next').hide();
+        }
+            else {
+
+                $('.slide-prev,.slide-next').show();
+            }
+    })
     
     $('.controlMap.a_print').click(function(){
       
@@ -86,7 +96,6 @@ $(document).ready(function() {
 
     $(this).addClass('active')
 
-    console.log($(this).data('jump'))
 
     var id=parseInt($(this).data('jump'),10);
 

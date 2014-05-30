@@ -49,7 +49,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div class="all_divs">
-        <header>
+        <div class="header">
             <div class="fix-width">
                 <div class="top">
                     <div class="inline-middle"><a class="logo" href="/"><img src="<? echo $this->getAssetsUrl();?>/img/logo.png" alt=""/></a><span>Жизнь в ритме спорта</span></div>
@@ -84,7 +84,7 @@
                     </div>
 
             </div>
-        </header>
+        </div>
 
 
         <div class="content">
@@ -96,7 +96,7 @@
 
 
 
-        <footer>
+        <div class="footer">
             <div class="fix-width">
                 <div class="content">
                     
@@ -113,7 +113,6 @@
                         <p class="slogan">Жизнь<br>в ритме<br><strong>спорта</strong></p>
                     </div>
                 </div>
-
                 <div class="bottom">
                     <p class="socials">
                         <a class="vk" target="_blank" href="https://vk.com/lifefit72"></a>
@@ -125,7 +124,7 @@
                     <p class="powered">© Фитнес-центр Lifefit 2014. Все права защищены</p>
                 </div>
             </div>
-        </footer>
+        </div>
 
         
        
