@@ -75,28 +75,28 @@ form input {
   padding: 12px 15px;
   border: 1px solid #1a1a1a; }
 
-header {
+.header {
     position:relative;
   padding: 28px 0; }
-  header a.logo {
+  .header a.logo {
     display: inline-block;
     vertical-align: middle;
     margin-right: 15px; }
-    header a.logo + span {
+    .header a.logo + span {
       display: inline-block;
       vertical-align: middle;
       color: white;
       font-size: 18px;
       font-family: "a_avantetckheavy", sans-serif;
       text-transform: uppercase; }
-  header .phone {
+  .header .phone {
     font-size: 30px;
     font-family: "a_avantetckmedium", sans-serif;
     line-height: 25px;
     display: inline-block;
     width: 254px;
     text-align: center; }
-    header .phone:before {
+    .header .phone:before {
       content: "";
       display: inline-block;
       vertical-align: middle;
@@ -104,26 +104,27 @@ header {
       height: 25px;
       background: url(../img/sprites.png) -2px -75px no-repeat;
       margin-right: 5px; }
-  header .address {
+  .header .address {
     font-family: "Ubuntu", sans-serif;
     display: inline-block;
     font-size: 14px;
     width: 180px; }
-  header .top {
+  .header .top {
     margin-bottom: 20px; }
-  header .record{
+  .header .record{
+    float: left;
     display: inline-block;
     padding: 15px 15px 8px 15px;
-    background: #d12424;
+    background: #d12424!important;
     margin-left: 20px;
     bottom:-28px;
     right:0;
     position: absolute;
   }  
-  header .bottom{
+  .header .bottom{
     position: relative;
   }
-  header .record a{
+  .header .record a{
     background: #e32727;
     padding-bottom: 15px;
     padding-top: 10px;
@@ -135,13 +136,13 @@ header {
     color: #fff;
     display: block;
   }
-  header .record .discription{
+  .header .record .discription{
     font-size: 12px;
     padding-top: 3px;
     display: block;
     padding-bottom: 7px;
   }
-  header .record a span{
+  .header .record a span{
     width: 14px;
     height: 12px;
     background: url('../img/arrow-record.png')no-repeat!important;
@@ -558,13 +559,13 @@ nav.menu {
         color: #676768;
         border-bottom-color: transparent; }
 
-footer {
+.footer {
   padding: 40px 0;
   color: #676768;
   font-family: "Ubuntu", sans-serif; }
-  footer .content {
+  .footer .content {
     overflow: hidden; }
-    footer .content ul.menu {
+    .footer .content ul.menu {
       width: 430px;
       list-style: none;
       font-size: 0;
@@ -572,39 +573,39 @@ footer {
       vertical-align: top;
       padding-left: 0;
       margin-left: 0; }
-      footer .content ul.menu li {
+      .footer .content ul.menu li {
         font-size: 16px;
         display: inline-block;
         width: 150px;
         border-right: 1px solid #676768;
         margin-right: 30px;
         vertical-align: top; }
-        footer .content ul.menu li a {
+        .footer .content ul.menu li a {
           font-size: 16px;
           display: inline-block;
           color: #676768;
           padding: 5px 10px 5px 0;
           font-weight: 500; }
-          footer .content ul.menu li a:hover {
+          .footer .content ul.menu li a:hover {
             color: #bababa; }
-    footer .content .order {
+    .footer .content .order {
       display: inline-block;
       vertical-align: top;
       text-align: center; 
       padding-right: 70px;
       border-right: solid 1px;
     }
-      footer .content .order p {
+      .footer .content .order p {
         margin: 0;
         line-height: 1.4; }
-      footer .content .order .address {
+      .footer .content .order .address {
         font-size: 14px;
         font-family: "Ubuntu", sans-serif;
         font-weight: 300;
         position: relative;
         text-align: left;
         margin-bottom: 5px; }
-        footer .content .order .address:before {
+        .footer .content .order .address:before {
           content: "";
           position: absolute;
           top: 50%;
@@ -613,11 +614,11 @@ footer {
           background: url(../img/sprites.png) -26px -76px no-repeat;
           width: 20px;
           height: 20px; }
-      footer .content .order .phone {
+      .footer .content .order .phone {
         text-align: left;
         font-family: "Ubuntu", sans-serif;
         font-size: 22px; }
-      footer .content .order a {
+      .footer .content .order a {
         font-family: "Exo 2", sans-serif;
         font-size: 26px;
         font-style: italic;
@@ -627,11 +628,13 @@ footer {
         margin-top: 30px; 
         padding-bottom: 5px;
       }
-    footer .content .master {
+    .footer .content .master {
       display: inline-block;
+      float: right;
       vertical-align: top;
-      float: right; }
-      footer .content .master a.amobile {
+      float: right; 
+    }
+      .footer .content .master a.amobile {
         color: #bababa;
         background: url(../img/amobile.png) right center no-repeat;
         padding-right: 98px;
@@ -640,7 +643,7 @@ footer {
         font-weight: 300;
         line-height: 23px;
         display: inline-block; }
-      footer .content .master .slogan {
+      .footer .content .master .slogan {
         line-height: 1;
         text-align: center;
         color: #e32727;
@@ -649,24 +652,30 @@ footer {
         font-style: italic;
         text-transform: uppercase;
         letter-spacing: 0.4em; }
-        footer .content .master .slogan strong {
+
+        .footer .content .master .slogan strong {
           font-weight: bold;
           font-size: 50px;
           font-weight: normal;
           line-height: 1; }
-  footer .bottom {
+          .lt-ie9 .footer .content .master .slogan strong {
+          font-weight: bold;
+          font-size: 40px;
+          font-weight: normal;
+          line-height: 1; }
+  .footer .bottom {
     text-align: center;
     overflow: hidden; }
-    footer .bottom .powered {
+    .footer .bottom .powered {
       font-weight: 300;
       font-size: 14px;
       margin: 10px 0 0; }
-    footer .bottom .socials {
+    .footer .bottom .socials {
       margin: 0;
       float: right;
       width: 230px;
       text-align: left; }
-      footer .bottom .socials a {
+      .footer .bottom .socials a {
         display: inline-block;
         width: 31px;
         height: 31px;
@@ -675,19 +684,19 @@ footer {
 
       }
 
-      footer .bottom .socials .vk{
+      .footer .bottom .socials .vk{
         background: url(../img/vk.png) 0 0px no-repeat;
       }
-      footer .bottom .socials .instagram{
+      .footer .bottom .socials .instagram{
         background: url(../img/instagram.png) 0 0px no-repeat;
       }
-      footer .bottom .socials .skype{
+      .footer .bottom .socials .skype{
         background: url(../img/skype.png) 0 0px no-repeat;
       }
-      footer .bottom .socials .twitter{
+      .footer .bottom .socials .twitter{
         background: url(../img/twitter.png) 0 0px no-repeat;
       }
-      footer .bottom .socials .facebook{
+      .footer .bottom .socials .facebook{
         background: url(../img/facebook.png) no-repeat;
       }
 .fix-width {
@@ -803,7 +812,7 @@ i[class|=arrow] {
     page-break-inside: avoid; }
 
   thead {
-    display: table-header-group; }
+    display: table-.header-group; }
 
   tr {
     page-break-inside: avoid; }
@@ -1389,7 +1398,7 @@ i[class|=arrow] {
   position: absolute;
   top: 350px;
   z-index: 100;
-  right: -5%;
+  right: -8%;
   width: 52px;
   height: 26px;
   background: url('../img/arrow-right.png') no-repeat; 
