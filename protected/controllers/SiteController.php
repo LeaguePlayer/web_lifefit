@@ -1,9 +1,7 @@
 <?php
-
 class SiteController extends FrontController
 {
 	public $layout = '//layouts/main';
-	
 	/**
 	 * Declares class-based actions.
 	 */
@@ -52,14 +50,11 @@ class SiteController extends FrontController
                             6 => array('name'=>"Йога", 'link'=>'/page/joga', 'slogan'=>'Гибкость и душа'),
                             7 => array('name'=>"Танцевальные направление", 'link'=>'/page/tanceval-nye-napravlenie', 'slogan'=>'Движение и совешенство'),
                         );
-                             
-       
+
         $getNextTrain = Sport::getNextTrain();
         
         $card_on_main = Cards::getCardOnMain();
-       
-       
-        
+
 		$this->render('index', array('data'=>$data, 'gallery'=>$gallery,'next_training'=>$getNextTrain, 'card_on_main'=>$card_on_main));
 	}
     
