@@ -39,6 +39,7 @@ class CardsController extends AdminController
 				$model->save(false);
 				foreach( $_POST['Pricecards'] as $id_slot => $post_pricecard )
 				{
+				    
 					$array_pricecards[$id_slot]->id_card = $model->id;
 					$array_pricecards[$id_slot]->slot = $id_slot;
 					$array_pricecards[$id_slot]->save(false);

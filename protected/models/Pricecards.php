@@ -25,7 +25,7 @@ class Pricecards extends EActiveRecord
     {
         return array(
             array('id_card, slot, price, status, sort', 'numerical', 'integerOnly'=>true),
-            array('create_time, update_time', 'safe'),
+            array('create_time, update_time, comment', 'safe'),
             // The following rule is used by search().
             array('id, id_card, slot, price, status, sort, create_time, update_time', 'safe', 'on'=>'search'),
         );
@@ -50,6 +50,7 @@ class Pricecards extends EActiveRecord
             'sort' => 'Вес для сортировки',
             'create_time' => 'Дата создания',
             'update_time' => 'Дата последнего редактирования',
+            'comment'=>'Комментарий к цене',
         );
     }
 
