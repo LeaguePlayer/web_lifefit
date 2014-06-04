@@ -20,6 +20,10 @@ class Cards extends EActiveRecord
     const BELONGS_TO_ABONEMENT = 0;
     const BELONGS_TO_PERSONAL_TRAINING = 1;
     
+    
+    const NO_PRIORITY = 0;
+    const HAS_PRIORITY = 1;
+    
     public function tableName()
     {
         return '{{cards}}';
@@ -30,7 +34,7 @@ class Cards extends EActiveRecord
     {
         return array(
 			array('name', 'required'),
-            array('type, status, sort', 'numerical', 'integerOnly'=>true),
+            array('type, status, sort, priority', 'numerical', 'integerOnly'=>true),
             array('name, img_preview', 'length', 'max'=>255),
             array('wswg_short_desc, create_time, update_time', 'safe'),
             // The following rule is used by search().
@@ -61,6 +65,7 @@ class Cards extends EActiveRecord
             'sort' => 'Вес для сортировки',
             'create_time' => 'Дата создания',
             'update_time' => 'Дата последнего редактирования',
+            'priority'=>'Выводить на главной',
         );
     }
 
@@ -154,5 +159,10 @@ class Cards extends EActiveRecord
 			return $array;
 		
 	}
+    
+    public static function getCardOnMain()
+    {
+        return self::model()->with(array('price'=>array('order'=>'slot ASC','condition'=>"price is not null")))->find( array( 'condition'=>"priority = :priority", 'order'=>'rand()', 'params'=>array(':priority'=>self::HAS_PRIORITY) ) );
+    }
 
 }

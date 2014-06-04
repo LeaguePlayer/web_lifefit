@@ -32,6 +32,8 @@ class SiteController extends FrontController
 	    $node = Structure::model()->findByUrl('main');
         $page = $node->getComponent();
         
+        $data['page'] = $page;
+        $data['node'] = $node;
        
         if ( !empty($node->seo->meta_title) )
             $this->title = $node->seo->meta_title;
@@ -43,20 +45,22 @@ class SiteController extends FrontController
         
         $gallery = array(
                             1 => array('name'=>"Тренажерный зал", 'link'=>'/page/trenazhernyj-zal', 'slogan'=>'Стремление к победе'),
-                            2 => array('name'=>"Сильный фитнес", 'link'=>'/page/sil-nyj-fitnes', 'slogan'=>'Созидание и цель'),
+                            2 => array('name'=>"Силовой фитнес", 'link'=>'/page/sil-nyj-fitnes', 'slogan'=>'Созидание и цель'),
                             3 => array('name'=>"Мягкий фитнес", 'link'=>'/page/myagkij-fitnes', 'slogan'=>'Легкость движения'),
                             4 => array('name'=>"TRX", 'link'=>'/page/trx', 'slogan'=>'Гибкость тела'),
                             5 => array('name'=>"Бокс", 'link'=>'/page/boks', 'slogan'=>'Сила & точность'),
                             6 => array('name'=>"Йога", 'link'=>'/page/joga', 'slogan'=>'Гибкость и душа'),
                             7 => array('name'=>"Танцевальные направление", 'link'=>'/page/tanceval-nye-napravlenie', 'slogan'=>'Движение и совешенство'),
-                             );
+                        );
                              
        
         $getNextTrain = Sport::getNextTrain();
+        
+        $card_on_main = Cards::getCardOnMain();
        
        
         
-		$this->render('index', array('page'=>$page, 'gallery'=>$gallery,'next_training'=>$getNextTrain));
+		$this->render('index', array('data'=>$data, 'gallery'=>$gallery,'next_training'=>$getNextTrain, 'card_on_main'=>$card_on_main));
 	}
     
     public function actionBuycard($id_card, $slot)

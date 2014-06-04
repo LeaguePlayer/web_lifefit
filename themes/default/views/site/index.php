@@ -83,13 +83,17 @@
                         </div>
                     <? } ?>
 
-                    <div class="block right fitness">
-                        <div class="content">
-                            <p class="label">Месяц фитнеса за:</p>
-                            <p class="price">2 500<span>руб</span></p>
-                            <a class="black-button fancybox.ajax run_fancy" href="/site/buycard/id_card/1/slot/1">Получить <i class="arrow-right"></i></a>
+                    <? if($card_on_main) { ?>
+                        <div class="block right fitness">
+                            <div class="content">
+                                <p class="label">Месяц фитнеса за:</p>
+                                <p class="price"><? echo number_format($card_on_main->price->price, 0, ',', ' '); ?><span>руб</span></p>
+                                <a class="black-button fancybox.ajax run_fancy" href="/site/buycard/id_card/<? echo $card_on_main->id ?>/slot/<? echo $card_on_main->price->id ?>">Получить <i class="arrow-right"></i></a>
+                            </div>
                         </div>
-                    </div>
+                    <? } ?>
+                    
+                    
                 </div>
             </div>
 
@@ -99,9 +103,10 @@
             <!-- Промо -->
             <div class="promo">
                 <div class="content fix-width">
-                    <h2>Фитнес-центр ЛайфФит</h2>
-                    <p>Отдeльно находящееся здание, охраняемый и удобный паркинг, тренажеры и оборудования ведущих фирм мира, квалифицированные тренера и радужный персонал. Комфортные  условия для занятий, гибкий график тренировок. Возможность добиться блестящих результатов и поставленных целей с инструктором и самостоятельно.</p>
-                    <p>Отдeльно находящееся здание, охраняемый и удобный паркинг, тренажеры и оборудования ведущих фирм мира, квалифицированные тренера и радужный персонал. </p>
+                    <h2><? echo $data['node']->name; ?></h2>
+                    <div>
+                        <? echo $data['page']->wswg_body; ?>
+                    </div>
                 </div>
             </div>
             <!-- Конец промо -->
@@ -111,7 +116,7 @@
             <div class="sliders-block">
                 <div class="fix-width">
                     <ul class="switch_slider">
-                        <? foreach ( $page->getGalleries() as $id=>$gal ) { ?>
+                        <? foreach ( $data['page']->getGalleries() as $id=>$gal ) { ?>
                             
                             <li<? echo ($id==0) ? " class='active'" : "";?> ><a href="#"><? echo $gal->gallery_name; ?></a></li>
                         <? } ?>
@@ -122,7 +127,7 @@
 
                 <div class="sliders">
                 
-                    <? foreach ( $page->getGalleries() as $id=>$gal ) { ?>
+                    <? foreach ( $data['page']->getGalleries() as $id=>$gal ) { ?>
                         <div class="slider">
                             <div class="fix-width">
                                 <div class="slider-width">

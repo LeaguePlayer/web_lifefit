@@ -25,7 +25,8 @@
 	</div>
 
 	<?php echo $form->dropDownListControlGroup($model, 'status', Cards::getStatusAliases(), array('class'=>'span8', 'displaySize'=>1)); ?>
-
+    
+    <?php echo $form->checkBoxControlGroup($model,'priority'); ?>
 
 <fieldset>
 <legend>Привязка цен</legend>
