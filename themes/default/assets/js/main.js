@@ -5,7 +5,12 @@ $(document).ready(function() {
     
     
     
-    
+    if ($('html').hasClass('lt-ie7'))
+    {
+        document.location="http://dev.lifefit72.ru/page/redirekt-s-ie-7";
+
+    } else {
+        
     $(window).resize(function(){
 
         if ($(this).width()<1300)
@@ -159,7 +164,7 @@ $(document).ready(function() {
     
     adaptiveShadows();
     
-
+}
 });
 
 $(window).resize(function(){
