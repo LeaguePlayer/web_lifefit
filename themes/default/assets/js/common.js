@@ -25,12 +25,16 @@ $(document).ready(function() {
                     
 					  if(data == "OK")
 					  {
-                $.fancybox.open({
+                             $.fancybox.open({
                                 padding : 0,
                                 href:'/site/thankyou',
                                 type: 'ajax'
                             });
-						  //window.location.href = "/page/spasibo";
+						 
+                          
+							  $(form).find('input[type="text"]').val('');
+							 
+						  
 					  }
 					  else
 					  {
@@ -38,9 +42,7 @@ $(document).ready(function() {
 						  $.each(data, function(key, value){
 						      console.log(key);
 							  $(form).find('input[data-field="'+key+'"]').parent('.row').addClass('error');
-							 // $('textarea[data-field="'+key+'"]').css('border','1px solid #F00');
-							 // $('input[data-field="'+key+'"]').css('border','1px solid #F00');
-							 // $('span[data-field="'+key+'"]').css('color','#F00');
+							 
 						  });
 
 						   

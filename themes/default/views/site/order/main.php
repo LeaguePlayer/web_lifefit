@@ -15,7 +15,7 @@
                 echo $this->renderPartial('/site/_about', array('data'=>$data));
             break;
             case 'thanks':
-                echo "<div class='typography'><p>Наш специалист свяжется с Вами в максимально короткие сроки! Просто дожидайтесь его звонка.</p></div>";
+                echo "<div class='typography'{$data[page]->wswg_body}</div>";
             break;
         }
         

@@ -1009,6 +1009,21 @@ i[class|=arrow] {
     border: none;
     margin: 5px 0;
     text-align: center;
+    
+  }
+  .record-form div.row.error input
+{
+    color:#e32727;
+    border-color:#000;
+
+}
+.record-form .send input
+{
+    cursor:pointer;
+}
+  .record-form div.row input{
+   
+    border: 3px solid #fff;
   }
   .record-form .send{
     background: #c21616;
@@ -1019,9 +1034,9 @@ i[class|=arrow] {
   .record-form input[type=submit]
   {
     background: url('../img/arrow-record.png')no-repeat;
-    background-position: right center;
+    background-position: 174px center;
     color: #fff;
-    
+    width:233px;
   }
   .info{
     float: left;

@@ -566,8 +566,16 @@ table.abonementy tbody tr td span
 }
 table.abonementy tbody tr td .card_buy
 {
+    height:44px;
     margin-top:20px;
     text-align:center;
+}
+table.abonementy tbody tr td .add_info
+{
+    color:#000;
+    font-size:12px;
+    text-align:center;
+    margin-top:8px;
 }
 table.abonementy tbody tr td .card_buy a
 {

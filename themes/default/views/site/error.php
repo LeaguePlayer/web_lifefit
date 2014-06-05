@@ -32,26 +32,26 @@
 			</div>
 			<ul>
 				<li>
-					<a href="#">Тренажерный зал</a>
+					<a href="/page/trenazhernyj-zal">Тренажерный зал</a>
 				</li>
 				<li>
-					<a href="#">мягкий фитнес</a>
+					<a href="/page/myagkij-fitnes">Мягкий фитнес</a>
 				</li>
 				<li>
-					<a href="#">Сильный фитнес</a>
+					<a href="/page/silovoj-fitnes">Сильный фитнес</a>
 				</li>
 				<li>
-					<a href="#">йога</a>
+					<a href="/page/joga">Йога</a>
 				</li>
 				<li>
-					<a href="#">Танцевальные направления</a>
+					<a href="/page/tanceval-nye-napravlenie">Танцевальные направления</a>
 				</li>
 				<li>
-					<a href="#">бокс</a>
+					<a href="/page/boks">Бокс</a>
 
 				</li>
 				<li>
-					<a href="#">trx</a>
+					<a href="/page/trx">TRX</a>
 				</li>
 			</ul>
 		</div>
@@ -62,10 +62,10 @@
 				На главную
 			</li>
 			<li class="fitnes">
-				Фитнес-центр LifeFit <?=date('Y')?>
+				Фитнес-центр LifeFit 2014
 			</li>
 			<li class="phone">
-				8 4352 619 691
+				8 <? echo Yii::app()->config->get('app.code_city'); ?> <? echo Yii::app()->config->get('app.phone'); ?>
 			</li>
 			<li class="logo-amobile">
 				сайт делали в <span class="logo-amobile"></span><br>

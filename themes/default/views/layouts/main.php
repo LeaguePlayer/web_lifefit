@@ -1,11 +1,11 @@
 <?php
 
 	$cs = Yii::app()->clientScript;
-	$cs->registerCssFile($this->getAssetsUrl().'/css/style.css');
+	$cs->registerCssFile($this->getAssetsUrl().'/css/style.css?v=2');
 	$cs->registerCssFile($this->getAssetsUrl().'/css/fancybox/jquery.fancybox.css');
 	$cs->registerCssFile($this->getAssetsUrl().'/css/jquery.ui/overcast/jquery-ui-1.10.3.custom.min.css');
 	$cs->registerCssFile($this->getAssetsUrl().'/css/normalize.min.css');
-	$cs->registerCssFile($this->getAssetsUrl().'/css/main.css');
+	$cs->registerCssFile($this->getAssetsUrl().'/css/main.css?v=2');
 	
 	$cs->registerCoreScript('jquery');
 	$cs->registerCoreScript('jquery.ui');
@@ -20,9 +20,9 @@
 	
 	$cs->registerScriptFile($this->getAssetsUrl().'/js/customslider.jquery.js', CClientScript::POS_END);
 	$cs->registerScriptFile($this->getAssetsUrl().'/js/vendor/jssor.jquery.min.js', CClientScript::POS_END);
-	$cs->registerScriptFile($this->getAssetsUrl().'/js/main.js', CClientScript::POS_END);
+	$cs->registerScriptFile($this->getAssetsUrl().'/js/main.js?v=2', CClientScript::POS_END);
 	
-	$cs->registerScriptFile($this->getAssetsUrl().'/js/common.js', CClientScript::POS_END);
+	$cs->registerScriptFile($this->getAssetsUrl().'/js/common.js?v=2', CClientScript::POS_END);
 ?><!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -53,28 +53,19 @@
             <div class="fix-width">
                 <div class="top">
                     <div class="inline-middle"><a class="logo" href="/"><img src="<? echo $this->getAssetsUrl();?>/img/logo.png" alt=""/></a><span>Жизнь в ритме спорта</span></div>
-                    <div class="inline-middle"><span class="phone">8 3452 612-691</span></div>
-                    <div class="inline-middle"><span class="address">Тюмень, Широтная 189, к1</span></div>
+                    <div class="inline-middle"><span class="phone">8 <? echo Yii::app()->config->get('app.code_city'); ?> <? echo Yii::app()->config->get('app.phone'); ?></span></div>
+                    <div class="inline-middle"><span class="address"><? echo Yii::app()->config->get('app.street'); ?></span></div>
                 </div>
                 <div class="bottom">
                     <nav class="menu">
                         <? $this->widget('zii.widgets.CMenu', array('items'=>$this->menu)); ?>
-                       <!-- <ul>
-                              <li><a href="/news">Новости</a></li>
-                            <li><a href="#">О нас</a></li>
-                            <li><a href="#">Как начать</a></li>
-                            <li><a href="#">Акции и статьи</a></li>
-                            <li><a href="#">Расписание</a></li>
-                            <li class="active"><a href="#">Партнеры</a></li>
-                            <li><a href="#">Цены</a></li>
-                            <li><a href="#">Контакты</a></li>
-                        </ul> -->
+                      
                     </nav>
                     
                     
                     <div class="shedule">
-                        <span class="weekdays">8-23</span>
-                        <span class="weekend">9-22</span>
+                        <span class="weekdays"><? echo Yii::app()->config->get('app.work_time_weekdays'); ?></span>
+                        <span class="weekend"><? echo Yii::app()->config->get('app.work_time_weekend'); ?></span>
                     </div>
                     
                 </div>
@@ -103,8 +94,8 @@
                     <? $this->widget('zii.widgets.CMenu', array('items'=>$this->menu, 'htmlOptions'=>array('class'=>'menu'))); ?>
 
                     <div class="order">
-                        <p class="address">Тюмень, Широтная 189, к1</p>
-                        <p class="phone">8 (3452) 612-691</p>
+                        <p class="address"><? echo Yii::app()->config->get('app.street'); ?></p>
+                        <p class="phone">8 (<? echo Yii::app()->config->get('app.code_city'); ?>) <? echo Yii::app()->config->get('app.phone'); ?></p>
                         <a class="fancybox.ajax run_fancy" href="/site/order">Записаться</a>
                     </div>
 
@@ -115,13 +106,27 @@
                 </div>
                 <div class="bottom">
                     <p class="socials">
-                        <a class="vk" target="_blank" href="https://vk.com/lifefit72"></a>
-                        <a class="instagram" target="_blank" href="https://vk.com/lifefit72"></a>
-                        <a class="facebook" target="_blank" href="https://vk.com/lifefit72"></a>
-                        <a class="twitter" target="_blank" href="https://vk.com/lifefit72"></a>
-                        <a class="skype" target="_blank" href="https://vk.com/lifefit72"></a>
+                        <? if(Yii::app()->config->get('app.vk')){ ?>
+                            <a class="vk" target="_blank" href="<? echo Yii::app()->config->get('app.vk'); ?>"></a>
+                        <? } ?>
+                        
+                        <? if(Yii::app()->config->get('app.instagram')){ ?>
+                            <a class="instagram" target="_blank" href="<? echo Yii::app()->config->get('app.instagram'); ?>"></a>
+                        <? } ?>
+                        
+                        <? if(Yii::app()->config->get('app.fb')){ ?>
+                            <a class="facebook" target="_blank" href="<? echo Yii::app()->config->get('app.fb'); ?>"></a>
+                        <? } ?>
+                        
+                        <? if(Yii::app()->config->get('app.twitter')){ ?>
+                            <a class="twitter" target="_blank" href="<? echo Yii::app()->config->get('app.twitter'); ?>"></a>
+                        <? } ?>
+                        
+                        <? if(Yii::app()->config->get('app.skype')){ ?>
+                            <a class="skype" target="_blank" href="<? echo Yii::app()->config->get('app.skype'); ?>"></a>
+                        <? } ?>
                     </p>
-                    <p class="powered">© Фитнес-центр Lifefit 2014. Все права защищены</p>
+                    <p class="powered">© <? echo Yii::app()->config->get('app.copyright'); ?></p>
                 </div>
             </div>
         </div>
@@ -132,7 +137,7 @@
         </div>
         <div class="hiddenMap">
         <img src='/googleMap/map.png' alt='' />
-        <p>Фитнес клуб Life Fit  -  8 (3452) 612-691  -  Тюмень, Широтная, 189, к1</p>
+        <p>Фитнес клуб Life Fit  -  8 (<? echo Yii::app()->config->get('app.code_city'); ?>) <? echo Yii::app()->config->get('app.phone'); ?>  -  <? echo Yii::app()->config->get('app.street'); ?></p>
     </div>
     </body>
     

@@ -43,7 +43,7 @@ class SiteController extends FrontController
         
         $gallery = array(
                             1 => array('name'=>"Тренажерный зал", 'link'=>'/page/trenazhernyj-zal', 'slogan'=>'Стремление к победе'),
-                            2 => array('name'=>"Силовой фитнес", 'link'=>'/page/sil-nyj-fitnes', 'slogan'=>'Созидание и цель'),
+                            2 => array('name'=>"Силовой фитнес", 'link'=>'/page/silovoj-fitnes', 'slogan'=>'Созидание и цель'),
                             3 => array('name'=>"Мягкий фитнес", 'link'=>'/page/myagkij-fitnes', 'slogan'=>'Легкость движения'),
                             4 => array('name'=>"TRX", 'link'=>'/page/trx', 'slogan'=>'Гибкость тела'),
                             5 => array('name'=>"Бокс", 'link'=>'/page/boks', 'slogan'=>'Сила & точность'),
@@ -81,8 +81,8 @@ class SiteController extends FrontController
 
 
 
-						if(SiteHelper::sendMail("Получен новый вопрос/заявка сайта!",$message,"minderov@amobile-studio.ru","no-reply@alextour72.ru")) 
-				echo CJSON::encode("OK");
+                if(SiteHelper::sendMail("Получен новый вопрос/заявка сайта!",$message,Yii::app()->config->get('app.mail'),"no-reply@lifefit72.ru")) 
+				    echo CJSON::encode("OK");
 			}
 			else
 			{
@@ -109,7 +109,7 @@ class SiteController extends FrontController
         
         $begin_string = ($card_model->type==Cards::BELONGS_TO_ABONEMENT) ? "Резервирование абонемента" : "Вы выбрали";
            
-        $period_card = Cards::getSlotsWithMonth($card_model->price->slot);
+        $period_card = ($card_model->type==Cards::BELONGS_TO_ABONEMENT) ? Cards::getSlotsWithMonth($card_model->price->slot) : "";
         $title = "{$begin_string} {$card_model->name} {$period_card} за {$card_model->price->price} руб";
         
         $this->renderPartial('/site/order/main', array('title'=>$title, 'type'=>'card', 'data'=>$data));
@@ -230,10 +230,25 @@ class SiteController extends FrontController
     {
         if(!Yii::app()->request->isAjaxRequest)
             throw new CHttpException('404','error');
+            
+        $node = Structure::model()->findByUrl('stranica-spasibo');
+        $page = $node->getComponent();
+        
+        $data['page'] = $page;
+        $data['node'] = $node;
+       
+        if ( !empty($node->seo->meta_title) )
+            $this->title = $node->seo->meta_title;
+        else
+            $this->title = $node->name.' | '.Yii::app()->config->get('app.name');
+
+        Yii::app()->clientScript->registerMetaTag($node->seo->meta_desc, 'description', null, array('id'=>'meta_description'), 'meta_description');
+        Yii::app()->clientScript->registerMetaTag($node->seo->meta_keys, 'keywords', null, array('id'=>'keywords'), 'meta_keywords');
+        
         
         $title = "Спасибо что выбрали LifeFit!";
         
-        $this->renderPartial('/site/order/main', array('title'=>$title, 'type'=>'thanks'));
+        $this->renderPartial('/site/order/main', array('title'=>$title, 'data'=>$data, 'type'=>'thanks'));
     }
 
 	/**
@@ -242,6 +257,7 @@ class SiteController extends FrontController
 	public function actionError()
 	{
 		$this->layout='//layouts/error';
+        $this->title = "Ошибка 404. Страница не была найдена на сайте";
 		if($error=Yii::app()->errorHandler->error)
 		{
 			if(Yii::app()->request->isAjaxRequest)

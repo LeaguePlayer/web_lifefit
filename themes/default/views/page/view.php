@@ -120,7 +120,8 @@
             <div class="rel">
                 <div class="contacts">
                     <div class="captionMap">Мы <br />находимся:</div>
-                    <div class="street">Тюмень, Широтная,  д 189, к1 <br />Фитнес клуб "Life Fit"</div>
+                    <div class="street"><? echo Yii::app()->config->get('app.street'); ?> <br />Фитнес клуб "Life Fit"</div>
+                    <div class="street">Телефон 8 (<? echo Yii::app()->config->get('app.code_city'); ?>) <? echo Yii::app()->config->get('app.phone'); ?></div>
                 </div>
                 <div class="angleMap"></div>
             </div>

@@ -58,6 +58,9 @@
                             <? if($abonement_slot->price) { ?>
                                 <div class="card_price"><? echo number_format($abonement_slot->price, 0, '', ' '); ?><span>руб.</span></div>
                                 <div  class="card_buy"><a class="run_fancy fancybox.ajax" href="/site/buycard/id_card/<? echo $abonement->id;?>/slot/<? echo $abonement_slot->id; ?>">Купить</a></div>
+                                <? if ($abonement_slot->comment) { ?>
+                                    <div class="add_info"><? echo $abonement_slot->comment; ?></div>
+                                <? } ?>
                             <? } ?>
                         </td>
                         <? } ?>
