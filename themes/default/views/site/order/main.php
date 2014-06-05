@@ -6,7 +6,7 @@
         switch($type)
         {
             case 'guest':
-                echo $this->renderPartial('/site/order/_guest');
+                echo $this->renderPartial('/site/order/_guest', array('data'=>$data));
             break;
             case 'card':
                 echo $this->renderPartial('/site/order/_card', array('data'=>$data));

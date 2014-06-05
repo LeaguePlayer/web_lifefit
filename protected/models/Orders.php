@@ -44,8 +44,21 @@ class Orders extends EActiveRecord
 		
 		$array = $this->post_types;	
 		
-		if( $n )
-			return $array[$n];
+		if( $n && $n == "card" )
+		{
+		      $card = Cards::model()->with( array('price'=>array('condition'=>"price.id={$this->post_slot}")) )->findByPk($this->post_id);
+		      $period_card = ($card->type==Cards::BELONGS_TO_ABONEMENT) ? ", сроком ".Cards::getSlotsWithMonth($card->price->slot) : "";
+              return "Заявка на абонемент {$card->name} за {$card->price->price} руб{$period_card}";
+		      
+		}
+        elseif($n == "guest" and $this->post_id)
+        {
+            $sport = Sport::model()->findByPk($this->post_id);
+            $begin_string = ($this->post_slot == 1) ? "Запись на ближайшее занятие" : "Запись на занятия";
+            return "{$begin_string} по {$sport->title}";
+        }
+        elseif($n)
+            return $array[$n];
 		else
 			return $array;
 	}
@@ -126,6 +139,7 @@ class Orders extends EActiveRecord
 		$criteria->compare('update_time',$this->update_time,true);
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
+            'sort'=>array('defaultOrder'=>'create_time DESC'),
         ));
     }
 

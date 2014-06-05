@@ -55,6 +55,7 @@
                         <p class="cursive">на бесплатный</p>
                         <p class="normal">гостевой визит</p>
                         <form class="ajaxForm" action="/site/order">
+                            <input type="hidden" name="Order[post_type]" value="guest" />
                             <div class="row">
                                 <input type="text" data-field="name" name="Order[name]" placeholder="Ваше имя" />
                             </div>
@@ -71,7 +72,7 @@
                             <div class="content">
                                 <p class="label"><? echo $next_training['model']->sport->title;?></p><br>
                                 <p class="desc"><? echo $next_training['string'];?></p>
-                                <a class="red-button fancybox.ajax run_fancy" href="/site/goto/sport/<? echo $next_training['model']->sport->id;?>">Посетить <i class="arrow-right"></i></a>
+                                <a class="red-button fancybox.ajax run_fancy" href="/site/goto/sport/<? echo $next_training['model']->sport->id;?>/from_main_page/1">Посетить <i class="arrow-right"></i></a>
                                 <p class="beginning">
                                     <span class="text">Начало занятий</span>
                                     <span class="timer"><? echo date('H',strtotime($next_training['model']->time_of));?></span><span class="timer"><? echo date('i',strtotime($next_training['model']->time_of));?></span>

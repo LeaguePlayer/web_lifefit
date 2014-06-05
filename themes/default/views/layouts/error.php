@@ -54,6 +54,7 @@
 				</div>
 			</div>
 			<form class="record-form ajaxForm"  action="/site/order">
+                <input type="hidden" name="Order[post_type]" value="guest" />
 				<div class="row">
                     <input type="text" data-field="name" name="Order[name]" placeholder="Ваше имя">
                 </div>

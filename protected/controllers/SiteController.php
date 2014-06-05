@@ -69,12 +69,13 @@ class SiteController extends FrontController
 
 			if($model->save())
 			{
+			             $model->post_type_word = $model->getPostType( $model->post_type );
 						if($model->name) $message .="Имя: {$model->name}<br>";
 						if($model->phone) $message .="Номер телефона: {$model->phone}<br>";
-						//if($model->rating) $message .="Оценка: {$model->rating}<br>";
-					//	if($model->comment) $message .="Комментарий: {$model->comment}<br>";
-						//$message.="{$model->create_time}";
-					//	$message.="http://{$_SERVER['SERVER_NAME']}/admin/reviews/update/id/{$model->id}/list_id/{$model->id_list}";
+                        if($model->phone) $message .="E-mail: {$model->email}<br>";
+                        if($model->post_type_word) $message .="Тип заявки: {$model->post_type_word}<br>";
+                        
+					
 
 							$date = date('d.m.Y H:i');
 							$message .="Время заявки: {$date}<br>";	
@@ -129,19 +130,20 @@ class SiteController extends FrontController
 
 			if($model->save())
 			{
+						$model->post_type_word = $model->getPostType( $model->post_type );
 						if($model->name) $message .="Имя: {$model->name}<br>";
 						if($model->phone) $message .="Номер телефона: {$model->phone}<br>";
-						//if($model->rating) $message .="Оценка: {$model->rating}<br>";
-					//	if($model->comment) $message .="Комментарий: {$model->comment}<br>";
-						//$message.="{$model->create_time}";
-					//	$message.="http://{$_SERVER['SERVER_NAME']}/admin/reviews/update/id/{$model->id}/list_id/{$model->id_list}";
+                        if($model->phone) $message .="E-mail: {$model->email}<br>";
+                        if($model->post_type_word) $message .="Тип заявки: {$model->post_type_word}<br>";
+                        
+					
 
 							$date = date('d.m.Y H:i');
 							$message .="Время заявки: {$date}<br>";	
 
 
 
-				//		if(SiteHelper::sendMail("Получен новый вопрос/заявка сайта!",$message,Yii::app()->config->get('app.email'),"no-reply@alextour72.ru")) 
+                if(SiteHelper::sendMail("Получен новый вопрос/заявка сайта!",$message,Yii::app()->config->get('app.mail'),"no-reply@lifefit72.ru")) 
 				echo CJSON::encode("OK");
 			}
 			else
@@ -180,7 +182,7 @@ class SiteController extends FrontController
  
     
     
-    public function actionGoTo($sport)
+    public function actionGoTo($sport, $from_main_page = 0)
     {
         if(!Yii::app()->request->isAjaxRequest)
             throw new CHttpException('404','error');
@@ -194,19 +196,20 @@ class SiteController extends FrontController
 
 			if($model->save())
 			{
+						$model->post_type_word = $model->getPostType( $model->post_type );
 						if($model->name) $message .="Имя: {$model->name}<br>";
 						if($model->phone) $message .="Номер телефона: {$model->phone}<br>";
-						//if($model->rating) $message .="Оценка: {$model->rating}<br>";
-					//	if($model->comment) $message .="Комментарий: {$model->comment}<br>";
-						//$message.="{$model->create_time}";
-					//	$message.="http://{$_SERVER['SERVER_NAME']}/admin/reviews/update/id/{$model->id}/list_id/{$model->id_list}";
+                        if($model->phone) $message .="E-mail: {$model->email}<br>";
+                        if($model->post_type_word) $message .="Тип заявки: {$model->post_type_word}<br>";
+                        
+					
 
 							$date = date('d.m.Y H:i');
 							$message .="Время заявки: {$date}<br>";	
 
 
 
-				//		if(SiteHelper::sendMail("Получен новый вопрос/заявка сайта!",$message,Yii::app()->config->get('app.email'),"no-reply@alextour72.ru")) 
+                if(SiteHelper::sendMail("Получен новый вопрос/заявка сайта!",$message,Yii::app()->config->get('app.mail'),"no-reply@lifefit72.ru")) 
 				echo CJSON::encode("OK");
 			}
 			else
@@ -223,7 +226,10 @@ class SiteController extends FrontController
         
         $title = "Заявка на посещения {$model->title}";
         
-        $this->renderPartial('/site/order/main', array('title'=>$title, 'type'=>'guest'));
+        $data['id_sport'] = $sport;
+        $data['post_slot'] = $from_main_page;
+        
+        $this->renderPartial('/site/order/main', array('title'=>$title, 'data'=>$data, 'type'=>'guest'));
     }
     
     public function actionThankyou()

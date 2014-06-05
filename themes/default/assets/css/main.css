@@ -536,7 +536,7 @@ nav.menu {
     padding-left: 0;
     margin-left: 0;
     margin-bottom: 0;
-    margin-top: -60px;
+    margin-top: -112px;
     }
     .sliders-block ul.switch_slider li {
       display: inline-block;
@@ -1282,6 +1282,7 @@ i[class|=arrow] {
     height: 710px;
     width: 1067px;
     border-right: 4px solid #222222;
+    
 }
 /* If mouseDrag:false then you are able to select text */
 .owl-carousel.owl-text-select-on .owl-item{
