@@ -12,6 +12,8 @@
                 array('label'=>'Разделы сайта', 'url'=>array('/admin/structure')),
                 array('label'=>'Меню сайта', 'url'=>array('/admin/menu')),
 				 array('label'=>'Заявки', 'url'=>array('/admin/orders')),
+                 array('label'=>'Видео', 'url'=>array('/admin/video')),
+                 array('label'=>'Альбом', 'url'=>array('/admin/album')),
                // array('label'=>'Материалы', 'url'=>array('/admin/material')),
                 array('label'=>'Настройки', 'url'=>array('/admin/config')),
                 array('label'=>'Галереи', 'url'=>array('/admin/gallery/manage')),

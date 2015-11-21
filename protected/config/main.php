@@ -27,6 +27,14 @@ return array_replace_recursive(
             'admin'=>array(),
             'email'=>array(),
             'auth'=>array(),
+            'gii'=>array(
+                'class'=>'system.gii.GiiModule',
+                'password'=>'qwe123',
+                'ipFilters'=>array('127.0.0.1','::1'),
+                'generatorPaths'=>array(
+                    'application.gii',
+                ),
+            ),
             'user'=>array(
                 'hash' => 'md5',
                 'sendActivationMail' => true,

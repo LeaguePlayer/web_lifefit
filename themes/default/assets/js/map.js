@@ -18,15 +18,15 @@ var lng = 65.622086;
  var styledMap = new google.maps.StyledMapType(styles,
     {name: "Styled Map"});
 
- var latlng = new google.maps.LatLng(lat, lng);
+ var latlng = new google.maps.LatLng(57.178778,65.562589);
  var settings = {
- zoom: 16,
+ zoom: 11,
  center: latlng,
  mapTypeControl: true,
  mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
  disableDefaultUI: true,
 
-  scrollwheel: false,
+  //scrollwheel: false,
   
     navigationControl: false,
     mapTypeControl: false,
@@ -34,25 +34,32 @@ var lng = 65.622086;
    
 	
  navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
- mapTypeId: google.maps.MapTypeId.ROADMAP
+  mapTypeId: google.maps.MapTypeId.ROADMAP
  };
 var map = new google.maps.Map(document.getElementById("map"), 
 settings);
 
 var companyLogo = new google.maps.MarkerImage('/googleMap/ball.png',
-new google.maps.Size(50,48),
-new google.maps.Point(0,0),
-new google.maps.Point(24,48)
+  new google.maps.Size(50,48),
+  new google.maps.Point(0,0),
+  new google.maps.Point(24,48)
 );
 
 var companyPos = new google.maps.LatLng(lat, lng);
 var companyMarker = new google.maps.Marker({
-position: companyPos,
-icon: companyLogo,
-map: map,
-title:"Some title"
+  position: companyPos,
+  icon: companyLogo,
+  map: map,
+  title:"Some title"
 });
 
+var companyPos2 = new google.maps.LatLng(57.178778,65.562589);
+var companyMarker2 = new google.maps.Marker({
+  position: companyPos2,
+  icon: companyLogo,
+  map: map,
+  title:"Some title"
+});
 
 map.mapTypes.set('map_style', styledMap);
   map.setMapTypeId('map_style');

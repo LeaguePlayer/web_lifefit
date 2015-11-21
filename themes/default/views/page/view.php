@@ -122,6 +122,7 @@
                     <div class="captionMap">Мы <br />находимся:</div>
                     <div class="street"><? echo Yii::app()->config->get('app.street'); ?> <br />Фитнес клуб "Life Fit"</div>
                     <div class="street">Телефон 8 (<? echo Yii::app()->config->get('app.code_city'); ?>) <? echo Yii::app()->config->get('app.phone'); ?></div>
+                    <div class="street">Тюмень, пр. Заречный 43/4<br>Телефон 8 3452 589-914 </div>
                 </div>
                 <div class="angleMap"></div>
             </div>

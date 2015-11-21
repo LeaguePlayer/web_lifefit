@@ -27,8 +27,13 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10"> <![endif]-->
+<!--[if IE 10]>         <html class="no-js lt-ie11"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
+        <!--[if lt IE 7]>
+            <script src="http://phpbbex.com/oldies/oldies.js" charset="utf-8"></script>
+        <![endif]-->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title><? echo $this->title; ?></title>
@@ -53,49 +58,47 @@
             <div class="fix-width">
                 <div class="top">
                     <div class="inline-middle"><a class="logo" href="/"><img src="<? echo $this->getAssetsUrl();?>/img/logo.png" alt=""/></a><span>Жизнь в ритме спорта</span></div>
-                    <div class="inline-middle"><span class="phone">8 <? echo Yii::app()->config->get('app.code_city'); ?> <? echo Yii::app()->config->get('app.phone'); ?></span></div>
-                    <div class="inline-middle"><span class="address"><? echo Yii::app()->config->get('app.street'); ?></span></div>
+					<div class="inline-middle marginLeftHeader"><span class="phone">8 3452 612-691<br><span class='headerAddress'>Широтная 189, к1</span></span></div>
+                    <div class="inline-middle marginLeftHeader"><span class="phone">8 3452 585-881<br><span class='headerAddress'>Стартовая 1</span></span></div>
+                    <div class="inline-middle marginLeftHeader"><span class="phone">8 3452 589-914<br><span class='headerAddress'>пр. Заречный 43/4</span></span></div>
                 </div>
                 <div class="bottom">
                     <nav class="menu">
                         <? $this->widget('zii.widgets.CMenu', array('items'=>$this->menu)); ?>
-                      
                     </nav>
-                    
-                    
                     <div class="shedule">
                         <span class="weekdays"><? echo Yii::app()->config->get('app.work_time_weekdays'); ?></span>
                         <span class="weekend"><? echo Yii::app()->config->get('app.work_time_weekend'); ?></span>
                     </div>
-                    
                 </div>
                 <div class="record">
                         <a class="fancybox.ajax run_fancy" href="/site/order" >Записаться<span></span></a>
                         <span class="discription">на бесплатный гостевой визит</span>
                     </div>
-
             </div>
         </div>
-
 
         <div class="content">
             <!-- Слайдер -->
             <?=$content?>
-
         </div>
-
-
-
 
         <div class="footer">
             <div class="fix-width">
                 <div class="content">
                     
                     <? $this->widget('zii.widgets.CMenu', array('items'=>$this->menu, 'htmlOptions'=>array('class'=>'menu'))); ?>
-
                     <div class="order">
-                        <p class="address"><? echo Yii::app()->config->get('app.street'); ?></p>
-                        <p class="phone">8 (<? echo Yii::app()->config->get('app.code_city'); ?>) <? echo Yii::app()->config->get('app.phone'); ?></p>
+						<table class='footerAddress'>
+							<tr>
+								<td><p class="address">Широтная 189, к1</p></td>
+								<td><p class="address">Стартовая 1</p></td>
+							</tr>
+							<tr>
+								<td><p class="phone">8 3452 612-691</p></td>
+								<td><p class="phone">8 3452 585-881</p></td>
+							</tr>
+						</table>
                         <a class="fancybox.ajax run_fancy" href="/site/order">Записаться</a>
                     </div>
 
@@ -136,9 +139,37 @@
 
         </div>
         <div class="hiddenMap">
-        <img src='/googleMap/map.png' alt='' />
-        <p>Фитнес клуб Life Fit  -  8 (<? echo Yii::app()->config->get('app.code_city'); ?>) <? echo Yii::app()->config->get('app.phone'); ?>  -  <? echo Yii::app()->config->get('app.street'); ?></p>
-    </div>
+			<img src='/googleMap/map.png' alt='' />
+			<p>Фитнес клуб Life Fit  -  8 (3452) 612-691  -  Широтная 189, к1</p>
+			<img src='/googleMap/map2.png' alt='' />
+			<p>Фитнес клуб Life Fit  -  8 (3452) 585-881  -  Стартовая 1</p>
+		</div>
     </body>
-    
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter25576379 = new Ya.Metrika({id:25576379,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/25576379" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </html>

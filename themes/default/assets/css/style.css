@@ -290,7 +290,8 @@ h2 {
     color:#535353;
     font-family: "Ubuntu", sans-serif;
     font-weight:300;
-    line-height: 50px;
+    line-height: 22px;
+  padding-top: 16px;
  }
  .captionPage .breadcrumbs a
  {
@@ -334,7 +335,7 @@ h2 {
      font-family: "a_avantetckheavy", sans-serif;
      font-size:25px;
      background:url(../img/mail.png) #e32727 no-repeat;
-     background-position: 214px 8px;
+     background-position: 224px 8px;
      padding:4px 38px 4px 8px;
      border-radius:6px;
      margin-left:26px;
@@ -376,7 +377,7 @@ h2 {
 }
 #map
 {
-    height:442px;
+    height:550px;
 }
 .mapHelper
 {
@@ -410,6 +411,10 @@ h2 {
     color:#fff;
     font-family: "Ubuntu", sans-serif;
     line-height:24px;
+}
+.mapHelper .rel .contacts .street > span:hover{
+	text-decoration: underline;
+	cursor: pointer;
 }
 .angleMap
 {
@@ -937,7 +942,7 @@ text-decoration: none;
 }
 .order_view
 {
-    padding: 50px 30px;
+    padding: 40px 30px;
     min-height: 300px;
 }
 .order_view h1
@@ -969,10 +974,27 @@ text-decoration: none;
     font-weight:300;
     width:303px;
 }
+
+.row select
+{
+    border: 3px solid #fff;
+    font-size:18px;
+    color:#a9a9a9;
+    font-family: "Exo 2", sans-serif;
+    font-weight:300;
+    width:303px;
+	padding: 12px 15px;
+}
+
 .guest_visit .row input
 {
     margin-bottom:3px;
     color:#636363;
+    font-size:18px;
+}
+.guest_visit .row select
+{
+    margin-bottom:3px;
     font-size:18px;
 }
 .row.error input
@@ -1043,4 +1065,60 @@ text-decoration: none;
         display:block;
     }
 }
-    
+
+::-webkit-input-placeholder,
+::-moz-placeholder, /* Firefox 19+ */
+:-moz-placeholder, /* Firefox 18- */
+:-ms-input-placeholder{
+	color:#a9a9a9;
+}
+
+.titleSlide{
+	background: #e41e25;
+	color: #ffffff;
+	margin: 0;
+	font-family: "Exo 2", sans-serif;
+	font-size: 18px;
+	display: inline-block;
+	font-weight: 300;
+	padding: 27px 18px;
+}
+
+.backgroundPage .captionPage .breadcrumb .leftBreadCrumbs{
+	float: left;
+	text-align: left;
+}
+
+.captionPage h1.ScheduleTitle{
+	width: 100%;
+}
+
+.contentLeft{
+	width: 320px;
+	float: right;
+}
+
+.selectGym{
+	float: left;
+}
+
+.selectGym > ul{
+	padding: 0;
+	margin: 21px 0px 0px 0px;
+}
+
+.selectGym > ul > li{
+	display: inline-block;
+	font-family: "Exo 2", sans-serif;
+	font-size: 20px;
+	color: #ffffff;
+	font-style: italic;
+	border: 3px solid #ffffff;
+	padding: 17px 20px;
+	cursor: pointer;
+}
+
+.selectGym > ul > li.active{
+	border-color: #e32727;
+	background: #e32727;
+}

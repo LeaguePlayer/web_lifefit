@@ -90,11 +90,10 @@ form input {
       font-family: "a_avantetckheavy", sans-serif;
       text-transform: uppercase; }
   .header .phone {
-    font-size: 30px;
+    font-size: 20px;
     font-family: "a_avantetckmedium", sans-serif;
-    line-height: 25px;
     display: inline-block;
-    width: 254px;
+    width: 171px;
     text-align: center; }
     .header .phone:before {
       content: "";
@@ -107,8 +106,13 @@ form input {
   .header .address {
     font-family: "Ubuntu", sans-serif;
     display: inline-block;
-    font-size: 14px;
+<<<<<<< HEAD
+    font-size: 13px;
     width: 180px; }
+=======
+    font-size: 14px;
+    width: 179px; }
+>>>>>>> 0a0b4e42b63b0055d34363fb04b7e7042a87cd1f
   .header .top {
     margin-bottom: 20px; }
   .header .record{
@@ -393,6 +397,8 @@ nav.menu {
         padding: 30px 30px 50px; }
       .actions .block.guest_visit input {
         width: 100%; }
+	  .actions .block.guest_visit select {
+	    width: 100%; }
       .actions .block.guest_visit button {
         width: 100%;
         margin-top: 10px; }
@@ -516,7 +522,7 @@ nav.menu {
       font-size: 16px;
       margin-top: 0;
       line-height: 1.5;
-      width: 430px; }
+      width: 506px; }
 
 .sliders-block {
   height: 646px;
@@ -566,7 +572,7 @@ nav.menu {
   .footer .content {
     overflow: hidden; }
     .footer .content ul.menu {
-      width: 430px;
+      width: 363px;
       list-style: none;
       font-size: 0;
       display: inline-block;
@@ -591,9 +597,9 @@ nav.menu {
     .footer .content .order {
       display: inline-block;
       vertical-align: top;
-      text-align: center; 
-      padding-right: 70px;
+      text-align: center;
       border-right: solid 1px;
+	  width: 330px;
     }
       .footer .content .order p {
         margin: 0;
@@ -617,7 +623,8 @@ nav.menu {
       .footer .content .order .phone {
         text-align: left;
         font-family: "Ubuntu", sans-serif;
-        font-size: 22px; }
+        font-size: 18px;
+		font-weight: 600;}
       .footer .content .order a {
         font-family: "Exo 2", sans-serif;
         font-size: 26px;
@@ -658,7 +665,7 @@ nav.menu {
           font-size: 50px;
           font-weight: normal;
           line-height: 1; }
-          .lt-ie9 .footer .content .master .slogan strong {
+          .lt-ie9 .footer .content .master .slogan strong,.lt-ie8 .footer .content .master .slogan strong,.lt-ie10 .footer .content .master .slogan strong {
           font-weight: bold;
           font-size: 40px;
           font-weight: normal;
@@ -701,7 +708,7 @@ nav.menu {
       }
 .fix-width {
     position:relative;
-  width: 950px;
+  width: 1100px;
   margin: 0 auto; }
 
 .inline {
@@ -953,6 +960,7 @@ i[class|=arrow] {
     background: #e32727;
     widows: 100%;
     height: 100%;
+    min-height: 1000px;
   }
   .bg_404 .fix-width{
     background: url('../img/girya.png') no-repeat;
@@ -966,6 +974,7 @@ i[class|=arrow] {
     height: 86px;
     margin:0 auto;
     padding-bottom: 20px;
+    display: block;
   }
 
   .bg_404 .caption .title{
@@ -980,6 +989,9 @@ i[class|=arrow] {
   }
   .record .item-left{
     float: left
+  }
+  .bg_404 .caption{
+    padding-bottom: 75px;
   }
   .bg_404 .info{
     position: relative;
@@ -1009,6 +1021,7 @@ i[class|=arrow] {
     border: none;
     margin: 5px 0;
     text-align: center;
+    width: 253px;
     
   }
   .record-form div.row.error input
@@ -1028,7 +1041,7 @@ i[class|=arrow] {
   .record-form .send{
     background: #c21616;
     border-radius: 10px;
-    width: 233px;
+    width: 253px;
     margin:5px auto;
   }
   .record-form input[type=submit]
@@ -1036,7 +1049,7 @@ i[class|=arrow] {
     background: url('../img/arrow-record.png')no-repeat;
     background-position: 174px center;
     color: #fff;
-    width:233px;
+    width:253px;
   }
   .info{
     float: left;
@@ -1084,6 +1097,12 @@ i[class|=arrow] {
     margin:35px 0px 15px 0px;
     display: inline-block;
     width: 225px;
+    color: #fadfdf;
+  }
+
+  .bot ul li a:hover{
+    text-decoration: underline;
+    color: inherit;
   }
   .toMain {
     
@@ -1112,6 +1131,10 @@ i[class|=arrow] {
     color: #ada9aa;
     line-height: 20px;
     font-size:14px; 
+  }
+  .logo-amobile a{
+    padding-right: 120px;
+    padding-top: 20px;
   }
   .logo-amobile .justify{
     letter-spacing: 4px;
@@ -1490,4 +1513,61 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
  padding-right:16px;
  display:inline-block;
  margin-top: 20px;
+}
+
+.marginLeftHeader{
+	margin-left: 10px;
+}
+
+.header  .phone .headerAddress{
+	font-size: 14px;
+	text-align: right;
+	display: block;
+}
+
+.footerAddress{
+	width: 100%;
+}
+
+.footerAddress td{
+	width: 50%;
+}
+.vid img{
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+}
+.item .vid{
+  max-width: 200px;
+
+}
+.empty{
+  font-size: 20px;
+  text-align: center;
+  padding: 120px;
+}
+.vid + span{
+  display: block;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.items{
+  font-size: 0;
+  line-height: 0;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+}
+.items .item{
+  font-size: 14px;
+  line-height: normal;
+  display: inline-block;
+}
+.items:after{
+  content: '';
+  display: inline-block;
+  width: 100%;
 }

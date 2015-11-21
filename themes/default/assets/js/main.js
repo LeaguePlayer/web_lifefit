@@ -43,6 +43,22 @@ $(document).ready(function() {
     });
     
     
+    $('.video img').on('click',function(){
+        $.fancybox({ 
+            'padding'  : 0,
+            'autoScale'    : false,
+            'transitionIn' : 'none',
+            'transitionOut'   : 'none',
+            //'title'   : $(this).data('title'),
+            'width'   : 640,
+            'height' : 385,
+            'href'   : $(this).data('url'),
+            'type'    : 'swf',
+            'swf'  : { 'wmode' : 'transparent',
+            'allowfullscreen'  : 'true' } 
+        }); 
+        return false;
+    })
 
 
  
