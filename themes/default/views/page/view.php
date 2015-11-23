@@ -130,11 +130,7 @@
                         <div class="street">Телефон 8 3452 585-881</div>
                     </span>
                     <br>
-                    <span class='goToPoint' data-coordsX="57.14653477" data-coordsY="65.65191750">
-                        <div class="street"><span>Стартовая 1</span><br />Фитнес клуб "Life Fit"</div>
-                        <div class="street">Телефон 8 3452 589-914 </div>
-                    </span>
-                    <span class='goToPoint' data-coordsX="57.14653477" data-coordsY="65.65191750">
+                    <span class='goToPoint' data-coordsX="57.178778" data-coordsY="65.562589">
                         <div class="street">пр. Заречный 43/4 <br />Фитнес клуб "Life Fit"</div>
                         <div class="street">Телефон 8 3452 589-914 </div>
                     </span>
