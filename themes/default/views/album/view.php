@@ -7,5 +7,6 @@
 			echo $photo->getImage();
 		}
 	?>
+
 	</div>
 </div>

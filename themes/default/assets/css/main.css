@@ -864,6 +864,7 @@ i[class|=arrow] {
     font-style:italic;
   }
   .news-announce{
+    line-height: normal;
     color: #222222;
     font-family: "Ubuntu", sans-serif;
     font-size: 14px;
