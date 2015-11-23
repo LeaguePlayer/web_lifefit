@@ -46,8 +46,8 @@ class Video extends EActiveRecord
     {
         return array(
             'id' => 'ID',
-            'video_url' => 'Адресс видео',
-            'name' => 'Навазние',
+            'video_url' => 'Адрес видео',
+            'name' => 'Название',
             'img_preview' => 'Превью',
             'status' => 'Статус',
             'sort' => 'Вес для сортировки',

@@ -1,9 +1,9 @@
 <div class="backgroundPage" id="begin_content">
     <div class="fix-width">
         <div class="captionPage"><h1><? echo $node->name ?></h1><div class="breadcrumb"><?php $this->widget('zii.widgets.CBreadcrumbs', array(
-		'separator'=>' → ',
-		'links'=>$this->breadcrumbs,
-	)); ?></div></div>
+        'separator'=>' → ',
+        'links'=>$this->breadcrumbs,
+    )); ?></div></div>
         
         <div class="typegraphy">
             
@@ -120,6 +120,15 @@
             <div class="rel">
                 <div class="contacts">
                     <div class="captionMap">Мы <br />находимся:</div>
+                    <span class='goToPoint' data-coordsX="57.09715477" data-coordsY="65.61989250">
+                        <div class="street"><span>Широтная 189, к1</span> <br />Фитнес клуб "Life Fit"</div>
+                        <div class="street">Телефон 8 3452 612-691</div>
+                    </span>
+                    <br>
+                    <span class='goToPoint' data-coordsX="57.14653477" data-coordsY="65.65191750">
+                        <div class="street"><span>Стартовая 1</span><br />Фитнес клуб "Life Fit"</div>
+                        <div class="street">Телефон 8 3452 585-881</div>
+                    </span>
                     <div class="street"><? echo Yii::app()->config->get('app.street'); ?> <br />Фитнес клуб "Life Fit"</div>
                     <div class="street">Телефон 8 (<? echo Yii::app()->config->get('app.code_city'); ?>) <? echo Yii::app()->config->get('app.phone'); ?></div>
                     <div class="street">Тюмень, пр. Заречный 43/4<br>Телефон 8 3452 589-914 </div>
@@ -128,7 +137,7 @@
             </div>
         
     </div>
-    <div id="map"></div>
+    <div id="map" data-assets='<?=$this->getAssetsUrl()?>'></div>
 </div>
 
 <? } ?>

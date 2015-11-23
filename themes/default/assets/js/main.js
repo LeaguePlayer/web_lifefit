@@ -42,9 +42,8 @@ $(document).ready(function() {
         
     });
     
-    
-    $('.vid img').on('click',function(){
-        $.fancybox({ 
+    $('.item.fancyvideo').on('click',function(){
+        $.fancybox.open({
             'padding'  : 0,
             'autoScale'    : false,
             'transitionIn' : 'none',
@@ -52,13 +51,33 @@ $(document).ready(function() {
             //'title'   : $(this).data('title'),
             'width'   : 640,
             'height' : 385,
-            'href'   : $(this).data('url'),
-            'type'    : 'swf',
+            'href'   : $(this).attr('href'),
+            'type'    : 'iframe',
             'swf'  : { 'wmode' : 'transparent',
             'allowfullscreen'  : 'true' } 
-        }); 
+        });
         return false;
     })
+    // $('.item.fancyvideo').fancybox({ 
+        
+    // });
+
+    // $('.vid img').on('click',function(){
+    //     $.fancybox({ 
+    //         'padding'  : 0,
+    //         'autoScale'    : false,
+    //         'transitionIn' : 'none',
+    //         'transitionOut'   : 'none',
+    //         //'title'   : $(this).data('title'),
+    //         'width'   : 640,
+    //         'height' : 385,
+    //         'href'   : $(this).data('url'),
+    //         'type'    : 'swf',
+    //         'swf'  : { 'wmode' : 'transparent',
+    //         'allowfullscreen'  : 'true' } 
+    //     }); 
+    //     return false;
+    // })
 
 
  

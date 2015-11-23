@@ -1099,6 +1099,7 @@ text-decoration: none;
 }
 
 .selectGym{
+
 	float: left;
 }
 
@@ -1114,7 +1115,8 @@ text-decoration: none;
 	color: #ffffff;
 	font-style: italic;
 	border: 3px solid #ffffff;
-	padding: 17px 20px;
+
+
 	cursor: pointer;
 }
 

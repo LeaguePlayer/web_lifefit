@@ -1,6 +1,6 @@
 <div class="actions">
-	<div class="fix-width">
-		<?if ($model){?>
+	<div class="fix-width fancy">
+		<?if ($models){?>
 		<div class="items">
 			<?
 				foreach ($models as $key => $data) {

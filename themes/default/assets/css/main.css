@@ -106,13 +106,9 @@ form input {
   .header .address {
     font-family: "Ubuntu", sans-serif;
     display: inline-block;
-<<<<<<< HEAD
-    font-size: 13px;
-    width: 180px; }
-=======
+
     font-size: 14px;
     width: 179px; }
->>>>>>> 0a0b4e42b63b0055d34363fb04b7e7042a87cd1f
   .header .top {
     margin-bottom: 20px; }
   .header .record{
@@ -1570,6 +1566,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
   content: '';
   display: inline-block;
   width: 100%;
+
 }
 .album .item{
   width: 240px;

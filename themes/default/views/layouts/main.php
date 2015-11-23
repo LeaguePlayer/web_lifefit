@@ -1,28 +1,28 @@
 <?php
 
-	$cs = Yii::app()->clientScript;
-	$cs->registerCssFile($this->getAssetsUrl().'/css/style.css?v=2');
-	$cs->registerCssFile($this->getAssetsUrl().'/css/fancybox/jquery.fancybox.css');
-	$cs->registerCssFile($this->getAssetsUrl().'/css/jquery.ui/overcast/jquery-ui-1.10.3.custom.min.css');
-	$cs->registerCssFile($this->getAssetsUrl().'/css/normalize.min.css');
-	$cs->registerCssFile($this->getAssetsUrl().'/css/main.css?v=2');
-	
-	$cs->registerCoreScript('jquery');
-	$cs->registerCoreScript('jquery.ui');
+    $cs = Yii::app()->clientScript;
+    $cs->registerCssFile($this->getAssetsUrl().'/css/style.css?v=2');
+    $cs->registerCssFile($this->getAssetsUrl().'/css/fancybox/jquery.fancybox.css');
+    $cs->registerCssFile($this->getAssetsUrl().'/css/jquery.ui/overcast/jquery-ui-1.10.3.custom.min.css');
+    $cs->registerCssFile($this->getAssetsUrl().'/css/normalize.min.css');
+    $cs->registerCssFile($this->getAssetsUrl().'/css/main.css?v=2');
+    
+    $cs->registerCoreScript('jquery');
+    $cs->registerCoreScript('jquery.ui');
     $cs->registerScriptFile($this->getAssetsUrl().'/js/owl.carousel.min.js', CClientScript::POS_END);
-	$cs->registerScriptFile($this->getAssetsUrl().'/js/lib/jquery.fancybox.js', CClientScript::POS_END);
-	//$cs->registerScriptFile($this->getAssetsUrl().'/js/lib/jquery.fancybox-buttons.js', CClientScript::POS_END);
-	//$cs->registerScriptFile('http://api-maps.yandex.ru/2.0.27/?load=package.standard&lang=ru-RU', CClientScript::POS_HEAD);
-	
-	$cs->registerScriptFile($this->getAssetsUrl().'/js/lib/jquery.timepicker.addon.js', CClientScript::POS_END);
-	$cs->registerScriptFile($this->getAssetsUrl().'/js/lib/jquery.ui.timepicker.ru.js', CClientScript::POS_END);
-	$cs->registerScriptFile($this->getAssetsUrl().'/js/vendor/modernizr-2.6.2.min.js', CClientScript::POS_END);
-	
-	$cs->registerScriptFile($this->getAssetsUrl().'/js/customslider.jquery.js', CClientScript::POS_END);
-	$cs->registerScriptFile($this->getAssetsUrl().'/js/vendor/jssor.jquery.min.js', CClientScript::POS_END);
-	$cs->registerScriptFile($this->getAssetsUrl().'/js/main.js?v=2', CClientScript::POS_END);
-	
-	$cs->registerScriptFile($this->getAssetsUrl().'/js/common.js?v=2', CClientScript::POS_END);
+    $cs->registerScriptFile($this->getAssetsUrl().'/js/lib/jquery.fancybox.js', CClientScript::POS_END);
+    //$cs->registerScriptFile($this->getAssetsUrl().'/js/lib/jquery.fancybox-buttons.js', CClientScript::POS_END);
+    //$cs->registerScriptFile('http://api-maps.yandex.ru/2.0.27/?load=package.standard&lang=ru-RU', CClientScript::POS_HEAD);
+    
+    $cs->registerScriptFile($this->getAssetsUrl().'/js/lib/jquery.timepicker.addon.js', CClientScript::POS_END);
+    $cs->registerScriptFile($this->getAssetsUrl().'/js/lib/jquery.ui.timepicker.ru.js', CClientScript::POS_END);
+    $cs->registerScriptFile($this->getAssetsUrl().'/js/vendor/modernizr-2.6.2.min.js', CClientScript::POS_END);
+    
+    $cs->registerScriptFile($this->getAssetsUrl().'/js/customslider.jquery.js', CClientScript::POS_END);
+    $cs->registerScriptFile($this->getAssetsUrl().'/js/vendor/jssor.jquery.min.js', CClientScript::POS_END);
+    $cs->registerScriptFile($this->getAssetsUrl().'/js/main.js?v=2', CClientScript::POS_END);
+    
+    $cs->registerScriptFile($this->getAssetsUrl().'/js/common.js?v=2', CClientScript::POS_END);
 ?><!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -58,8 +58,9 @@
             <div class="fix-width">
                 <div class="top">
                     <div class="inline-middle"><a class="logo" href="/"><img src="<? echo $this->getAssetsUrl();?>/img/logo.png" alt=""/></a><span>Жизнь в ритме спорта</span></div>
-					<div class="inline-middle marginLeftHeader"><span class="phone">8 3452 612-691<br><span class='headerAddress'>Широтная 189, к1</span></span></div>
+                    <div class="inline-middle marginLeftHeader"><span class="phone">8 3452 612-691<br><span class='headerAddress'>Широтная 189, к1</span></span></div>
                     <div class="inline-middle marginLeftHeader"><span class="phone">8 3452 585-881<br><span class='headerAddress'>Стартовая 1</span></span></div>
+
                     <div class="inline-middle marginLeftHeader"><span class="phone">8 3452 589-914<br><span class='headerAddress'>пр. Заречный 43/4</span></span></div>
                 </div>
                 <div class="bottom">
@@ -89,16 +90,16 @@
                     
                     <? $this->widget('zii.widgets.CMenu', array('items'=>$this->menu, 'htmlOptions'=>array('class'=>'menu'))); ?>
                     <div class="order">
-						<table class='footerAddress'>
-							<tr>
-								<td><p class="address">Широтная 189, к1</p></td>
-								<td><p class="address">Стартовая 1</p></td>
-							</tr>
-							<tr>
-								<td><p class="phone">8 3452 612-691</p></td>
-								<td><p class="phone">8 3452 585-881</p></td>
-							</tr>
-						</table>
+                        <table class='footerAddress'>
+                            <tr>
+                                <td><p class="address">Широтная 189, к1</p></td>
+                                <td><p class="address">Стартовая 1</p></td>
+                            </tr>
+                            <tr>
+                                <td><p class="phone">8 3452 612-691</p></td>
+                                <td><p class="phone">8 3452 585-881</p></td>
+                            </tr>
+                        </table>
                         <a class="fancybox.ajax run_fancy" href="/site/order">Записаться</a>
                     </div>
 
@@ -139,11 +140,11 @@
 
         </div>
         <div class="hiddenMap">
-			<img src='/googleMap/map.png' alt='' />
-			<p>Фитнес клуб Life Fit  -  8 (3452) 612-691  -  Широтная 189, к1</p>
-			<img src='/googleMap/map2.png' alt='' />
-			<p>Фитнес клуб Life Fit  -  8 (3452) 585-881  -  Стартовая 1</p>
-		</div>
+            <img src='/googleMap/map.png' alt='' />
+            <p>Фитнес клуб Life Fit  -  8 (3452) 612-691  -  Широтная 189, к1</p>
+            <img src='/googleMap/map2.png' alt='' />
+            <p>Фитнес клуб Life Fit  -  8 (3452) 585-881  -  Стартовая 1</p>
+        </div>
     </body>
     <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
