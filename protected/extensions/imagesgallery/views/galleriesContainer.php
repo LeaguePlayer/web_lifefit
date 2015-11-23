@@ -27,7 +27,6 @@
 	</div>
 
 
-
 	<div class="modal hide create_gallery-modal">
 		<div class="modal-header">
 			<a class="close" data-dismiss="modal">×</a>

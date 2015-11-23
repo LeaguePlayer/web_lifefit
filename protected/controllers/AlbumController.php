@@ -37,9 +37,9 @@ class AlbumController extends FrontController
 	
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Album');
+		$models=Album::model()->published()->findAll();
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'models'=>$models,
 		));
 	}
 }

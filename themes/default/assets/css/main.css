@@ -1571,3 +1571,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
   display: inline-block;
   width: 100%;
 }
+.album .item{
+  width: 240px;
+}
+.album a{
+  display: inline-block;
+
+}
+.album span{
+  display: block;
+  text-align: center;
+  margin: 20px 0;
+}

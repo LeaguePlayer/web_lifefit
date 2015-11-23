@@ -20,7 +20,6 @@ class Album extends EActiveRecord
         return '{{album}}';
     }
 
-
     public function rules()
     {
         return array(
@@ -42,6 +41,44 @@ class Album extends EActiveRecord
         );
     }
 
+    public function afterSave(){
+        parent::afterSave();
+        $this->createGallery();
+    }
+
+    public function createGallery()
+    {
+        $gallery=EntityGallery::model()->find('entity_id=:id and entity_type=:type',array(":id"=>$this->id,':type'=>'Album'));
+        if (!$gallery)
+        {
+            $gallery=Gallery::model()->find('name=:name',array(':name'=>$this->name.' '.$this->id));
+
+            if (!$gallery)
+                $gallery = new Gallery();
+            $versions = array(
+              '_980' => array(
+                'resize' => array(980),
+              ),
+              'item' => array(
+                'resize' => array(240),
+              ),
+            );
+            $gallery->versions = $versions;
+            $gallery->gallery_name=$this->name.' '.$this->id;
+            $gallery->validate();
+
+            $gallery->save();
+
+            if (empty($gallery->errors))
+            {
+                $entityGallery = new EntityGallery();
+                $entityGallery->entity_id = $this->id;
+                $entityGallery->gallery_id = $gallery->id;
+                $entityGallery->entity_type = get_class($this);
+                $entityGallery->save();
+            }
+        }
+    }
 
     public function attributeLabels()
     {
@@ -67,26 +104,8 @@ class Album extends EActiveRecord
                 'updateAttribute' => 'update_time',
                 'setUpdateOnCreate' => true,
 			),
-            'galleryBehaviorPlans' => array(
-                'class' => 'appext.imagesgallery.GalleryBehavior',
-                'idAttribute' => 'glr_album',
-                'tags'=>true,
-                'versions' => array(
-                    'small' => array(
-                        'adaptiveResize' => array(90, 90),
-                    ),
-                    'medium' => array(
-                        'resize' => array(600),
-                    ),
-                    'view' => array(
-                        'adaptiveResize' => array(183, 183),
-                    ),
-                    'photo'=>array(
-                        'adaptiveResize' => array(500, 200),
-                    )
-                ),
-                'name' => true,
-                'description' => true,
+            'GalleryManager' => array(
+                'class' => 'application.extensions.imagesgallery.GalleryBehavior',
             ),
         ));
     }

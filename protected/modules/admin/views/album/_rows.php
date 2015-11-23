@@ -1,16 +1,7 @@
 	<?php echo $form->textFieldControlGroup($model,'name',array('class'=>'span8','maxlength'=>255)); ?>
 
-	<div class='control-group'>
-	<?//php echo CHtml::activeLabelEx($model, $attr); ?>
-		<?php if ($model->gallery === null) {
-			echo '<p class="help-block">Прежде чем загружать изображения, нужно сохранить текущее состояние</p>';
-		} else {
-			$this->widget('appext.imagesgallery.GalleryManager', array(
-				'gallery' => $model->gallery,
-				'controllerRoute' => '/admin/gallery',
-			));
-		} ?>
-	</div>
+	
+	
 
 	<div class='control-group'>
 		<?php echo CHtml::activeLabelEx($model, 'wswg_body'); ?>

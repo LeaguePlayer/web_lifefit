@@ -1,21 +1,11 @@
-<?php
-$this->breadcrumbs=array(
-	'Albums'=>array('index'),
-	$model->name,
-);
+<div class="actions">
 
-<h1>View Album #<?php echo $model->id; ?></h1>
-
-<?php $this->widget('bootstrap.widgets.TbDetailView',array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'name',
-		'glr_album',
-		'wswg_body',
-		'status',
-		'sort',
-		'create_time',
-		'update_time',
-	),
-)); ?>
+	<div class="content fix-width">
+		<h1 style="font-size:20px;"><?=$model->name?></h1>
+	<?
+		foreach ($model->gallery->galleryPhotos as $key => $photo) {
+			echo $photo->getImage();
+		}
+	?>
+	</div>
+</div>

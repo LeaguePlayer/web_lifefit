@@ -43,7 +43,7 @@ $(document).ready(function() {
     });
     
     
-    $('.video img').on('click',function(){
+    $('.vid img').on('click',function(){
         $.fancybox({ 
             'padding'  : 0,
             'autoScale'    : false,
