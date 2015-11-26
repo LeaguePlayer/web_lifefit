@@ -1,68 +1,65 @@
-function initialize() {
+$(document).ready(function(e){  
+  var myMap;
+  var assetsUrl = $('#map').attr('data-assets');
+  ymaps.ready(init);
 
-var lat = 57.097727;
-var lng = 65.622086;
-	 
-	 var styles = [
-    {
-       "stylers": [
-		  { "hue": "#00ffff" },
-		  { "gamma": 0.87 },
-		  { "lightness": 11 },
-		  { "saturation": -66 }
-		]
+  function init(){
+    myMap = new ymaps.Map('map', {
+      center: [57.09715477, 65.61989250],
+      zoom: 16,
+      controls: []
+    });
+    
+    myMap.behaviors.disable('scrollZoom');
+    
+    firstGym = new ymaps.GeoObject({
+            geometry: {
+                type: "Point",
+                coordinates: [57.097648, 65.621078],
+            },
+        }, {
+            iconLayout: 'default#image',
+            // Своё изображение иконки метки.
+            iconImageHref: assetsUrl + '/img/ball.png',
+            // Размеры метки.
+            iconImageSize: [50, 48],
+        });
+    
+    secondGym = new ymaps.GeoObject({
+            geometry: {
+                type: "Point",
+                coordinates: [57.14653477, 65.65191750],
+            },
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: assetsUrl + '/img/ball.png',
+            iconImageSize: [50, 48],
+        });
+    
+    thirdGym = new ymaps.GeoObject({
+            geometry: {
+                type: "Point",
+                coordinates: [57.178778, 65.562589],
+            },
+        }, {
+            iconLayout: 'default#image',
+            iconImageHref: assetsUrl + '/img/ball.png',
+            iconImageSize: [50, 48],
+        });
 
-    }
-  ];
-
- var styledMap = new google.maps.StyledMapType(styles,
-    {name: "Styled Map"});
-
- var latlng = new google.maps.LatLng(57.178778,65.562589);
- var settings = {
- zoom: 11,
- center: latlng,
- mapTypeControl: true,
- mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
- disableDefaultUI: true,
-
-  //scrollwheel: false,
+    myMap.geoObjects
+      .add(firstGym)
+      .add(secondGym);
+      .add(thirdGym);
+  }
   
-    navigationControl: false,
-    mapTypeControl: false,
-    scaleControl: false,
-   
-	
- navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
-  mapTypeId: google.maps.MapTypeId.ROADMAP
- };
-var map = new google.maps.Map(document.getElementById("map"), 
-settings);
-
-var companyLogo = new google.maps.MarkerImage('/googleMap/ball.png',
-  new google.maps.Size(50,48),
-  new google.maps.Point(0,0),
-  new google.maps.Point(24,48)
-);
-
-var companyPos = new google.maps.LatLng(lat, lng);
-var companyMarker = new google.maps.Marker({
-  position: companyPos,
-  icon: companyLogo,
-  map: map,
-  title:"Some title"
-});
-
-var companyPos2 = new google.maps.LatLng(57.178778,65.562589);
-var companyMarker2 = new google.maps.Marker({
-  position: companyPos2,
-  icon: companyLogo,
-  map: map,
-  title:"Some title"
-});
-
-map.mapTypes.set('map_style', styledMap);
-  map.setMapTypeId('map_style');
+  function setCenter(coordsX, coordsY){
+    myMap.panTo([
+      [coordsX, coordsY],
+    ]);
+  }
   
-}
-initialize();
+  $('.goToPoint').click(function(e){
+    setCenter($(this).attr('data-coordsX'), $(this).attr('data-coordsY'));
+  });
+});

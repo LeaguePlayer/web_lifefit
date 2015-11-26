@@ -131,7 +131,7 @@
                     </span>
                     <br>
                     <span class='goToPoint' data-coordsX="57.178778" data-coordsY="65.562589">
-                        <div class="street">пр. Заречный 43/4 <br />Фитнес клуб "Life Fit"</div>
+                        <div class="street">Заречный проезд 43 <br />Фитнес клуб "Life Fit"</div>
                         <div class="street">Телефон 8 3452 589-914 </div>
                     </span>
                 </div>

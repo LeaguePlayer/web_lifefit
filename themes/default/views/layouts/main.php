@@ -1,11 +1,11 @@
 <?php
 
     $cs = Yii::app()->clientScript;
-    $cs->registerCssFile($this->getAssetsUrl().'/css/style.css?v=2');
+    $cs->registerCssFile($this->getAssetsUrl().'/css/style.css?v=5');
     $cs->registerCssFile($this->getAssetsUrl().'/css/fancybox/jquery.fancybox.css');
     $cs->registerCssFile($this->getAssetsUrl().'/css/jquery.ui/overcast/jquery-ui-1.10.3.custom.min.css');
     $cs->registerCssFile($this->getAssetsUrl().'/css/normalize.min.css');
-    $cs->registerCssFile($this->getAssetsUrl().'/css/main.css?v=2');
+    $cs->registerCssFile($this->getAssetsUrl().'/css/main.css?v=5');
     
     $cs->registerCoreScript('jquery');
     $cs->registerCoreScript('jquery.ui');
@@ -20,9 +20,9 @@
     
     $cs->registerScriptFile($this->getAssetsUrl().'/js/customslider.jquery.js', CClientScript::POS_END);
     $cs->registerScriptFile($this->getAssetsUrl().'/js/vendor/jssor.jquery.min.js', CClientScript::POS_END);
-    $cs->registerScriptFile($this->getAssetsUrl().'/js/main.js?v=2', CClientScript::POS_END);
+    $cs->registerScriptFile($this->getAssetsUrl().'/js/main.js?v=5', CClientScript::POS_END);
     
-    $cs->registerScriptFile($this->getAssetsUrl().'/js/common.js?v=2', CClientScript::POS_END);
+    $cs->registerScriptFile($this->getAssetsUrl().'/js/common.js?v=6', CClientScript::POS_END);
 ?><!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -61,7 +61,7 @@
                     <div class="inline-middle marginLeftHeader"><span class="phone">8 3452 612-691<br><span class='headerAddress'>Широтная 189, к1</span></span></div>
                     <div class="inline-middle marginLeftHeader"><span class="phone">8 3452 585-881<br><span class='headerAddress'>Стартовая 1</span></span></div>
 
-                    <div class="inline-middle marginLeftHeader"><span class="phone">8 3452 589-914<br><span class='headerAddress'>пр. Заречный 43/4</span></span></div>
+                    <div class="inline-middle marginLeftHeader"><span class="phone">8 3452 589-914<br><span class='headerAddress'>Заречный проезд 43</span></span></div>
                 </div>
                 <div class="bottom">
                     <nav class="menu">
@@ -94,10 +94,12 @@
                             <tr>
                                 <td><p class="address">Широтная 189, к1</p></td>
                                 <td><p class="address">Стартовая 1</p></td>
+                                <td><p class="address">Заречный проезд 43</p></td>
                             </tr>
                             <tr>
                                 <td><p class="phone">8 3452 612-691</p></td>
                                 <td><p class="phone">8 3452 585-881</p></td>
+                                <td><p class="phone">8 3452 589-914</p></td>
                             </tr>
                         </table>
                         <a class="fancybox.ajax run_fancy" href="/site/order">Записаться</a>

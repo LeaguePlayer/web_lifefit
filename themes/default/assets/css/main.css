@@ -595,7 +595,7 @@ nav.menu {
       vertical-align: top;
       text-align: center;
       border-right: solid 1px;
-	  width: 330px;
+	    width: 450px;
     }
       .footer .content .order p {
         margin: 0;
@@ -835,6 +835,7 @@ i[class|=arrow] {
     display: inline-block;
     width: 535px;
     padding-bottom: 35px;
+    line-height: normal;
   }
   .item-news div{
     vertical-align: top;
@@ -1527,7 +1528,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 }
 
 .footerAddress td{
-	width: 50%;
+	width: 33.33%;
 }
 .vid img{
   cursor: pointer;
